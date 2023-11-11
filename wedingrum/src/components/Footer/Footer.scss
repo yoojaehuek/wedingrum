@@ -1,0 +1,43 @@
+.footer {
+  background-color: #c7c2c2;
+  color: #000000;
+  padding: 20px 10px;
+}
+
+.footer-toggle{
+  display: flex;
+  line-height: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.footer-toggle > button {
+  background: none;
+  border: none; /* 선택적으로 테두리 제거 */
+  margin: 0 15px;
+  font-size: 0.8rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-section h2 {
+  font-size: 1.5rem;
+}
+
+
+.footer-section p {
+  margin: 8px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
