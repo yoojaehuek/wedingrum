@@ -1,0 +1,42 @@
+.sliders {
+  position: relative;
+  overflow: hidden;
+
+  .sliders2 {
+    display: flex !important;
+    align-items: center;
+
+    .slick-slide {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      max-width: 100%;
+
+      img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.slide-control {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+
+  .prev,
+  .next {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    outline: none;
+  }
+}
+

@@ -4,6 +4,11 @@ import Header from './components/Header/Header';
 import Main from './pages/Main/Main';
 import Footer from './components/Footer/Footer';
 import './App.css';
+import Exp from './pages/Experience/Exp/Exp';
+import Exp1 from './pages/Experience/Exp1/Exp1';
+import Exp2 from './pages/Experience/Exp2/Exp2';
+import Exp3 from './pages/Experience/Exp3/Exp3';
+import Wedding from './pages/Wedding/Wedding';
 
 function App() {
   return (
@@ -11,9 +16,17 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='/exp' element={<Exp />} />
+        <Route path='/exp1' element={<Exp1 />} />
+        <Route path='/exp2' element={<Exp2 />} />
+        <Route path='/exp3' element={<Exp3 />} />
+        <Route path='/wedding' element={<Wedding />} />
+        
+
       </Routes>
       <Footer />
     </div>
+    
   );
 }
 
