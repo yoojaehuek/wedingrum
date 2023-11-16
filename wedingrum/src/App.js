@@ -17,6 +17,7 @@ import Party from './pages/Party/Party';
 import Login from './pages/Login/Login'
 import Join from './pages/Join/Join'
 import Joininput from './pages/Join/Join-input';
+import Invitation from './pages/Mypage/Mypage3';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path='/party' element={<Party />} />
         <Route path='/Join' element={<Join />} />
         <Route path='/Join-input' element={<Joininput />} />
+        <Route path='/Mypage3' element={<Invitation />} />
       </Routes>
       <Footer />
     </div>
