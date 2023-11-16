@@ -1,0 +1,60 @@
+#join-input-form{
+    list-style: none;
+    width: 800px;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    #join-input{
+        div{
+            width: 50%;
+            padding-bottom: 5px;
+        }
+        input{
+            padding: 10px 15px;
+            width: 85%;
+            background-color: #ebebeb;
+            border: 0px;
+        }
+        li{
+            list-style-type: none;
+            text-align: left;
+            display:flex;
+        }
+        .gender{
+            width: 15px;
+            height:15px;
+        }
+    }
+    h3{
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1;
+        font-family: Montserrat,Notosanskr,sans-serif;
+    }
+    h1{
+        margin: 10px 0;
+        margin-bottom: 32px;
+        font-size: 40px;
+        font-weight: 400;
+        font-family: Montserrat,Notosanskr,sans-serif;
+    }
+    h5{
+        margin-bottom: 10px;
+    } 
+    #join-btn{
+        width: 50%;
+        height: 60px;
+        color: white;
+        background-color: brown;
+        border: 0px;
+        border-radius: 50px;
+        font-size: 20px;
+        transition: 0.3s;
+        margin: 40px auto;
+    }
+    #join-btn:hover{
+        background-color: #424242;
+    }
+
+}
