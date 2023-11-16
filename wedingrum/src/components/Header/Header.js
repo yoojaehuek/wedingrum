@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import "../Header/Header.scss";
 import { NavLink } from "react-router-dom";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 const Header = () => {
 
+    const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+
   return (
-    <div id='header-container'>
+    <div id="header-container"
+      className={isHeaderHovered ? 'hovered' : ''}
+      onMouseEnter={() => setIsHeaderHovered(true)}
+      onMouseLeave={() => setIsHeaderHovered(false)}>
       <div className='header-warp'>
         <a href='/'><img src='./img/header/logo.png' alt=''></img></a>
         <div className='header-item'>
@@ -68,8 +74,11 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <a href='/'>로그인</a>
-              <ul></ul>
+              <a href='/'><PersonOutlineIcon fontSize='medium'/></a>
+              <ul id='sub-menu'>
+                <li><a href="/">로그인</a></li>
+                <li><a href="/">회원 가입</a></li>
+              </ul>
             </li>
           </ul>
         </div>
