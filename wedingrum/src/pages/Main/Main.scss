@@ -1,106 +1,112 @@
-/* src/components/FullPage.css */
-#fullpage-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-.section {
-  position: relative;
-  height: 100vh;
-}
-
-.video-bg {
-  width: 100%;
-  height: 99.6vh;
-  object-fit: cover;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-}
-
-.content h1 {
-  margin-bottom: 50px;
-  font-size: 3rem;
-}
-
-.content span {
-  font-weight: 700;
-}
-
-.content-button {
-  position: relative;
-  padding: 15px 110px;
-  text-decoration: none;
-  font-size: 1.5rem;
-  border: solid 1px rgb(255, 255, 255);
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.content-button::before {
-  content: "";
+.bg-video {
   position: absolute;
   top: 0;
   left: 0;
+  height: 100vh;
   width: 100%;
-  height: 100%;
-  background-color: rgba(52, 152, 219, 0); /* 초기 배경 색상 (투명) */
   z-index: -1;
-  transition: background-color 0.5s ease-in-out, border-radius 0.5s ease-in-out;
-  border-radius: inherit; /* 보더 라디우스 값 상속 */
 }
 
-.content-button:hover::before {
-  background-color: rgba(185, 224, 240, 1); /* 호버 시에 백그라운드 색상이 천천히 채워지도록 설정 */
-  border-radius: 30px; /* 호버 시에 보더 라디우스 값이 적용 */
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; // background-size: cover 와 비슷함. (HTML 요소 or 비디오와 작동)
+  
 }
 
+.main-page2{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed !important;
 
-// ---------------------------------------------------------------
+  .main-content2 {
+    text-align: center;
+    color: white;
 
+    h1 {
+      padding-bottom: 30px;
+      font-size: 3.5rem;
+    }
 
-.slider-section {
+    li {
+      border: solid 2px rgb(255, 255, 255);
+      padding: 15px 0;
+      border-radius: 50px;
+      list-style: none;
+      transition: background-color 0.4s ease-in-out;
+    }
+
+    a{
+      color: white;
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    li:hover{
+      background-color: rgb(218, 247, 252);
+      color: black;
+    }
+  }
+}
+
+.main-page3{
   position: relative;
-  z-index: 1;
-  background: #fff;
+  display: grid;
+  grid-template-columns: 7fr 3fr; /* 8:2 비율로 설정 */
+  height: 100vh; /* 전체 화면 높이로 설정, 필요에 따라 조절 가능 */
+
+
+  .main-side-bar{
+    background-color: #333; /* 오른쪽 사이드바 배경색 */
+    color: white;
+    padding: 20px;
+  }
 }
 
-// .slider-grid{
-//   // display: flex;
-//   // position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 0;
-//   width: 100%;
-//   height: 100vh;
-//   min-height: 830px;
-// }
+.main-side-txt{
+  padding: 50px 20px;
 
-// .slider-main{
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   margin-right: auto;
-//   position: relative;
-//   overflow: hidden;
-//   list-style: none;
-//   padding: 0;
-//   z-index: 1;
-//   width: 68%!important;
-//   margin-left: 0!important;
-// }
+  h1{
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+  }
 
-// .slider-right{
-//   width: 30%;
-//   margin-top: 7vw;
-//   background: #fff;
-// }
+  h2{
+    font-size: 2.0rem;
+    font-weight: 300;
+    padding-bottom: 40px;
+  }
+
+  h4{
+    font-size: 1.0rem;
+    font-weight: 200;
+    padding-bottom: 50px;
+  }
+
+  li{
+    list-style: none;
+    padding-bottom: 30px;
+  }
+
+  a{
+    color: white;
+    padding-bottom: 2px;
+    border-bottom: solid 0.0001rem white; /* 밑줄 굵기 및 색상 설정 */
+    text-decoration: none; /* 기본 밑줄 제거 */
+  }
+
+  a:hover {
+    color: rgb(211, 98, 98);
+    border-bottom: 1px solid rgb(207, 104, 104);
+
+  }
+
+}
+
+.main-page4{
+  padding: 0 0;
+  width: 100%;
+}
