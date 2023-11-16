@@ -17,10 +17,13 @@ const Joininput = () => {
         const phone = e.target.phone.value
         const companionName = e.target.companionName.value
         const companionPhone = e.target.companionPhone.value
-        
-        if(pwd === confirmPwd && id !== "" && pwd !== "" && confirmPwd !== "" && name !== "" && phone !== "" && gender !== ""&& birth !==""
-        && companionPhone !==""&&companionName!=="" ){
-            await axios.post(`${API_URL}/user`,{id, name, phone ,pwd})
+
+        // pwd === confirmPwd && id !== "" && pwd !== "" && confirmPwd !== "" && name !== "" && phone !== "" && gender !== ""&& birth !==""
+        // && companionPhone !==""&&companionName!==""
+
+        if(true){
+            console.log("g c c : ",gender, companionName, companionPhone);
+            await axios.post(`${API_URL}/user`,{name, id, pwd, phone, birth, gender, companionName, companionPhone})
             .then(() =>{
                 alert("가입성공!");
                 navigate('/');  
@@ -38,7 +41,7 @@ const Joininput = () => {
 
 
     return (
-<form id="join-input-form" onsubmit={onsubmitJoin} >
+<form id="join-input-form" onSubmit={onsubmitJoin} >
     <h3>MEMBER</h3>
     <h1>회원가입</h1>
 
