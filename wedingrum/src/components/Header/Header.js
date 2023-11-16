@@ -3,6 +3,18 @@ import "../Header/Header.scss";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  
+  const productData = [
+    { id: 'prodpho', name: '웨딩 본식 상품', category: '웨딩 본식 상품' },
+    { id: 'prodpho', name: '사진 촬영', category: '사진 촬영' },
+    { id: 'prodmov', name: '영상 촬영', category: '영상 촬영' },
+    { id: 'prodhair', name: '헤어&메이크업', category: '헤어&메이크업' },
+    { id: 'prodbooth', name: '포토부스', category: '포토부스' },
+    { id: 'prodetc', name: '축가/사회', category: '축가/사회' },
+    { id: 'prodcar', name: '웨딩카', category: '웨딩카' },
+    { id: 'prodbow', name: '폐백', category: '폐백' },
+    { id: 'prodwdmg', name: '웨딩관리', category: '웨딩관리' },
+  ];
 
   return (
     <div id='header-container'>
@@ -30,13 +42,13 @@ const Header = () => {
             <li>
               <a href='/'>PRODUCTS</a>
               <ul id='sub-menu'>
-                <li><a href='/'>웨딩 본식 상품</a></li>
-                <li><a href='/'>사진촬영</a></li>
-                <li><a href='/'>영상촬영</a></li>
-                <li><a href='/'>혼주 헤어&메이크업</a></li>
-                <li><a href='/'>포토부스</a></li>
-                <li><a href='/'>축가/사회</a></li>
-                <li><a href='/'>웨딩관리</a></li>
+                {productData.map((item) => (
+                  <li key={item.id}>
+                    <NavLink to={`product/${item.id}`}>
+                      {item.name}
+                    </NavLink>
+                  </li>
+                ))}
               </ul>
             </li>
             <li>
