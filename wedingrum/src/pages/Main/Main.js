@@ -1,5 +1,5 @@
 import "../Main/Main.scss"
-import ReactFullpage from '@fullpage/react-fullpage';
+// import ReactFullpage from '@fullpage/react-fullpage';
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import ImageSlider from '../../components/Slider/Slider'

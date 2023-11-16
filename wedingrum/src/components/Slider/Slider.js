@@ -1,5 +1,5 @@
 import React from "react";
-import Sliders from "react-slick";
+// import Sliders from "react-slick";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 import "./Slider.scss";
@@ -19,7 +19,7 @@ const Slider = () => {
 
   return (
     <div className="sliders">
-      <Sliders {...settings} className="sliders2">
+      <Slider {...settings} className="sliders2">
         <div>
           <img
             className="phoneImages"
@@ -55,7 +55,7 @@ const Slider = () => {
             src="img/main/5.jpg"
           />
         </div>
-      </Sliders>
+      </Slider>
       <div className="slide-control">
         <button className="prev" onClick={() => this.slider.slickPrev()}>
           Prev
