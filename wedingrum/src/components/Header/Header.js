@@ -58,12 +58,12 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <a href='/'>EXPERIENCE</a>
+              <a href='/exp'>EXPERIENCE</a>
               <ul id='sub-menu'>
-                <li><a href='/'>골든웨딩</a></li>
-                <li><a href='/'>웨딩가모 앳홈</a></li>
-                <li><a href='/'>트리츠 스파</a></li>
-                <li><a href='/'>웨딩의 여신</a></li>
+                <li><a href='/exp'>골든웨딩</a></li>
+                <li><a href='/exp1'>웨딩가모 앳홈</a></li>
+                <li><a href='/exp2'>트리츠 스파</a></li>
+                <li><a href='/exp3'>웨딩의 여신</a></li>
               </ul>
             </li>
             <li>
