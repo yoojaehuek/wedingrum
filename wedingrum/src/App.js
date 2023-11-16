@@ -11,6 +11,9 @@ import Exp3 from './pages/Experience/Exp3/Exp3';
 import Product from './pages/Products/Product'
 import ProdDetail from './pages/Products/ProdDetail';
 import Wedding from './pages/Wedding/Wedding';
+import Login from './pages/Login/Login';
+import Join from './pages/Join/Join'
+import JoinIn from './pages/Join/Join-input'
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path='/ProdD' element={<ProdDetail />} />
         <Route path='/product/:id' element={<Product />} />
         <Route path='/wedding' element={<Wedding />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/join' element={<Join />} />
+        <Route path='/joinin' element={<JoinIn />} />
       </Routes>
       <Footer />
     </div>
