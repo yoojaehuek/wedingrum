@@ -3,11 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 
 function MyPageTop() {
-
-  const user = [
-    {name: "임헌성" , age:'25', phone:'000-0000-0000', bh:"1999-10-08"}
-  ]
-
+  
   return(
     <>
       <div className='my-wadding'>

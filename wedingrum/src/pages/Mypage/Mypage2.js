@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Mypage/Mypage.scss';
-import LeftBar from '../../components/MyPage/LeftBar'
 import MyPageTop from '../../components/MyPage/MyPageTop'
 
 function MyPage2() {
