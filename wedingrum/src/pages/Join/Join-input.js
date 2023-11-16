@@ -1,6 +1,6 @@
 import React from 'react';
 import './Join-input.scss'
-const Join = () => {
+const Joininput = () => {
     return (
 <form id="join-input-form" onsubmit="">
     <h3>MEMBER</h3>
@@ -53,4 +53,4 @@ const Join = () => {
     );
 }
 
-export default Join;
+export default Joininput;
