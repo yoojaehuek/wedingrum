@@ -9,6 +9,7 @@ import Exp1 from './pages/Experience/Exp1/Exp1';
 import Exp2 from './pages/Experience/Exp2/Exp2';
 import Exp3 from './pages/Experience/Exp3/Exp3';
 import Wedding from './pages/Wedding/Wedding';
+import Party from './pages/Party/Party';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/exp2' element={<Exp2 />} />
         <Route path='/exp3' element={<Exp3 />} />
         <Route path='/wedding' element={<Wedding />} />
+        <Route path='/party' element={<Party />} />
         
 
       </Routes>
