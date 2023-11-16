@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Main from './pages/Main/Main';
 import Footer from './components/Footer/Footer';
+import MyPage from './pages/Mypage/Mypage';
+import MyPage2 from './pages/Mypage/Mypage2';
 import './App.css';
 import Exp from './pages/Experience/Exp/Exp';
 import Exp1 from './pages/Experience/Exp1/Exp1';
@@ -15,6 +17,9 @@ import Login from './pages/Login/Login';
 import Join from './pages/Join/Join'
 import JoinIn from './pages/Join/Join-input'
 import Party from './pages/Party/Party';
+import Login from './pages/Login/Login'
+import Join from './pages/Join/Join'
+import Joininput from './pages/Join/Join-input';
 
 function App() {
   return (
@@ -22,6 +27,9 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='/MyPage' element={<MyPage />} />
+        <Route path='/MyPage2' element={<MyPage2 />} />
+        <Route path='/Login' element={<Login />} />
         <Route path='/exp' element={<Exp />} />
         <Route path='/exp1' element={<Exp1 />} />
         <Route path='/exp2' element={<Exp2 />} />
@@ -33,6 +41,8 @@ function App() {
         <Route path='/join' element={<Join />} />
         <Route path='/joinin' element={<JoinIn />} />
         <Route path='/party' element={<Party />} />
+        <Route path='/Join' element={<Join />} />
+        <Route path='/Join-input' element={<Joininput />} />
       </Routes>
       <Footer />
     </div>

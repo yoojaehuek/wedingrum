@@ -66,6 +66,7 @@
       list-style: none;
     }
 
+
     a{
       display: inline-block;
       text-align: center;
@@ -106,20 +107,21 @@
         padding: 0;
 
         li{
-          margin: 0 0 20px 0;
+          margin: 0 0 10px 0;
           white-space: nowrap;
-          cursor: pointer;
-          border: 1px solid #ccc;
-          border-radius: 30px;
-          padding: 8px 21px;
-          background: #fff;
-          width: 70%;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-weight: 300;
-          color: #9c9c9c;
-          
+
+          a{
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            padding: 8px 21px;
+            background: #fff;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 300;
+            color: #9c9c9c;
+          }
         }
       }
     }
@@ -145,3 +147,5 @@
   padding: 15px;
   margin: 0 0 1vw;
 }
+
+

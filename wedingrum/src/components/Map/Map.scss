@@ -1,0 +1,22 @@
+.MapContainer {
+  height: 16.875rem;
+  width: 100%;
+  border-radius: 50px;
+}
+
+.leaflet-popup-content-wrapper {
+  background: white;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+
+.map-container {
+  margin-top: 20px;
+}
