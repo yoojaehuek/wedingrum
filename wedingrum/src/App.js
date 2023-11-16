@@ -11,6 +11,7 @@ import Exp3 from './pages/Experience/Exp3/Exp3';
 import Product from './pages/Products/Product'
 import ProdDetail from './pages/Products/ProdDetail';
 import Wedding from './pages/Wedding/Wedding';
+import Party from './pages/Party/Party';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/ProdD' element={<ProdDetail />} />
         <Route path='/product/:id' element={<Product />} />
         <Route path='/wedding' element={<Wedding />} />
+        <Route path='/party' element={<Party />} />
       </Routes>
       <Footer />
     </div>
