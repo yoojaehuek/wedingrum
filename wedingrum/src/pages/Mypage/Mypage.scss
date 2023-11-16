@@ -3,7 +3,7 @@
   padding: 0;
   z-index: 5;
   min-width: 320px;
-  height: 100vh;
+  height: 110vh;
   overflow: hidden;
 }
 
@@ -84,6 +84,7 @@
 
 .sub-menu{
   background: #fff;
+
   padding: 60px 0 10px;
 
   .my-both{
@@ -119,7 +120,13 @@
           display: inline-block;
           font-weight: 300;
           color: #9c9c9c;
+          transition: background-color 0.4s ease-in-out;
           
+        }
+
+        li:hover{
+          background-color: #444;
+          color: white;
         }
       }
     }
@@ -142,6 +149,11 @@
   position: relative;
   border: 1px solid #dcdcdc;
   background: #fff;
-  padding: 15px;
+  padding: 20px 20px;
   margin: 0 0 1vw;
+
+  h2{
+    font-size: 22px;
+    padding-bottom: 30px;
+  }
 }

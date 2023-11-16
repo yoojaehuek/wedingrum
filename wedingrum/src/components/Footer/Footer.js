@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
           <div className="footer-section2">
             <div className="footer-section2">
-              <h2>스마트예약 고객센터 : 02-512-7011</h2>
+              <h2>스마트예약 고객센터 : 00-000-0000</h2>
               <h3>월~일 : 10시 ~ 19시 (점심: 12시 ~ 13시)</h3>
             </div>
             <div className="footer-section3">
