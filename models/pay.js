@@ -44,7 +44,7 @@ class Pay extends Sequelize.Model {
   }
 
   static associate(db) { //다른 모델과의 관계정의
-    db.Pay.belongsTo(db.User, {foreignKey: 'userId', targetKey: 'id'});
+    db.Pay.belongsTo(db.User, {foreignKey: 'userId', targetKey: 'id'});//받는거
     db.Pay.belongsTo(db.Amount, {foreignKey: 'amountId', targetKey: 'id'});
   }
 };
