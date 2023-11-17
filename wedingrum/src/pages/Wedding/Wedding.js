@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Header from '../../components/Header/Header';
 import './wedding.scss';
 
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 function Wedding() {
@@ -69,16 +74,44 @@ function Wedding() {
           <div class="center_fourth">
             <div class="slidebox">
               <div class="slide">
-
+                <Swiper
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  navigation={true}
+                  modules={[Autoplay, Pagination, Navigation]}
+                  className="mySwiper"
+                >
+                  <SwiperSlide>Slide 1</SwiperSlide>
+                  <SwiperSlide>Slide 2</SwiperSlide>
+                  <SwiperSlide>Slide 3</SwiperSlide>
+                  <SwiperSlide>Slide 4</SwiperSlide>
+                  <SwiperSlide>Slide 5</SwiperSlide>
+                  <SwiperSlide>Slide 6</SwiperSlide>
+                  <SwiperSlide>Slide 7</SwiperSlide>
+                  <SwiperSlide>Slide 8</SwiperSlide>
+                  <SwiperSlide>Slide 9</SwiperSlide>
+                </Swiper>
               </div>
             </div>
-            <div class="l_arrow"></div>
-            <div class="r_arrow"></div>
+            <div class="l_arrow" role='button' aria-label='Previous slide'>{'<'}</div>
+            <div class="r_arrow" role='button' aria-label='Next slide'>{'>'}</div>
             <div class="gallery">
               <div class="sub_tit">
-                <h2></h2>
+                <h2>Gallery of Jamsil Hall</h2>
                 <div class="gallery_btn">
-                  <a class="btn_boline"></a>
+                  <a class="btn_boline">All</a>
+                  <a class="btn_boline">Wedding Hall</a>
+                  <a class="btn_boline">Bridal Room</a>
+                  <a class="btn_boline">Courtesy Room</a>
+                  <a class="btn_boline">Banquet & Buffet</a>
+                  <a class="btn_boline">Others</a>
                 </div>
               </div>
             </div>
@@ -106,11 +139,11 @@ function Wedding() {
               </p>
               <p>
                 <span>용인 및 과천방향</span>
-                " - 청담대로 진입 후 (동부간선도로 방면) 직진 {'>'} 천호대교, 잠실대교(우측방향) {'>'} 잠실대교 진입 후 (잠실대교 남단) > 잠실나루역 방향 (좌회전) > 한국광고문화회관" <br/>
+                " - 청담대로 진입 후 (동부간선도로 방면) 직진 {'>'} 천호대교, 잠실대교(우측방향) {'>'} 잠실대교 진입 후 (잠실대교 남단) {'>'} 잠실나루역 방향 (좌회전) {'>'} 한국광고문화회관" <br/>
                 <span>강동, 강북 방면</span>
-                "- 올림픽대로&강변북로 직진 {'>'} 잠실대교 진입 후 송파대로 이동 {'>'} 잠실대교 남단 잠실나루역 방향 (좌회전) > 한국광고문화회관" <br/>
+                "- 올림픽대로&강변북로 직진 {'>'} 잠실대교 진입 후 송파대로 이동 {'>'} 잠실대교 남단 잠실나루역 방향 (좌회전) {'>'} 한국광고문화회관" <br/>
                 <span>강서 방향</span>
-                "- 강변북로&올림픽대로 (잠실대교방면) {'>'} 잠실대교 남단 잠실나루역 방향 (좌회전) > 한국광고문화회관" <br/>
+                "- 강변북로&올림픽대로 (잠실대교방면) {'>'} 잠실대교 남단 잠실나루역 방향 (좌회전) {'>'} 한국광고문화회관" <br/>
               </p>
             </div>
           </div>

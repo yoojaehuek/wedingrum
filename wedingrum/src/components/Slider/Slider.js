@@ -1,71 +1,48 @@
-import React from "react";
-// import Sliders from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-import "./Slider.scss";
+import React, { useState, useEffect, useRef } from 'react';
+import '../Slider/Slider.scss';
 
-const Slider = () => {
-  const settings = {
-    arrows: true,
-    infinite: true,
-    speed: 10000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 10000,
-    pauseOnHover: false,
-    dots: false,
+const images = [
+  '../img/main/1.jpg',
+  '../img/main/2.jpg',
+  '../img/main/3.jpg',
+  '../img/main/4.jpg',
+  // 추가 이미지를 필요에 따라 계속해서 추가하세요
+];
+
+const AutoImageSlider = ({ onNextSlide }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 6000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  useEffect(() => {
+    onNextSlide(nextSlide);
+  }, [onNextSlide]);
+
+  const slideStyle = {
+    transform: `translateX(-${currentIndex * 100}%)`,
+    transition: 'transform 3s ease', // 0.5초 동안 ease 함수를 사용한 부드러운 애니메이션 효과
   };
 
   return (
-    <div className="sliders">
-      <Slider {...settings} className="sliders2">
-        <div>
-          <img
-            className="phoneImages"
-            alt="이미지"
-            src="img/main/1.jpg"
-          />
-        </div>
-        <div>
-          <img
-            className="phoneImages"
-            alt="이미지"
-            src="img/main/2.jpg"
-          />
-        </div>
-        <div>
-          <img
-            className="phoneImages"
-            alt="이미지"
-            src="img/main/3.jpg"
-          />
-        </div>
-        <div>
-          <img
-            className="phoneImages"
-            alt="이미지"
-            src="img/main/4.jpg"
-          />
-        </div>
-        <div>
-          <img
-            className="phoneImages"
-            alt="이미지"
-            src="img/main/5.jpg"
-          />
-        </div>
-      </Slider>
-      <div className="slide-control">
-        <button className="prev" onClick={() => this.slider.slickPrev()}>
-          Prev
-        </button>
-        <button className="next" onClick={() => this.slider.slickNext()}>
-          Next
-        </button>
+    <div className="slider-container">
+      <div ref={sliderRef} className="slider" style={slideStyle}>
+        {images.map((image, index) => (
+          <div key={index} className={`slide ${index === currentIndex ? 'active' : ''}`} style={{ backgroundImage: `url(${image})` }}></div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Slider;
+export default AutoImageSlider;

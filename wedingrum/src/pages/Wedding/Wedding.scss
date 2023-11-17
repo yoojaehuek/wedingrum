@@ -150,3 +150,57 @@ header {
   font-size: 16px;
 }
 
+.center_fourth {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  min-height: 780px;
+}
+.slidebox {
+  width: 68%;
+  margin-left: 0;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+.swiper {
+  transform: translateZ(0);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  box-sizing: content-box;
+  transition: transform 300ms
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.l_arrow {
+  top: 80%;
+  
+}
+.r_arrow {
+  top: 80%;
+  left: auto;
+  right: calc(30% - 135px);
+  bottom: -45vh;
+  width: 63px;
+  height: 63px;
+}
