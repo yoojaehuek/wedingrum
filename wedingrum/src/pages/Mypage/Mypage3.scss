@@ -1,0 +1,134 @@
+.Mypage-container{
+  position: relative;
+  padding: 0;
+  z-index: 5;
+  min-width: 320px;
+  height: 110vh;
+  overflow: hidden;
+
+}
+
+.my-backgrund{
+  background-color: #f0f0f0;
+}
+
+.my-backgrund2{
+  position: relative;
+  width: 100%;
+  padding-top: 7px;
+  background-color: rgb(255, 243, 255);
+}
+
+
+.invitation-container {
+  background-color: #fff;
+  padding: 20px 0 ;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 50vh;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.details p {
+  margin: 5px 0;
+}
+
+.date {
+  color: #e44d26;
+  font-weight: bold;
+}
+
+.Mypage-container {
+  /* 기존 스타일 유지 */
+}
+
+.my-backgrund {
+  /* 기존 스타일 유지 */
+}
+
+.invitation-container {
+  /* 기본 스타일 */
+  padding: 10vh 0 0 0;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease; /* 트랜지션 효과 추가 */
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .details {
+    margin-top: 20px;
+    font-size: 1.2em;
+
+    p {
+      margin: 10px 0;
+    }
+  }
+}
+
+/* 각 버튼에 대한 스타일 추가 */
+.style1 {
+  width: 50%;
+  position: relative;
+  left: 25%;
+  background: url(../../../public/img/mypage3/1.png) center/cover;
+}
+
+.style2 {  
+  width: 50%;
+  position: relative;
+  left: 25%;
+  background: url(../../../public/img/mypage3/2.png) center/cover;
+}
+
+.style3 {
+  width: 50%;
+  position: relative;
+  left: 25%;
+  background: url(../../../public/img/mypage3/3.png) center/cover;
+}
+
+.buttons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 100px;
+
+  
+  margin: 20px 0 0 30px;
+
+  button {
+    padding: 30px 20px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: none;
+    background-color: rgb(238, 185, 238);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 트랜지션 효과 추가 */
+    
+
+    &:hover {
+      background-color: #bff1f3; /* 버튼에 호버 효과 */
+    }
+  }
+}

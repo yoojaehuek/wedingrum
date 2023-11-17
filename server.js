@@ -2,9 +2,21 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
+const { sequelize } = require('./models');//DB테이블
 require('dotenv').config();
+const userRouter =require('./routers/user')
 
-  //로그 자세히보기
+//시퀄라이즈 연결 부분
+sequelize.sync({ force: false }) //force가 true면 킬때마다 DB 새로 만듬
+.then(() => { 
+  console.log("DB연결 성공");
+})
+.catch((err) => {
+  console.error(err);
+});
+
+
+//로그 자세히보기
 app.use(morgan('dev'));
 
 // URL-encoded방식 사용할수있게 설정 (.urlencoded()은 x-www-form-urlencoded형태의 데이터를 해석  )
@@ -19,6 +31,9 @@ app.use(cors());
 
 //포트는 .env파일의 PORT로 설정한 값
 app.set('port', process.env.PORT);
+
+//{API}/user 로 접속하면  userRouter 를 실행
+app.use('/user', userRouter);
 
 
 app.use(express.static(path.join(__dirname, 'wedingrum/build')));
