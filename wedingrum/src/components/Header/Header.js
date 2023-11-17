@@ -46,7 +46,7 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <a href='/'>PRODUCTS</a>
+              <a href='/product/prodpho'>PRODUCTS</a>
               <ul id='sub-menu'>
                 {productData.map((item) => (
                   <li key={item.id}>

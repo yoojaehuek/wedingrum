@@ -9,9 +9,9 @@ const ProdDetail = () => {
 
   // 임시 데이터 임시 이미지 경로
   const galleryImages = [
-    "./image/Product/photo.jpg",
-    "./image/Product/Etc.jpg",
-    "./image/Product/car.jpg"
+    "../image/Product/photo.jpg",
+    "../image/Product/Etc.jpg",
+    "../image/Product/car.jpg"
   ];
   const productDetails = {
     category: "PRODUCTS > 사진 촬영",

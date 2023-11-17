@@ -13,9 +13,6 @@ import Exp3 from './pages/Experience/Exp3/Exp3';
 import Product from './pages/Products/Product'
 import ProdDetail from './pages/Products/ProdDetail';
 import Wedding from './pages/Wedding/Wedding';
-import Login from './pages/Login/Login';
-import Join from './pages/Join/Join'
-import JoinIn from './pages/Join/Join-input'
 import Party from './pages/Party/Party';
 import Login from './pages/Login/Login'
 import Join from './pages/Join/Join'
@@ -38,8 +35,6 @@ function App() {
         <Route path='/product/:id' element={<Product />} />
         <Route path='/wedding' element={<Wedding />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/join' element={<Join />} />
-        <Route path='/joinin' element={<JoinIn />} />
         <Route path='/party' element={<Party />} />
         <Route path='/Join' element={<Join />} />
         <Route path='/Join-input' element={<Joininput />} />
