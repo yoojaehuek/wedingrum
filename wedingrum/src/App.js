@@ -17,6 +17,7 @@ import Party from './pages/Party/Party';
 import Login from './pages/Login/Login'
 import Join from './pages/Join/Join'
 import Joininput from './pages/Join/Join-input';
+import Invitation from './pages/Mypage/Mypage3';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/MyPage' element={<MyPage />} />
         <Route path='/MyPage2' element={<MyPage2 />} />
-        <Route path='/Login' element={<Login />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/exp' element={<Exp />} />
         <Route path='/exp1' element={<Exp1 />} />
         <Route path='/exp2' element={<Exp2 />} />
@@ -35,8 +36,9 @@ function App() {
         <Route path='/product/:id' element={<Product />} />
         <Route path='/wedding' element={<Wedding />} />
         <Route path='/party' element={<Party />} />
-        <Route path='/Join' element={<Join />} />
-        <Route path='/Join-input' element={<Joininput />} />
+        <Route path='/join' element={<Join />} />
+        <Route path='/join-input' element={<Joininput />} />
+        <Route path='/Mypage3' element={<Invitation />} />
       </Routes>
       <Footer />
     </div>

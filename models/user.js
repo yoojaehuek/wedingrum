@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-
+//고객(id, pw, name, phone, 생일, 성별, companionName, companionPhone)
 class User extends Sequelize.Model {
   static initiate(sequelize) {
     User.init({
@@ -24,6 +24,26 @@ class User extends Sequelize.Model {
         allowNull: false,
         comment: "회원 전화번호",
       },
+      birth:{
+        type:Sequelize.STRING(20),
+        allowNull:false,
+        comment:"생일"
+      },
+      gender:{
+        type:Sequelize.STRING(20),
+        allowNull:false,
+        comment:"성별",
+      },
+      companionName:{
+        type:Sequelize.STRING(20),
+        allowNull:false,
+        comment:"배우자 이름",
+      },
+      companionPhone:{
+        type:Sequelize.STRING(20),
+        allowNull:false,
+        comment:"배우자 전화번호"
+      },
       regdate: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -43,10 +63,10 @@ class User extends Sequelize.Model {
   }
 
   static associate(db) {
-    //참조키로 Cart모델에 id(sourceKey)를 userId(foreignKey)라는 이름으로 보냄
-    db.User.hasMany(db.Pay, { foreignKey: 'userId', sourceKey: 'id'});
-    db.User.hasMany(db.PlayHistory, { foreignKey: 'userId', sourceKey: 'id'});
-    db.User.hasMany(db.PlayList, { foreignKey: 'userId', sourceKey: 'id'});
+    //참조키로 Pay모델에 id(sourceKey)를 userId(foreignKey)라는 이름으로 보냄
+    // db.User.hasMany(db.Pay, { foreignKey: 'userId', sourceKey: 'id'});//pay태이블로 보냄 hasMany 가 보낸다 라는뜻
+    // db.User.hasMany(db.PlayHistory, { foreignKey: 'userId', sourceKey: 'id'});
+    // db.User.hasMany(db.PlayList, { foreignKey: 'userId', sourceKey: 'id'});
   }
 };
 
