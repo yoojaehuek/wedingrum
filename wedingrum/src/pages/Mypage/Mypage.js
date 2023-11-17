@@ -61,9 +61,6 @@ function MyPage() {
                 <form>
                   <Container maxWidth="xs">
                     <Box mt={3}>
-                      <Typography variant="h5" align="center">
-                        회원정보 수정
-                      </Typography>
                     </Box>
                     <Box mt={2}>
                       <TextField fullWidth label="아이디" variant="outlined" required name="id" onChange={handleInputChange} />
