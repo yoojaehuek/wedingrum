@@ -8,7 +8,7 @@ const User = require('./user'); //user파일을 User로 불러옴
 // const PlayList = require('./playList');
 
 const env = process.env.NODE_ENV || 'development'; //상수 env에 NODE_ENV없으면 'development' 넣음
-const config = require('../config/config')[env]; //상수config에 ../config/config파일에서 env(development) 불러옴
+const config = require('../../config/config.json')[env]; //상수config에 ../config/config파일에서 env(development) 불러옴
 const db = {}; //상수 db라는 빈 객체 생성
 
 //sequelize 인스턴스 생성../config/config파일의 development 내용들 넣음  

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
-const { sequelize } = require('./models');//DB테이블
+const { sequelize } = require('./database/schemas');//DB테이블
 require('dotenv').config();
 const userRouter =require('./routers/user')
 
