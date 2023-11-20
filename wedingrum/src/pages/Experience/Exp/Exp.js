@@ -2,7 +2,6 @@
 박승균 html, css
 */
 
-
 import React from "react";
 import './Exp.scss';
 

@@ -1,17 +1,11 @@
 // product-main
-.product-page1,
-.product-page2,
-.product-page3,
-.product-page4,
-.product-page5,
-.product-page6,
-.product-page7,
-.product-page8 {
+.product-page1 {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-attachment: fixed !important;
+  background: center/cover;
 
   .product-content {
     text-align: center;
@@ -25,38 +19,6 @@
       font-size: 1.5rem;
     }
   }
-}
-
-.product-page1 {
-  background: url('../../../public/image/Product/photo.jpg') center/cover;
-}
-
-.product-page2 {
-  background: url('../../../public/image/Product/movie.jpg') center/cover;
-}
-
-.product-page3 {
-  background: url('../../../public/image/Product/hair.jpg') center/cover;
-}
-
-.product-page4 {
-  background: url('../../../public/image/Product/booth.jpg') center/cover;
-}
-
-.product-page5 {
-  background: url('../../../public/image/Product/Etc.jpg') center/cover;
-}
-
-.product-page6 {
-  background: url('../../../public/image/Product/car.jpg') center/cover;
-}
-
-.product-page7 {
-  background: url('../../../public/image/Product/bow.jpg') center/cover;
-}
-
-.product-page8 {
-  background: url('../../../public/image/Product/WdMg.jpg') center/cover;
 }
 
 // 메뉴바.
@@ -171,6 +133,7 @@
     .image-overlay {
       position: absolute;
       left: 0;
+      top: 70%;
       width: 100%;
       display: flex;
       justify-content: start;
