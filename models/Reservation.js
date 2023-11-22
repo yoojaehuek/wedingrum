@@ -1,55 +1,47 @@
 const Sequelize = require("sequelize");
-// 예약(참조키=(고객id, 플레너id, prodId), 언제, 어디서)	
+// 예약(예약 id, 참조키=(고객id, 플레너id, prodId), 예약일,예약시간, 예약장소)	
 
 class Reservation extends Sequelize.Model {
     static initiate(sequelize) {
         Reservation.init({
-        id: {
+        id:{
             type: Sequelize.STRING(20),
             primaryKey: true,
             allowNull: false,
-            comment: "유저 ID (기본키)",
+            comment: "예약 ID (기본키)",
         },
-        pwd: {
+        userId: {
+            type: Sequelize.STRING(20),
+            primaryKey: false,
+            allowNull: false,
+            comment: "유저 ID (참조키) ",
+        },
+        plannerId: {
+            type: Sequelize.STRING(20),
+            primaryKey: flase,
+            allowNull: false,
+            comment: "플레너 ID (참조키) ",
+        },
+        prodId: {
+            type: Sequelize.STRING(20),
+            primaryKey: flase,
+            allowNull: false,
+            comment: "상품 ID (참조키)",
+        },
+        when: {
             type: Sequelize.STRING(20),
             allowNull: false,
-            comment: "비밀번호",
+            comment: "예약일",
         },
-        name: {
+        time: {
             type: Sequelize.STRING(20),
             allowNull: false,
-            comment: "이름",
+            comment: "예약시간",
         },
-        phone: {
-            type: Sequelize.STRING(20),
-            allowNull: false,
-            comment: "회원 전화번호",
-        },
-        birth:{
+        where:{
             type:Sequelize.STRING(20),
             allowNull:false,
-            comment:"생일"
-        },
-        gender:{
-            type:Sequelize.STRING(20),
-            allowNull:false,
-            comment:"성별",
-        },
-        companionName:{
-            type:Sequelize.STRING(20),
-            allowNull:false,
-            comment:"배우자 이름",
-        },
-        companionPhone:{
-            type:Sequelize.STRING(20),
-            allowNull:false,
-            comment:"배우자 전화번호"
-        },
-        regdate: {
-            type: Sequelize.DATE,
-            allowNull: false,
-            defaultValue: Sequelize.NOW,
-            comment: "회원 가입일",
+            comment:"예약장소"
         },
         }, {
         sequelize,
@@ -68,6 +60,10 @@ class Reservation extends Sequelize.Model {
         // db.User.hasMany(db.Pay, { foreignKey: 'userId', sourceKey: 'id'});//pay태이블로 보냄 hasMany 가 보낸다 라는뜻
         // db.User.hasMany(db.PlayHistory, { foreignKey: 'userId', sourceKey: 'id'});
         // db.User.hasMany(db.PlayList, { foreignKey: 'userId', sourceKey: 'id'});
+
+        db.Reservation.belongsTo(db.User, {foreignKey: 'userId', targetKey: 'id'});//user의 id를 userId 로 받아옴 
+        db.Reservation.belongsTo(db.Planner, {foreignKey: 'plannerId', targetKey: 'id'});//user의 id를 userId 로 받아옴 
+        db.Reservation.belongsTo(db.Product, {foreignKey: 'prodId', targetKey: 'id'});//user의 id를 userId 로 받아옴 
     }
 };
 

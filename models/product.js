@@ -46,6 +46,8 @@ class Product extends Sequelize.Model {
   static associate(models) {
     this.hasMany(models.ProductDetail, { foreignKey: 'productId', as: 'details' });
     this.hasMany(models.ProductSubImage, { foreignKey: 'productId', as: 'subImages' });
+    db.Product.hasMany(db.Reservation, { foreignKey: 'prodId', sourceKey: 'id'});//Reservation로 보냄 
+
   }
 }
 
