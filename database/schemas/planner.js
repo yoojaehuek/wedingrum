@@ -47,7 +47,7 @@ class Planner extends Sequelize.Model {
         // db.User.hasMany(db.Pay, { foreignKey: 'userId', sourceKey: 'id'});//pay태이블로 보냄 hasMany 가 보낸다 라는뜻
         // db.User.hasMany(db.PlayHistory, { foreignKey: 'userId', sourceKey: 'id'});
         // db.User.hasMany(db.PlayList, { foreignKey: 'userId', sourceKey: 'id'});
-
+        db.Planner.hasMany(db.Reservation, { foreignKey: 'plannerId', sourceKey: 'id'});
     }
 };
 
