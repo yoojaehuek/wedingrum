@@ -11,20 +11,17 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 function Wedding() {
   return (
-    <div className="App">
-      <Header></Header>
-
-      
+    <div className="App">     
 
       <div class="contents">
         <header>
-          <div id="background">
-            <img src=""/>
+          <div class="bak-image">
+            <div class="big_tit">
+              <h3>WEDDING</h3>
+              <h1>아펠가모 잠실</h1>
+            </div>
           </div>
-          <div class="big_tit">
-            <h3>WEDDING</h3>
-            <h1>아펠가모 잠실</h1>
-          </div>
+          
         </header>
         
         <div class="main">
@@ -88,15 +85,15 @@ function Wedding() {
                   modules={[Autoplay, Pagination, Navigation]}
                   className="mySwiper"
                 >
-                  <SwiperSlide>Slide 1</SwiperSlide>
-                  <SwiperSlide>Slide 2</SwiperSlide>
-                  <SwiperSlide>Slide 3</SwiperSlide>
-                  <SwiperSlide>Slide 4</SwiperSlide>
-                  <SwiperSlide>Slide 5</SwiperSlide>
-                  <SwiperSlide>Slide 6</SwiperSlide>
-                  <SwiperSlide>Slide 7</SwiperSlide>
-                  <SwiperSlide>Slide 8</SwiperSlide>
-                  <SwiperSlide>Slide 9</SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/AP_JS_bb001.7b068930.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/AP_JS_bb002.0113c817.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/AP_JS_bb003.a1263775.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/AP_JS_bb004.29b86daa.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/AP_JS_wh001.99580704.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/AP_JS_wh004.0ee99786.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/js_ot02.7738ba14.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/js_ot03.fa84884a.jpg"/></SwiperSlide>
+                  <SwiperSlide><img src="/image/wedding/js_ot04.c1418334.jpg"/></SwiperSlide>
                 </Swiper>
               </div>
             </div>
@@ -118,7 +115,7 @@ function Wedding() {
           </div>
         </div>
 
-        <div id="foooter">
+        <div class="foooter">
           <div class="foooter_txt">
             <div class="tit">
               <h1>Location</h1>

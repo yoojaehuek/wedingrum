@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Product, ProductDetail, ProductSubImage } = require('../models');
+const { Product, ProductDetail, ProductSubImage } = require('../database/schemas/product');
 
 router.get('/', async (req, res) => {
   try {
@@ -53,6 +53,5 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ error: '서버 에러.' });
   }
 });
-
 
 module.exports = router;
