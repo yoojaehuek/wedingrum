@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize'); 
 const User = require('./user'); //user파일을 User로 불러옴 
 const Planner = require('./planner')//planner 파일을 Planner로 불러옴
+const Point = require('./point')//point.js 파일을 Point로 불러옴
 
 const env = process.env.NODE_ENV || 'development'; //상수 env에 NODE_ENV없으면 'development' 넣음
 const config = require('../config/config')[env]; //상수config에 ../config/config파일에서 env(development) 불러옴
@@ -15,14 +16,17 @@ db.sequelize = sequelize;
 //만든 모델들 추가
 db.User = User;
 db.Planner = Planner;
+db.Point = Point;
 
 
 User.initiate(sequelize);
 Planner.initiate(sequelize);
+Point.initiate(sequelize);
 
 
 User.associate(db);
 Planner.associate(db);
+Point.associate(db);
 
 
 module.exports = db;
