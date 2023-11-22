@@ -48,7 +48,7 @@ class Product extends Sequelize.Model {
     this.hasMany(models.ProductSubImage, { foreignKey: 'productId', as: 'subImages' });
   }
 }
-
+//ss
 class ProductDetail extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
