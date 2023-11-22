@@ -1,0 +1,61 @@
+.Mypage-container {
+  position: relative;
+  padding: 0;
+  z-index: 5;
+  min-width: 320px;
+  height: 110vh;
+  overflow: hidden;
+}
+
+.sub2-menu {
+  background: #fff;
+  padding: 60px 0 10px;
+
+  .my2-both {
+    display: flex;
+    width: 97%;
+    justify-content: space-between;
+    margin: 0 auto 0;
+
+    .my2-content {
+      flex: 1 1 0;
+      margin: 0 80px 50px 0;
+      position: relative;
+
+      h1 {
+        font-size: 23px;
+        font-weight: 500;
+        padding: 0 0 20px;
+      }
+
+      .my3-content {
+        display: flex;
+        flex: 1;
+        position: relative;
+        border: 1px solid #dcdcdc;
+        background: #fff;
+        padding: 15px;
+        margin: 0 10px 1vw;
+      }
+      
+      .my2-content-main {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+
+        h2{
+          padding-bottom: 20px;
+        }
+      }
+      
+      .my2-content-left {
+        flex: 1;
+      }
+      
+      .my2-map {
+        flex: 1;
+        margin-left: 20px;
+      }      
+    }
+  }
+}

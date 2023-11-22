@@ -35,19 +35,21 @@ p{
 }
 .party_main_txt{
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: (-50%, -50%);
   text-align: center;
   color: #fff;
+  h1{
+    font-size: 60px;
+  }
+  h3{
+    font-size: 32px;
+    line-height: 1;
+    color: #fff;
+  }
 }
-.party_main_txt h1{
-  font-size: 60px;
-}
-.party_main_txt h3{
-  font-size: 32px;
-  line-height: 1;
-}
+
 .party_ex{
   position: relative;
   text-align: center;
@@ -58,18 +60,92 @@ p{
   color: #ad5656;
 }
 .ui_button{
-  padding: 5px;
-  border-radius: 15px;
+  padding: 0 30px;
+  height: 38px;
+  border-radius: 50px;
+  border: 1px solid #424242;
 }
 .ui_button:hover{
-  background-color: gray;
+  background-color: #424242;
   color: white;
 }
 .gallery_left{
-  width: 70%;
+  margin-top: 50px;
   position: relative;
+  box-sizing: border-box;
+  width: 80%;
+  left: 10%;
 }
 .gallery_right{
-  width: 30%;
+  text-align: center;
+  width: 100%;
   position: relative;
+  margin: 0 auto;
+  h2{
+    font-size: 40px;
+    padding: 0 0 20px;
+    font-weight: lighter;
+  }
+}
+.info{
+  .info_text{
+    h2{
+      font-size: 40px;
+      font-weight: lighter;
+      margin-bottom: 20px;
+    }
+    p{
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+  }
+}
+.Multi{
+  margin-bottom: 150px;
+}
+.right_tab{
+  margin-top: 40px;
+  margin-bottom: 80px;
+  .ht{
+    padding-right: 20px;
+    text-decoration-line: underline;
+    font-weight: bold;
+  }
+  .lt{
+    padding-right: 20px;
+    font-size: 0.9em;
+  }
+}
+
+.menu_ex{
+  position: relative;
+  text-align: left;
+  left: 80px;
+  width: 50%;
+  float: left;
+  h1{
+    margin-bottom: 20px;
+  }
+  p{
+    line-height: 1.8;
+  }
+  .menu_tab{
+    float: left;
+    
+    a{
+      font-size: 24px;
+      line-height: 110px;
+      border-bottom: 1px solid black;
+    }
+  }
+}
+.menu_tab a:hover{
+  color: #ad5656;
+}
+
+.Vswiper{
+  position: relative;
+  width: 50%;
+  height: 600px;
+  float: left;
 }

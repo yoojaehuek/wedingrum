@@ -1,10 +1,14 @@
 import "../Party/Party.scss"
 import React from "react"
-
+import Header from "../../components/Header/Header";
+import Swiper from "../../components/Swiper/Swiper";
+import Multi from "../../components/Mcarousel/Mcarousel";
+import Vswiper from "../../components/Vswiper/Vswiper";
 
 const Party = () => {
   return (
     <div id="container">
+      <Header></Header>
     <div className="sub_inner">
       <div className="party_main">
         <div className="party_main_img">
@@ -26,19 +30,19 @@ const Party = () => {
       </div>
       <div className="sub_gallery_wrap">
         <div className="gallery_left">
-          <img src="img/Party/ex2.jpg"></img>
+          <Swiper></Swiper>
         </div>
         <div className="gallery_right">
-          <h2>Gallery of\nBanquet</h2>
+          <h2>Gallery of<br></br>Banquet</h2>
           <p>성공과 행복을 기원하는 맛있는 연회도<br></br>더채플에서 즐겨보세요</p>
           <div className="right_tab">
-            <a>잠실점</a>
-            <a>잠실점</a>
-            <a>잠실점</a>
-            <a>잠실점</a>
-            <a>잠실점</a>
-            <a>잠실점</a>
-            <a>잠실점</a>
+            <a className="ht">잠실점</a>
+            <a className="ht">반포점</a>
+            <a className="ht">광화문점</a>
+            <a className="ht">선릉점</a>
+            <a className="ht">공덕점</a>
+            <a className="lt">6F 연회홀</a>
+            <a className="lt">7F 연회홀</a>
           </div>
         </div>
         <div className="info">
@@ -49,7 +53,9 @@ const Party = () => {
               고급스러운 느낌을 더해 줍니다.
             </p>
           </div>
-          image
+          <div className="Multi">
+            <Multi></Multi>
+          </div>
         </div>
       </div>
       <div className="party_menu_wrap">
@@ -60,15 +66,17 @@ const Party = () => {
               메뉴들과 조찬, 뷔페식, 파티 등 행사에 따른 다양한 음식들을<br></br>
               고품격으로 만나보실 수 있습니다.
             </p>
-          </div>
-          <div className="menu_tab">
-            <a>Buffet</a>
-            <a>Buffet</a>
-            <a>Buffet</a>
-            <a>Buffet</a>
-          </div>
+            <div className="menu_tab">
+              <a>Buffet<br></br></a>
+              <a>Course<br></br></a>
+              <a>Finger Food<br></br></a>
+              <a>Coffee & Tea Reception<br></br></a>
+            </div>
+          </div>          
         </div>
-        image
+        <div className="Vswiper">
+          <Vswiper></Vswiper>
+        </div>
       </div>
     </div>
   </div>

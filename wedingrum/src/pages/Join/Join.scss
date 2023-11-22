@@ -1,0 +1,49 @@
+#join-form{
+    list-style: none;
+    width: 500px;
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    li{
+        list-style-type: none;
+    }
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    h3{
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1;
+        margin: 10px 0;
+        font-family: Montserrat,Notosanskr,sans-serif;
+    }
+    h1{
+        margin: 10px 0;
+
+        margin-bottom: 50px;
+        font-size: 50px;
+        font-weight: 600;
+        font-family: Montserrat,Notosanskr,sans-serif;
+    }
+    h2{
+        font-family: Montserrat,Notosanskr,sans-serif;
+        font-weight: 500;
+    }
+    #join-btn{
+        width: 90%;
+        height: 60px;
+        color: white;
+        background-color: brown;
+        border: 0px;
+        border-radius: 50px;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+    #join-btn:hover{
+        background-color: #424242;
+    }
+}
