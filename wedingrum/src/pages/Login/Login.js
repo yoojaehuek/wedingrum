@@ -8,7 +8,7 @@ const Login = () => {
                 <h1>로그인</h1>
                 <div id="login-input">
                     <li><input id="id" type="text" placeholder='아이디'/></li>
-                    <li><input id="pwd" type="password" placeholder='비밀번호'/></li>
+                    <li><input id="pw d" type="password" placeholder='비밀번호'/></li>
                 </div>
                 
                 <li>

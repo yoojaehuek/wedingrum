@@ -46,7 +46,7 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/product/prodpho'>PRODUCTS</NavLink>
+              <NavLink to='product/prodpho'>PRODUCTS</NavLink>
               <ul id='sub-menu'>
                 {productData.map((item) => (
                   <li key={item.id}>
@@ -80,9 +80,9 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'>CUSTOMER</NavLink>
+              <NavLink to='/faq'>CUSTOMER</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>FAQ</NavLink></li>
+                <li><NavLink to='/faq'>FAQ</NavLink></li>
               </ul>
             </li>
             <li>

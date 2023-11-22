@@ -16,7 +16,7 @@ function MyPageTop() {
         <div className='sub-tab'>
           <ul>
             <li className="mypage1"><NavLink to="/Mypage">내 정보</NavLink></li>
-            <li className="mypage2"><NavLink to='/Mypage2'>예약 내역</NavLink></li>\
+            <li className="mypage2"><NavLink to='/Mypage2'>예약 내역</NavLink></li>
             <li className="mypage2"><NavLink to='/Mypage3'>청첩장</NavLink></li>
           </ul>
         </div>

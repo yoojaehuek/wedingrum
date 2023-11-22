@@ -4,18 +4,18 @@ import 'leaflet/dist/leaflet.css';
 import '../Map/Map.scss'; 
 
 const MapComponent = () => {
-  const position = [36.6384, 127.6966];
+  const position = [37.5115, 127.0821];
 
   return (
     <div className="map-container"> {/* 추가된 부분 */}
-      <MapContainer center={position} zoom={13} className="MapContainer">
+      <MapContainer center={position} zoom={130} className="MapContainer">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker position={position}>
           <Popup>
-          한국의 중심 위치입니다. <br /> 수정 가능합니다.
+          잠실의 위치입니다. <br /> 수정 가능합니다.
           </Popup>
         </Marker>
       </MapContainer>
