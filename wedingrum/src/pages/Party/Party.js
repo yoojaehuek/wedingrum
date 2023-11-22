@@ -1,6 +1,5 @@
 import "../Party/Party.scss"
 import React from "react"
-import Header from "../../components/Header/Header";
 import Swiper from "../../components/Swiper/Swiper";
 import Multi from "../../components/Mcarousel/Mcarousel";
 import Vswiper from "../../components/Vswiper/Vswiper";
@@ -8,7 +7,6 @@ import Vswiper from "../../components/Vswiper/Vswiper";
 const Party = () => {
   return (
     <div id="container">
-      <Header></Header>
     <div className="sub_inner">
       <div className="party_main">
         <div className="party_main_img">

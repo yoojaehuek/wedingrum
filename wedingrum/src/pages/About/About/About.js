@@ -14,13 +14,12 @@ import About1 from '../About1/About1';
 const About = () => {
   return (
     <div id="container">
-      <Header></Header>
-    <div className="sub_inner">
-      <div className="party_main">
-        <div className="party_main_img">
+    <div className="Asub_inner">
+      <div className="about_main">
+        <div className="about_main_img">
          <img src="img/About/a1.jpg"></img>
         </div>
-        <div className="party_main_txt">          
+        <div className="about_main_txt">          
           <h3>About</h3>
           <h1>브랜드 스토리</h1>
         </div>
@@ -76,7 +75,7 @@ const About = () => {
       </div>
       <div className="party_menu_wrap">
         <div className="party_menu">
-          <div className="menu_ex">
+          <div className="Amenu_ex">
             <h1>Team Apelgamo</h1>            
           </div>
           <div className="imggal">

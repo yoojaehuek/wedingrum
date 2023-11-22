@@ -11,13 +11,12 @@ import About from '../About/About.js';
 const About1 = () => {
   return (
     <div id="container">
-      <Header></Header>
-    <div className="sub_inner">
-      <div className="party_main">
-        <div className="party_main_img">
+    <div className="A1sub_inner">
+      <div className="about1_main">
+        <div className="about1_main_img">
          <img src="img/About/ab1.jpg"></img>
         </div>
-        <div className="party_main_txt">          
+        <div className="about1_main_txt">          
           <h3>About</h3>
           <h1>회사소개</h1>
         </div>
