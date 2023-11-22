@@ -43,9 +43,9 @@ class Product extends Sequelize.Model {
     );
   }
 
-  static associate(models) {
-    this.hasMany(models.ProductDetail, { foreignKey: 'productId', as: 'details' });
-    this.hasMany(models.ProductSubImage, { foreignKey: 'productId', as: 'subImages' });
+  static associate(schemas) {
+    this.hasMany(schemas.ProductDetail, { foreignKey: 'productId', as: 'details' });
+    this.hasMany(schemas.ProductSubImage, { foreignKey: 'productId', as: 'subImages' });
   }
 }
 
@@ -97,8 +97,8 @@ class ProductDetail extends Sequelize.Model {
     );
   }
 
-  static associate(models) {
-    this.belongsTo(models.Product, { foreignKey: 'productId', as: 'product' });
+  static associate(schemas) {
+    this.belongsTo(schemas.Product, { foreignKey: 'productId', as: 'product' });
   }
 }
 
@@ -130,8 +130,8 @@ class ProductSubImage extends Sequelize.Model {
     );
   }
 
-  static associate(models) {
-    this.belongsTo(models.Product, { foreignKey: 'productId', as: 'product' });
+  static associate(schemas) {
+    this.belongsTo(schemas.Product, { foreignKey: 'productId', as: 'product' });
   }
 }
 

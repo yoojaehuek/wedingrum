@@ -6,34 +6,34 @@ import { API_URL } from '../../config/contansts';
 import { useParams } from 'react-router-dom';
 
 const ProdDetail = () => {
-  //const { id, productId } = useParams();
-  //const [selectedImage, setSelectedImage] = useState(0);
-  //const [productDetails, setProductDetails] = useState(null);
+  // const { id, productId } = useParams();
+  // const [selectedImage, setSelectedImage] = useState(0);
+  // const [productDetails, setProductDetails] = useState(null);
 
-  //useEffect(() => {
-    //const fetchProductDetails = async () => {
-      //try {
-        //const response = await axios.get(`${API_URL}/product/${id}/${productId}`);
-        //setProductDetails(response.data);
-      //} catch (error) {
-        //console.error('에러:', error);
-      //}
-    //};
+  // useEffect(() => {
+  //   const fetchProductDetails = async () => {
+  //     try {
+  //       const response = await axios.get(`${API_URL}/product/${id}/${id}`);
+  //       setProductDetails(response.data);
+  //     } catch (error) {
+  //       console.error('에러:', error);
+  //     }
+  //   };
 
-    //fetchProductDetails();
-  //}, [id, productId]);
+  //   fetchProductDetails();
+  // }, [id, productId]);
 
-  //const handleThumbnailClick = (index) => {
-    //setSelectedImage(index);
-  //};
+  // const handleThumbnailClick = (index) => {
+  //   setSelectedImage(index);
+  // };
 
-  //const goBack = () => {
-    //window.history.back();
-  //};
+  // const goBack = () => {
+  //   window.history.back();
+  // };
 
-  //if (!productDetails) {
-    //return <p>Loading...</p>;
-  //}
+  // if (!productDetails) {
+  //   return <p>Loading.</p>;
+  // }
   const [selectedImage, setSelectedImage] = useState(0);
 
   // 임시 데이터 임시 이미지 경로
@@ -71,47 +71,47 @@ const ProdDetail = () => {
     window.history.back();
   };
 
-  return (
-    <div className="detail-container">
-      <div className="image-container">
-        <img src={productDetails.imageUrl} alt="Product" />
-        <div className="image-overlay">
-          {productDetails.subImages && productDetails.subImages.map((subImage, index) => (
-            <div
-              key={index}
-              className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
-              onClick={() => handleThumbnailClick(index)}
-            >
-              <img src={subImage.subImageUrl} alt={`Thumbnail ${index + 1}`} />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="description-container">
-        <div className="header">
-          <p>{productDetails.category}</p>
-          <button className="list-button" onClick={goBack}>
-            <ListIcon fontSize="large" />
-          </button>
-        </div>
-        <h1>{productDetails.name}</h1>
-        <p>{productDetails.description}</p>
-        <div className="details">
-          {productDetails.details && productDetails.details.map((detail, index) => (
-            <div key={index} className="detail">
-              <p>{detail.type}</p>
-              <span className="description">{detail.detailDescription}</span>
-              <span className="price">{(+detail.detailPrice).toLocaleString()}원</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="detail-container">
+//       <div className="image-container">
+//         <img src={productDetails.imageUrl} alt="Product" />
+//         <div className="image-overlay">
+//           {productDetails.subImages && productDetails.subImages.map((subImage, index) => (
+//             <div
+//               key={index}
+//               className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
+//               onClick={() => handleThumbnailClick(index)}
+//             >
+//               <img src={subImage.subImageUrl} alt={`Thumbnail ${index + 1}`} />
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       <div className="description-container">
+//         <div className="header">
+//           <p>{productDetails.category}</p>
+//           <button className="list-button" onClick={goBack}>
+//             <ListIcon fontSize="large" />
+//           </button>
+//         </div>
+//         <h1>{productDetails.name}</h1>
+//         <p>{productDetails.description}</p>
+//         <div className="details">
+//           {productDetails.details && productDetails.details.map((detail, index) => (
+//             <div key={index} className="detail">
+//               <p>{detail.type}</p>
+//               <span className="description">{detail.detailDescription}</span>
+//               <span className="price">{(+detail.detailPrice).toLocaleString()}원</span>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 
-/* // JSX를 반환
+ // JSX를 반환
 return (
   <div className="detail-container">
     <div className="image-container">
@@ -148,8 +148,8 @@ return (
       </div>
     </div>
   </div>
-); */
-
+); 
+        }
 
 export default ProdDetail;
 

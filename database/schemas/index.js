@@ -6,13 +6,13 @@ const User = require('./user'); //user파일을 User로 불러옴
 // const Amount = require('./amount');
 // const PlayHistory = require('./history');
 // const PlayList = require('./playList');
-const FAQ = require('./customer');
+const FAQ = require('./faq');
 const ProductModels = require('./product');
 const Planner = require('./planner')//planner 파일을 Planner로 불러옴
 const Point = require('./point')//point.js 파일을 Point로 불러옴
 
 const env = process.env.NODE_ENV || 'development'; //상수 env에 NODE_ENV없으면 'development' 넣음
-const config = require('../config/config')[env]; //상수config에 ../config/config파일에서 env(development) 불러옴
+const config = require('../../config/config.json')[env]; //상수config에 ../config/config파일에서 env(development) 불러옴
 const db = {}; //상수 db라는 빈 객체 생성
 
 //sequelize 인스턴스 생성../config/config파일의 development 내용들 넣음  

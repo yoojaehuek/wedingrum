@@ -19,7 +19,7 @@ class FAQ extends Sequelize.Model {
         },
         description: {
           type: Sequelize.TEXT,
-          allowNull: false,
+          allowNull: false, 
         },
       },
       {
