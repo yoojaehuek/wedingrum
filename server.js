@@ -1,13 +1,13 @@
 const express = require('express');
+const app = express();
 const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
-
-const app = express();
 const { sequelize } = require('./database/schemas');//DB테이블
-
 const userRouter =require('./routers/user');
+const faqRouter = require('./routers/customer');
+const ProductRouter = require('./routers/product');
 
 //시퀄라이즈 연결 부분
 sequelize.sync({ force: false }) //force가 true면 킬때마다 DB 새로 만듬
@@ -40,6 +40,8 @@ app.set('port', process.env.PORT);
 
 //{API}/user 로 접속하면  userRouter 를 실행
 app.use('/user', userRouter);
+app.use('/faq', faqRouter);
+app.use('/product/:id', ProductRouter);
 
 
 app.use(express.static(path.join(__dirname, 'wedingrum/build')));
