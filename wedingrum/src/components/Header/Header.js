@@ -29,7 +29,7 @@ const Header = () => {
         <div className='header-item'>
           <ul>
             <li>
-              <NavLink to='/'>RESERVATIONS</NavLink>
+              <NavLink to='/Reservations'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
                 <li><NavLink to='/'>예식예약</NavLink></li>
                 <li><NavLink to='/'>상담예약</NavLink></li>

@@ -19,6 +19,8 @@ import Join from './pages/Join/Join'
 import Joininput from './pages/Join/Join-input';
 import Invitation from './pages/Mypage/Mypage3';
 import Customer from './pages/Customer/Customer';
+import Reservations from './pages/Reservations/Reservations';
+import SangDam from './pages/Reservations/SangDam';
 
 function App() {
   return (
@@ -41,11 +43,15 @@ function App() {
         <Route path='/join-input' element={<Joininput />} />
         <Route path='/mypage3' element={<Invitation />} />
         <Route path='/faq' element={<Customer />} />
+        <Route path='/Reservations' element={<Reservations />} />
+        <Route path='/SangDam' element={<SangDam />} />
       </Routes>
       <Footer />
     </div>
     
   );
 }
+
+
 
 export default App;
