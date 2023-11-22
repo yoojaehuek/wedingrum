@@ -34,7 +34,7 @@ const ProductPhoto = () => {
       <>
       <div className="product-page1" style={backgroundImageStyle}>
         <div className="product-content">
-          <h1>제품</h1>
+          <h1>Product</h1>
           <h3>{data ? data.name : '아무것도 없다.'}</h3>
         </div>
       </div>

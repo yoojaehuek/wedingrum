@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     res.json(products);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: '서버 에러.' });
 	}
 });
 
