@@ -1,14 +1,21 @@
 import "../Party/Party.scss"
 import React from "react"
 
-
+const tempDatas = [
+  { img: "images/party/banquet-hall_1.jpg", name: "광화문점 연회홀", personnel: "550", parking: "400"},
+  { img: "images/party/banquet-hall_2.jpg", name: "반포점 연회홀", personnel: "500", parking: "250"},
+  { img: "images/party/banquet-hall_3.jpg", name: "잠실점 연회홀", personnel: "550", parking: "200"},
+  { img: "images/party/banquet-hall_3.jpg", name: "청담점 2F 연회홀", personnel: "300", parking: "200"},
+  { img: "images/party/banquet-hall_5.jpg", name: "공덕점 6F 연회홀", personnel: "500", parking: "550"},
+  { img: "images/party/banquet-hall_6.jpg", name: "공덕점 7F 연회홀", personnel: "500", parking: "550"},
+]
 const Party = () => {
   return (
     <div id="container">
     <div className="sub_inner">
       <div className="party_main">
         <div className="party_main_img">
-         <img src="img//Party/ex2.jpg"></img>
+          <img src="img//Party/ex2.jpg"></img>
         </div>
         <div className="party_main_txt">          
           <h3>PARTY</h3>
@@ -49,7 +56,14 @@ const Party = () => {
               고급스러운 느낌을 더해 줍니다.
             </p>
           </div>
-          image
+          {tempDatas.map(tempData => 
+            <div>
+              <img src={tempData.img} alt="에러" />
+              <h3>{tempData.name}</h3>
+              <span>인원제한: {tempData.personnel}</span>
+              <span>주차공간: {tempData.parking}</span>
+            </div>
+          )}
         </div>
       </div>
       <div className="party_menu_wrap">
