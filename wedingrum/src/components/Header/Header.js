@@ -60,7 +60,7 @@ const Header = () => {
             <li>
               <NavLink to='/'>PARTY</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>연회</NavLink></li>
+                <li><NavLink to='/party'>연회</NavLink></li>
               </ul>
             </li>
             <li>
@@ -73,10 +73,10 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'>ABOUT</NavLink>
+              <NavLink to='/about'>ABOUT</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>브랜드 스토리</NavLink></li>
-                <li><NavLink to='/'>회사소개</NavLink></li>
+                <li><NavLink to='/about'>브랜드 스토리</NavLink></li>
+                <li><NavLink to='/about1'>회사소개</NavLink></li>
               </ul>
             </li>
             <li>
