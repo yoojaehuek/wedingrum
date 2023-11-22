@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Header from '../../components/Header/Header';
-import './wedding.scss';
+import './Wedding.scss';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
