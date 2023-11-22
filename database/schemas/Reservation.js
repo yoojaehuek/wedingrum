@@ -12,21 +12,13 @@ class Reservation extends Sequelize.Model {
         },
         userId: {
             type: Sequelize.STRING(20),
-            primaryKey: false,
             allowNull: false,
             comment: "유저 ID (참조키) ",
         },
         plannerId: {
             type: Sequelize.STRING(20),
-            primaryKey: flase,
             allowNull: false,
             comment: "플레너 ID (참조키) ",
-        },
-        prodId: {
-            type: Sequelize.STRING(20),
-            primaryKey: flase,
-            allowNull: false,
-            comment: "상품 ID (참조키)",
         },
         when: {
             type: Sequelize.STRING(20),
@@ -38,7 +30,7 @@ class Reservation extends Sequelize.Model {
             allowNull: false,
             comment: "예약시간",
         },
-        where:{
+        where1:{
             type:Sequelize.STRING(20),
             allowNull:false,
             comment:"예약장소"
@@ -63,7 +55,6 @@ class Reservation extends Sequelize.Model {
 
         db.Reservation.belongsTo(db.User, {foreignKey: 'userId', targetKey: 'id'});//user의 id를 userId 로 받아옴 
         db.Reservation.belongsTo(db.Planner, {foreignKey: 'plannerId', targetKey: 'id'});//user의 id를 userId 로 받아옴 
-        db.Reservation.belongsTo(db.Product, {foreignKey: 'prodId', targetKey: 'id'});//user의 id를 userId 로 받아옴 
     }
 };
 

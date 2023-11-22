@@ -43,10 +43,10 @@ class Product extends Sequelize.Model {
     );
   }
 
-  static associate(models) {
-    this.hasMany(models.ProductDetail, { foreignKey: 'productId', as: 'details' });
-    this.hasMany(models.ProductSubImage, { foreignKey: 'productId', as: 'subImages' });
-    db.Product.hasMany(db.Reservation, { foreignKey: 'prodId', sourceKey: 'id'});//Reservation로 보냄 
+  static associate(db) {
+    this.hasMany(db.ProductDetail, { foreignKey: 'productId', as: 'details' });
+    this.hasMany(db.ProductSubImage, { foreignKey: 'productId', as: 'subImages' });
+    this.hasMany(db.Reservation, { foreignKey: 'prodId', sourceKey: 'id'});//Reservation로 보냄 
 
   }
 }
@@ -99,8 +99,8 @@ class ProductDetail extends Sequelize.Model {
     );
   }
 
-  static associate(models) {
-    this.belongsTo(models.Product, { foreignKey: 'productId', as: 'product' });
+  static associate(db) {
+    this.belongsTo(db.Product, { foreignKey: 'productId', as: 'product' });
   }
 }
 
@@ -132,8 +132,8 @@ class ProductSubImage extends Sequelize.Model {
     );
   }
 
-  static associate(models) {
-    this.belongsTo(models.Product, { foreignKey: 'productId', as: 'product' });
+  static associate(db) {
+    this.belongsTo(db.Product, { foreignKey: 'productId', as: 'product' });
   }
 }
 

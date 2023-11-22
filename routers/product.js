@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Product, ProductDetail, ProductSubImage } = require('../models');
+const { Product, ProductDetail, ProductSubImage } = require('../database/schemas/product');
 
 router.get('/', async (req, res) => {
   try {

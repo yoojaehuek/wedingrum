@@ -10,10 +10,15 @@ class User extends Sequelize.Model {
         comment: "유저 ID (기본키)",
       },
       pwd: {
-        type: Sequelize.STRING(20),
+        type: Sequelize.STRING(128),
         allowNull: false,
         comment: "비밀번호",
       },
+      salt: {
+        type: Sequelize.STRING(200),
+        allowNull: false,
+        comment: "암호화할때 쓴 난수",
+      }, 
       name: {
         type: Sequelize.STRING(20),
         allowNull: false,
