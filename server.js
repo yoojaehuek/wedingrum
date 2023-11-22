@@ -1,10 +1,13 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 const morgan = require('morgan');
-const { sequelize } = require('./database/schemas');//DB테이블
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
-const userRouter =require('./routers/user')
+
+const app = express();
+const { sequelize } = require('./database/schemas');//DB테이블
+
+const userRouter =require('./routers/user');
 
 //시퀄라이즈 연결 부분
 sequelize.sync({ force: false }) //force가 true면 킬때마다 DB 새로 만듬
@@ -18,6 +21,9 @@ sequelize.sync({ force: false }) //force가 true면 킬때마다 DB 새로 만�
 
 //로그 자세히보기
 app.use(morgan('dev'));
+
+app.use(cookieParser());
+
 
 // URL-encoded방식 사용할수있게 설정 (.urlencoded()은 x-www-form-urlencoded형태의 데이터를 해석  )
 // json형식의 데이터를 처리할 수 있게 설정 (.json()은 JSON형태의 데이터를 해석.)
@@ -37,9 +43,9 @@ app.use('/user', userRouter);
 
 
 app.use(express.static(path.join(__dirname, 'wedingrum/build')));
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/wedingrum/build/index.html'));
-});
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, '/wedingrum/build/index.html'));
+// });
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '/wedingrum/build/index.html'));
 });

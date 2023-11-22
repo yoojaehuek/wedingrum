@@ -6,17 +6,19 @@ class UserModel {
     const createNewUser = await User.create(newUser);
     return createNewUser;
   }
-  static async findOneUser(userId){
-    // console.log("userId",userId);
+
+  static async findOneUserId({id}){
+    // console.log("userId",id);
     const user = await User.findOne({
       where: {
-        id: userId
+        id: id
       }
     }); //where: {id: asdf} 형태가 들어와야함
     return user;
   }
+
   static async destroyUser(userId){
-    console.log("userId",userId);
+    // console.log("userId",userId);
     const user = await User.destroy({
       where: {
         id: userId
