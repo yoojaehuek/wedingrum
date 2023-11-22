@@ -1,6 +1,9 @@
 li{
     list-style: none;
   }
+a{
+  text-decoration-line: none;
+}
   
   .container{
     position: relative;
@@ -22,6 +25,22 @@ li{
   }
   #sub_inner{
     position: relative;
+    height: 100vh;
+  }
+  .links{
+    padding-top: 50px;
+    a{
+      padding-right: 40px;
+      font-size: 18.7px;
+      color: #242322;
+      font-weight: bold;
+      text-decoration-line: underline;
+      text-underline-position: under;
+    }
+    
+  }
+  .links a:hover{
+    color: #ad5656;
   }
   .party_main{
     width: 100%;
@@ -41,7 +60,7 @@ li{
   .party_main_txt{
     position: absolute;
     top: 60%;
-    left: 40%;
+    left: 60%;
     transform: (-50%, -50%);
     text-align: center;
     color: #fff;
@@ -60,7 +79,7 @@ li{
   }
   .bigimg{
     position: relative;
-    padding-top: 160px;
+    padding-top: 100px;
     padding-bottom: 40px;
   }
   .left{
@@ -117,6 +136,26 @@ li{
     }
   }
   .bottom{
+    background-image: url("../../../../public/img/About/ab5.jpg");
     padding-top: 80px;
     position: relative;
+    height: 570px;
+    width: 100%;
+    .btminner{      
+      position: absolute;
+      width: 60%;
+      left: 20%;
+      // z-index: 2;
+      .innertxt{
+        text-align: center;
+        color: #fff;
+        font-size: 45px;
+        padding-bottom: 40px;
+      }
+      .innerimg{
+        background-color: black;
+      opacity: 0.3;
+      }
+    }
   }
+  

@@ -49,6 +49,21 @@
       color: #fff;
     }
   }
+  .links{
+    padding-top: 50px;
+    a{
+      padding-right: 40px;
+      font-size: 18.7px;
+      color: #242322;
+      font-weight: bold;
+      text-decoration-line: underline;
+      text-underline-position: under;
+    }
+    
+  }
+  .links a:hover{
+    color: #ad5656;
+  }
   .sub_gallery_wrap{
     position: relative;
     padding-top: 80px;
@@ -160,6 +175,7 @@
   }
   .menu_ex{
     position: relative;
+    width: 100%;
     text-align: center;
     padding-bottom: 40px;
     h1{

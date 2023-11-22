@@ -1,6 +1,12 @@
 import "../About1/About1.scss"
 import React from "react"
-import Header from "../../components/Header/Header";
+import Header from "../../../components/Header/Header";
+import {
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
+import About from '../About/About.js';
 
 const About1 = () => {
   return (
@@ -17,6 +23,14 @@ const About1 = () => {
         </div>
       </div>
       <div className="bigcont">
+        <div className="links">
+          <a>
+            <Link to ="/About">브랜드 스토리</Link>
+          </a>
+          <a>
+            <Link to ="/About1">회사 소개</Link>
+          </a>
+        </div>
         <div className="bigimg">
           <img src="img/About/ab2.jpg"/>
         </div>
@@ -59,12 +73,26 @@ const About1 = () => {
           </div>
           <div className="imgright">
             <img src="img/About/ab4.png"></img>
-          </div>
-        </div>
+          </div>          
+        </div> 
         <div className="bottom">          
-          <img src="img/About/ab5.jpg"></img>          
-        </div>
-      </div>      
+          
+          <div className="btminner">
+            <div className="innertxt">
+              <h1>Our Brand</h1>  
+            </div>
+            <div className="innerimg">
+              <img src="./img/About/ab6.png"></img>
+              <img src="./img/About/ab7.png"></img>
+              <img src="./img/About/ab8.png"></img>
+              <img src="./img/About/ab9.png"></img>
+              <img src="./img/About/ab10.png"></img>
+              <img src="./img/About/ab11.png"></img>
+              <img src="./img/About/ab12.png"></img>
+            </div>  
+          </div>          
+        </div>       
+      </div>     
     </div>
   </div>
   );

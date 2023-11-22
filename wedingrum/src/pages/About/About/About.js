@@ -1,9 +1,15 @@
 import "../About/About.scss"
 import React from "react"
-import Header from "../../components/Header/Header";
-import Aswiper from "../../components/Aswiper/Aswiper";
-import Multi from "../../components/Amcarousel/Amcarousel";
-import ImageGallery from '../../components/imggal/imghover'
+import Header from "../../../components/Header/Header";
+import Aswiper from "../../../components/Aswiper/Aswiper";
+import Multi from "../../../components/Amcarousel/Amcarousel";
+import ImageGallery from '../../../components/imggal/imghover'
+import {
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
+import About1 from '../About1/About1';
 
 const About = () => {
   return (
@@ -19,6 +25,14 @@ const About = () => {
           <h1>브랜드 스토리</h1>
         </div>
       </div>
+      <div className="links">
+          <a>
+            <Link to ="/About">브랜드 스토리</Link>
+          </a>
+          <a>
+            <Link to ="/About1">회사 소개</Link>
+          </a>
+        </div>
       <div className="party_ex">
         <h1>The Ultimate Elegant Wedding</h1>
         <p>도심 속에서 누리는 가장 스타일리시한 웨딩<br></br>격조 높은 예식의 가치를 누려보세요.
