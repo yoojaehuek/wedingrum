@@ -25,28 +25,28 @@ const Header = () => {
       onMouseEnter={() => setIsHeaderHovered(true)}
       onMouseLeave={() => setIsHeaderHovered(false)}>
       <div className='header-warp'>
-        <a href='/'><img src='./img/header/logo.png' alt=''></img></a>
+        <NavLink to='/'><img src='./img/header/logo.png' alt=''></img></NavLink>
         <div className='header-item'>
           <ul>
             <li>
-              <a href='/'>RESERVATIONS</a>
+              <NavLink to='/'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
-                <li><a href='/'>예식예약</a></li>
-                <li><a href='/'>상담예약</a></li>
+                <li><NavLink to='/'>예식예약</NavLink></li>
+                <li><NavLink to='/'>상담예약</NavLink></li>
               </ul>
             </li>
             <li>
-              <a href='/'>WEDDING</a>
+              <NavLink to='/'>WEDDING</NavLink>
               <ul id='sub-menu'>
-                <li><a href='/'>잠실점</a></li>
-                <li><a href='/'>반포점</a></li>
-                <li><a href='/'>평택점</a></li>
-                <li><a href='/'>선릉점</a></li>
-                <li><a href='/'>공덕점</a></li>
+                <li><NavLink to='/'>잠실점</NavLink></li>
+                <li><NavLink to='/'>반포점</NavLink></li>
+                <li><NavLink to='/'>평택점</NavLink></li>
+                <li><NavLink to='/'>선릉점</NavLink></li>
+                <li><NavLink to='/'>공덕점</NavLink></li>
               </ul>
             </li>
             <li>
-              <a href='/'>PRODUCTS</a>
+              <NavLink to='product/prodpho'>PRODUCTS</NavLink>
               <ul id='sub-menu'>
                 {productData.map((item) => (
                   <li key={item.id}>
@@ -58,38 +58,38 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <a href='/'>PARTY</a>
+              <NavLink to='/'>PARTY</NavLink>
               <ul id='sub-menu'>
-                <li><a href='/'>연회</a></li>
+                <li><NavLink to='/party'>연회</NavLink></li>
               </ul>
             </li>
             <li>
-              <a href='/exp'>EXPERIENCE</a>
+              <NavLink to='/exp'>EXPERIENCE</NavLink>
               <ul id='sub-menu'>
-                <li><a href='/exp'>골든웨딩</a></li>
-                <li><a href='/exp1'>웨딩가모 앳홈</a></li>
-                <li><a href='/exp2'>트리츠 스파</a></li>
-                <li><a href='/exp3'>웨딩의 여신</a></li>
+                <li><NavLink to='/exp'>골든웨딩</NavLink></li>
+                <li><NavLink to='/exp1'>웨딩가모 앳홈</NavLink></li>
+                <li><NavLink to='/exp2'>트리츠 스파</NavLink></li>
+                <li><NavLink to='/exp3'>웨딩의 여신</NavLink></li>
               </ul>
             </li>
             <li>
-              <a href='/'>ABOUT</a>
+              <NavLink to='/about'>ABOUT</NavLink>
               <ul id='sub-menu'>
-                <li><a href='/'>브랜드 스토리</a></li>
-                <li><a href='/'>회사소개</a></li>
+                <li><NavLink to='/about'>브랜드 스토리</NavLink></li>
+                <li><NavLink to='/about1'>회사소개</NavLink></li>
               </ul>
             </li>
             <li>
-              <a href='/'>CUSTOMER</a>
+              <NavLink to='/faq'>CUSTOMER</NavLink>
               <ul id='sub-menu'>
-                <li><a href='/'>FAQ</a></li>
+                <li><NavLink to='/faq'>FAQ</NavLink></li>
               </ul>
             </li>
             <li>
-              <a href='/'><PersonOutlineIcon fontSize='medium'/></a>
+              <NavLink to='/'><PersonOutlineIcon fontSize='medium'/></NavLink>
               <ul id='sub-menu'>
-                <li><a href="/Login">로그인</a></li>
-                <li><a href="/Join">회원 가입</a></li>
+                <li><NavLink to="/Login">로그인</NavLink></li>
+                <li><NavLink to="/Join">회원 가입</NavLink></li>
               </ul>
             </li>
           </ul>

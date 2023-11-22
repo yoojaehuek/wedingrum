@@ -10,7 +10,7 @@ const Party = () => {
     <div className="Psub_inner">
       <div className="party_main">
         <div className="party_main_img">
-         <img src="img//Party/ex2.jpg"></img>
+          <img src="img//Party/ex2.jpg"></img>
         </div>
         <div className="party_main_txt">          
           <h3>PARTY</h3>
