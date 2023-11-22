@@ -10,7 +10,7 @@ import About from '../About/About.js';
 
 const About1 = () => {
   return (
-    <div id="container">
+    <div id="A1container">
     <div className="A1sub_inner">
       <div className="about1_main">
         <div className="about1_main_img">
@@ -22,7 +22,7 @@ const About1 = () => {
         </div>
       </div>
       <div className="bigcont">
-        <div className="links">
+        <div className="A1links">
           <a>
             <Link to ="/About">브랜드 스토리</Link>
           </a>
@@ -30,10 +30,10 @@ const About1 = () => {
             <Link to ="/About1">회사 소개</Link>
           </a>
         </div>
-        <div className="bigimg">
+        <div className="A1bigimg">
           <img src="img/About/ab2.jpg"/>
         </div>
-        <div className="maintxt">
+        <div className="A1maintxt">
           <div className="left">
             <p>
               유모멘트는 웨딩 서비스를<br></br>  
@@ -63,10 +63,10 @@ const About1 = () => {
             </div>
           </div>  
         </div>
-        <div className="bigtxt">
+        <div className="A1bigtxt">
           <h1>Corporate Identity</h1>
         </div>
-        <div className="iden">
+        <div className="A1iden">
           <div className="imgleft">
             <img src="img/About/ab3.png"></img>
           </div>
@@ -74,7 +74,7 @@ const About1 = () => {
             <img src="img/About/ab4.png"></img>
           </div>          
         </div> 
-        <div className="bottom">          
+        <div className="A1bottom">          
           
           <div className="btminner">
             <div className="innertxt">

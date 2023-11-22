@@ -3,17 +3,13 @@ import React from "react"
 import Header from "../../../components/Header/Header";
 import Aswiper from "../../../components/Aswiper/Aswiper";
 import Multi from "../../../components/Amcarousel/Amcarousel";
-import ImageGallery from '../../../components/imggal/imghover'
-import {
-  Switch,
-  Route,
-  Link,
-} from 'react-router-dom';
+import ImageGal from '../../../components/imggal/imghover'
+import { Link } from 'react-router-dom';
 import About1 from '../About1/About1';
 
 const About = () => {
   return (
-    <div id="container">
+    <div id="Acontainer">
     <div className="Asub_inner">
       <div className="about_main">
         <div className="about_main_img">
@@ -24,7 +20,7 @@ const About = () => {
           <h1>브랜드 스토리</h1>
         </div>
       </div>
-      <div className="links">
+      <div className="Alinks">
           <a>
             <Link to ="/About">브랜드 스토리</Link>
           </a>
@@ -32,15 +28,15 @@ const About = () => {
             <Link to ="/About1">회사 소개</Link>
           </a>
         </div>
-      <div className="party_ex">
+      <div className="about_ex">
         <h1>The Ultimate Elegant Wedding</h1>
         <p>도심 속에서 누리는 가장 스타일리시한 웨딩<br></br>격조 높은 예식의 가치를 누려보세요.
         </p>
-        <div className="subimg_wrap">
-          <div className="subimg">
+        <div className="Asubimg_wrap">
+          <div className="Asubimg">
             <img src="img/About/a2.jpg"></img>
           </div>
-          <div className="subtxt">
+          <div className="Asubtxt">
             <h2>Create Your Once<br></br>in a lifetime Moment</h2>
             <h3>클라이맥스로 기억될 행복의 순간</h3>
             <p>쏟아지는 환호, 반짝이는 행복, 두 사람의 힘찬 첫 걸음.<br></br>
@@ -59,13 +55,13 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="sub_gallery_wrap">
+      <div className="Asub_gallery_wrap">
         <h1>Wedding Special</h1>
-        <div className="gallery_left">
+        <div className="Agallery_left">
           <Aswiper></Aswiper>
         </div>        
-        <div className="info">
-          <div className="info_text">
+        <div className="aboutinfo">
+          <div className="Ainfo_text">
             <h2>Why Apelgamo</h2>            
           </div>
           <div className="Multi">
@@ -73,13 +69,13 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="party_menu_wrap">
-        <div className="party_menu">
+      <div className="about_menu_wrap">
+        <div className="about_menu">
           <div className="Amenu_ex">
             <h1>Team Apelgamo</h1>            
           </div>
           <div className="imggal">
-            <ImageGallery/>  
+            <ImageGal/>  
           </div>          
         </div>        
       </div>

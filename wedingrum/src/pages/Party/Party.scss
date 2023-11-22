@@ -1,22 +1,23 @@
-.container{
+.Pcontainer{
   position: relative;
   margin: 0 auto;
   padding: 0;
   z-index: 5;
   overflow: hidden;
   width: 1152px;
+  h1{
+    font-size: 45px;
+    font-weight: 400;
+  }
+  p{
+    font-weight: 200;
+  }
 }
 // h1, h2, h3, p, b, a{
 //   white-space: pre-line;
 // }
-h1{
-  font-size: 45px;
-  font-weight: 400;
-}
-p{
-  font-weight: 200;
-}
-#sub_inner{
+
+.Psub_inner{
   position: relative;
 }
 .party_main{
@@ -36,7 +37,7 @@ p{
 .party_main_txt{
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 45%;
   transform: (-50%, -50%);
   text-align: center;
   color: #fff;
@@ -59,24 +60,24 @@ p{
 .party_ex h3{
   color: #ad5656;
 }
-.ui_button{
+.party_button{
   padding: 0 30px;
   height: 38px;
   border-radius: 50px;
   border: 1px solid #424242;
 }
-.ui_button:hover{
+.party_button:hover{
   background-color: #424242;
   color: white;
 }
-.gallery_left{
+.pgallery_left{
   margin-top: 50px;
   position: relative;
   box-sizing: border-box;
   width: 80%;
   left: 10%;
 }
-.gallery_right{
+.pgallery_right{
   text-align: center;
   width: 100%;
   position: relative;
@@ -87,8 +88,8 @@ p{
     font-weight: lighter;
   }
 }
-.info{
-  .info_text{
+.partyinfo{
+  .pinfo_text{
     h2{
       font-size: 40px;
       font-weight: lighter;
@@ -103,7 +104,7 @@ p{
 .Multi{
   margin-bottom: 150px;
 }
-.right_tab{
+.pright_tab{
   margin-top: 40px;
   margin-bottom: 80px;
   .ht{
@@ -117,7 +118,7 @@ p{
   }
 }
 
-.menu_ex{
+.pmenu_ex{
   position: relative;
   text-align: left;
   left: 80px;
@@ -129,7 +130,7 @@ p{
   p{
     line-height: 1.8;
   }
-  .menu_tab{
+  .pmenu_tab{
     float: left;
     
     a{
@@ -139,7 +140,7 @@ p{
     }
   }
 }
-.menu_tab a:hover{
+.pmenu_tab a:hover{
   color: #ad5656;
 }
 

@@ -1,21 +1,22 @@
-.container{
+.Acontainer{
     position: relative;
     margin: 0 auto;
     padding: 0;
     z-index: 5;
     overflow: hidden;
     width: 1152px;
+    h1{
+      font-size: 45px;
+      font-weight: 400;
+    }
+    p{
+      font-weight: 200;
+    }
   }
   // h1, h2, h3, p, b, a{
   //   white-space: pre-line;
   // }
-  h1{
-    font-size: 45px;
-    font-weight: 400;
-  }
-  p{
-    font-weight: 200;
-  }
+  
   .Asub_inner{
     position: relative;
   }
@@ -49,7 +50,7 @@
       color: #fff;
     }
   }
-  .links{
+  .Alinks{
     padding-top: 50px;
     a{
       padding-right: 40px;
@@ -64,7 +65,7 @@
   .links a:hover{
     color: #ad5656;
   }
-  .sub_gallery_wrap{
+  .Asub_gallery_wrap{
     position: relative;
     padding-top: 80px;
     h1{
@@ -72,16 +73,16 @@
       text-align: center;
     }
   }
-  .subimg_wrap{
+  .Asubimg_wrap{
     position: relative;
     width: 100%;
     height: 870px;
-    .subimg{
+    .Asubimg{
       width: 75%;
       float: left;
       position: relative;
     }
-    .subtxt{
+    .Asubtxt{
       position: relative;
       text-align: left;
       margin-left: 20px;
@@ -103,7 +104,7 @@
     }
     
   }
-  .party_ex{
+  .about_ex{
     position: relative;
     text-align: center;
     padding-top: 40px;
@@ -112,20 +113,10 @@
       margin-bottom: 80px;
     }
   }
-  .party_ex h3{
+  .about_ex h3{
     color: #ad5656;
   }
-  .ui_button{
-    padding: 0 30px;
-    height: 38px;
-    border-radius: 50px;
-    border: 1px solid #424242;
-  }
-  .ui_button:hover{
-    background-color: #424242;
-    color: white;
-  }
-  .gallery_left{
+  .Agallery_left{
     margin-top: 50px;
     position: relative;
     box-sizing: border-box;
@@ -133,19 +124,8 @@
     left: 10%;
     padding-bottom: 80px;
   }
-  .gallery_right{
-    text-align: center;
-    width: 100%;
-    position: relative;
-    margin: 0 auto;
-    h2{
-      font-size: 40px;
-      padding: 0 0 20px;
-      font-weight: lighter;
-    }
-  }
-  .info{
-    .info_text{
+  .aboutinfo{
+    .Ainfo_text{
       h2{
         font-size: 40px;
         font-weight: lighter;
@@ -181,21 +161,6 @@
     h1{
       margin-bottom: 20px;
     }
-    p{
-      line-height: 1.8;
-    }
-    .menu_tab{
-      float: left;
-      
-      a{
-        font-size: 24px;
-        line-height: 110px;
-        border-bottom: 1px solid black;
-      }
-    }
-  }
-  .menu_tab a:hover{
-    color: #ad5656;
   }
   
   .Vswiper{

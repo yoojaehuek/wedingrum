@@ -1,33 +1,29 @@
-
-  
-  .container{
+  .A1container{
     position: relative;
     margin: 0 auto;
     padding: 0;
     z-index: 5;
     overflow: hidden;
-    width: 1152px;
-    li{
-      list-style: none;
-    }
+    width: 1152px;    
     a{
       text-decoration-line: none;
+    }
+    h1{
+      font-size: 45px;
+      font-weight: 400;
+    }
+    p{
+      font-weight: 200;
     }
   }
   // h1, h2, h3, p, b, a{
   //   white-space: pre-line;
   // }
-  h1{
-    font-size: 45px;
-    font-weight: 400;
-  }
-  p{
-    font-weight: 200;
-  }
+ 
   .A1sub_inner{
     position: relative;
   }
-  .links{
+  .A1links{
     padding-top: 50px;
     a{
       padding-right: 40px;
@@ -39,7 +35,7 @@
     }
     
   }
-  .links a:hover{
+  .A1links a:hover{
     color: #ad5656;
   }
   .about1_main{
@@ -77,53 +73,57 @@
     width: 80%;
     margin: 0 auto;
   }
-  .bigimg{
+  .A1bigimg{
     position: relative;
     padding-top: 100px;
     padding-bottom: 40px;
   }
-  .left{
-    width: 30%;
-    position: relative;
-    float: left;
-    p{
-      color: #e48989;
-      font-size: 17px;
-      text-align: left;
-      margin-left: 60px;
+  .A1maintxt{
+    .left{
+      width: 30%;
+      position: relative;
+      float: left;
+      p{
+        color: #e48989;
+        font-size: 17px;
+        text-align: left;
+        margin-left: 60px;
+      }
+    }
+    .right{
+      width: 70%;
+      position: relative;
+      float: left;
+      p{
+        text-align: left;
+      }
+    }
+    .number{
+      padding-top: 40px;
+      padding-bottom: 80px;
+      position: relative;
+      float: left;
+      margin-right: 60px;
+      span{
+        text-align: left;
+        font-size: 40px;
+      }
+      li{
+        text-align: left;
+        font-size: 16px;
+        list-style: none;
+      }
     }
   }
-  .right{
-    width: 70%;
-    position: relative;
-    float: left;
-    p{
-      text-align: left;
-    }
-  }
-  .number{
-    padding-top: 40px;
-    padding-bottom: 80px;
-    position: relative;
-    float: left;
-    margin-right: 60px;
-    span{
-      text-align: left;
-      font-size: 40px;
-    }
-    li{
-      text-align: left;
-      font-size: 16px;
-    }
-  }
-  .bigtxt{
+  
+  .A1bigtxt{
     position: relative;
     padding-bottom: 40px;
     h1{
       font-size: 45px;
     }
   }
-  .iden{  
+  .A1iden{  
     position: relative;
     left: 20%;
     .imgleft{
@@ -135,7 +135,7 @@
       float: left;
     }
   }
-  .bottom{
+  .A1bottom{
     background-image: url("../../../../public/img/About/ab5.jpg");
     padding-top: 80px;
     position: relative;
@@ -147,10 +147,14 @@
       left: 20%;
       // z-index: 2;
       .innertxt{
+        h1{
         text-align: center;
         color: #fff;
         font-size: 45px;
         padding-bottom: 40px;
+        font-weight: lighter;
+        }
+        
       }
       .innerimg{
         background-color: black;
