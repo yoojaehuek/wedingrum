@@ -15,7 +15,7 @@ const Reservations = () => {
                         <div className='ris-tit2'>
                             <ul>
                                 <li><NavLink to="/"><p>지점-지역-웨딩홀로 찾기</p><span className='icon1'></span></NavLink></li>
-                                <li><NavLink to="/"><p>날짜 시간으로 찾기</p><span className='icon2'></span></NavLink></li>
+                                <li><NavLink to="/Date"><p>날짜 시간으로 찾기</p><span className='icon2'></span></NavLink></li>
                                 <li><NavLink to="/"><p>다른 방식으로 찾기</p><span className='icon3'></span></NavLink></li>
                             </ul>
                         </div>

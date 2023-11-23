@@ -31,8 +31,8 @@ const Header = () => {
             <li>
               <NavLink to='/Reservations'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>예식예약</NavLink></li>
-                <li><NavLink to='/'>상담예약</NavLink></li>
+                <li><NavLink to='/Reservations'>예식예약</NavLink></li>
+                <li><NavLink to='/SangDam2'>상담예약</NavLink></li>
               </ul>
             </li>
             <li>

@@ -10,12 +10,6 @@ const Main = () => {
   const sliderRef = useRef(null);
   const [scrollTriggered, setScrollTriggered] = useState(false);
 
-  const handleNextSlide = () => {
-    if (sliderRef.current) {
-      sliderRef.current(); // AutoImageSlider 컴포넌트의 nextSlide 함수 호출
-    }
-  };
-
   const handleScroll = () => {
     if (!scrollTriggered && window.scrollY > window.innerHeight) {
       setScrollTriggered(true);
@@ -29,7 +23,15 @@ const Main = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrollTriggered]);
+  },);
+
+
+  const handleLocationClick = (position) => {
+    // MapComponent에서 전달받은 위치로 지도의 좌표를 변경
+    // 예시로 잠실점의 좌표를 사용
+    position = [37.5115, 127.0821];
+    MapWithRealtimeLocation.setCenter(position);
+  };
 
   return (
     <>
@@ -56,7 +58,7 @@ const Main = () => {
             <h2>A Perfect Wedding<br></br>Day for You</h2>
             <h4>완벽한 예식의 주인공, 바로 당신입니다.</h4>
             <ul>
-              <li><NavLink to='/'>잠실점</NavLink></li>
+              <li><NavLink to='/' onClick={() => handleLocationClick([397.5115, 127.0821])}>잠실점</NavLink></li>
               <li><NavLink to='/'>반포점</NavLink></li>
               <li><NavLink to='/'>평택점</NavLink></li>
               <li><NavLink to='/'>선릉점</NavLink></li>

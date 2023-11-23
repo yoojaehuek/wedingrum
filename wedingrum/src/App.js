@@ -21,6 +21,13 @@ import Invitation from './pages/Mypage/Mypage3';
 import Customer from './pages/Customer/Customer';
 import Reservations from './pages/Reservations/Reservations';
 import SangDam from './pages/Reservations/SangDam';
+import SangDam2 from './pages/Reservations/SangDam/SangDam2';
+import Date from './pages/Reservations/Reservations/Date';
+import DateCal from './pages/Reservations/Reservations/DateCal';
+import Time from './pages/Reservations/Reservations/Time';
+import Month from './pages/Reservations/Reservations/Month';
+import Holl from './pages/Reservations/Reservations/Holl';
+
 
 function App() {
   return (
@@ -45,6 +52,12 @@ function App() {
         <Route path='/faq' element={<Customer />} />
         <Route path='/Reservations' element={<Reservations />} />
         <Route path='/SangDam' element={<SangDam />} />
+        <Route path='/SangDam2' element={<SangDam2 />} />
+        <Route path='/Date' element={<Date />} />
+        <Route path='/Time' element={<Time />} />
+        <Route path='/Month' element={<Month />} />
+        <Route path='/DateCal' element={<DateCal />} />
+        <Route path='/Holl' element={<Holl />} />
       </Routes>
       <Footer />
     </div>
