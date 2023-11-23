@@ -14,7 +14,6 @@ import Product from './pages/Products/Product'
 import ProdDetail from './pages/Products/ProdDetail';
 import Wedding from './pages/Wedding/Wedding';
 import Party from './pages/Party/Party';
-import Customer from './pages/Customer/Customer';
 import Login from './pages/Login/Login'
 import Join from './pages/Join/Join'
 import Joininput from './pages/Join/Join-input';
@@ -23,6 +22,8 @@ import About from './pages/About/About/About';
 import About1 from './pages/About/About1/About1';
 import Reservations from './pages/Reservations/Reservations';
 import SangDam from './pages/Reservations/SangDam';
+import Ceremony from './pages/Reservations/Information';
+import Customer from './pages/Customer/Customer'
 
 function App() {
   return (
@@ -47,8 +48,9 @@ function App() {
         <Route path='/join-input' element={<Joininput />} />
         <Route path='/mypage3' element={<Invitation />} />
         <Route path='/faq' element={<Customer />} />
-        <Route path='/Reservations' element={<Reservations />} />
-        <Route path='/SangDam' element={<SangDam />} />
+        <Route path='/reservations' element={<Reservations />} />
+        <Route path='/sangDam' element={<SangDam />} />
+        <Route path='/ceremony' element={<Ceremony />} />
       </Routes>
       <Footer />
     </div>
