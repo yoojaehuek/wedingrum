@@ -1,13 +1,19 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import '../Mypage/Mypage.scss';
 import LeftBar from '../../components/MyPage/LeftBar';
 import MyPageTop from '../../components/MyPage/MyPageTop';
-import { TextField, Button, Container, Typography, Box } from '@mui/material';
+import { TextField, Button, Container, Box } from '@mui/material';
 import axios from 'axios';
 import { API_URL } from '../../config/contansts';
 import useAsync from '../../hooks/useAsync';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from "recoil";
+import { loginState } from "../../recoil/atoms/loginState";
 
 function MyPage() {
+  console.log('마이페이지 실행됨');
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useRecoilState(loginState); //useState와 거의 비슷한 사용법
   const [selectedMenuItem, setSelectedMenuItem] = useState('내 정보');
   const [formData, setFormData] = useState({
     id: '',
@@ -16,18 +22,25 @@ function MyPage() {
     email: '',
   });
   const getUser = async () =>{
-    const user = await axios.get(`${API_URL}/user/mypage`)
+    console.log("Mypage.js/getUser()들어옴");
+    const user = await axios.get(`${API_URL}/user/mypage`);
+    console.log("mypage/user", user.status);
     return user.data;
   }
   
   const [state] = useAsync(getUser, []);
   const { loading, data:profile, error} = state; //state구조분해 
   if(loading) return <div>로딩중 ......</div>
-  if(error) return <div>에러가 발생했습니다.</div>
+  if(error) { 
+    alert('다시 로그인 해주세요');
+    setIsLogin(false);
+    navigate('/login');
+    return <div>에러가 발생했습니다.</div> 
+  }
   if(!profile){
     return <div>로딩중입니다.</div>
   }  
-  console.log(profile);
+  // console.log(profile);
   const name = profile.name;
   const id = profile.id;
   const pwd = profile.pwd;

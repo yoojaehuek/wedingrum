@@ -14,7 +14,7 @@ exports.makeAccessToken = (Object) =>{
   const accessToken = jwt.sign(
       Object,  // 토큰에 담을 JSON 데이터(payload)
       JWT_KEY, // 두 번째 인자로는 키(key)
-      {expiresIn: "5m"} // 유효시간 60분
+      {expiresIn: "1s"} // 유효시간 60분
   );
   console.log("token.js/makeAccessToken/accessToken: ", accessToken);
   return accessToken;
@@ -27,7 +27,7 @@ exports.makeRefreshToken = () =>{
       JWT_KEY, 
       {
           algorithm: "HS256",
-          expiresIn: "24h"
+          expiresIn: "10s"
       }
   );
   // console.log("refreshToken: ",refreshToken);

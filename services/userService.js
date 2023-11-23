@@ -50,7 +50,7 @@ class UserService{
 		// Compare the generated hash with the stored hashed password
 		if (hashedPassword === user.pwd) {
 			console.log('Login successful!');
-			console.log("userService.js/loginUser()/user: ", user);
+			// console.log("userService.js/loginUser()/user: ", user);
 			const accessToken = makeAccessToken({id: user.id});
 			const refreshToken = makeRefreshToken();
 

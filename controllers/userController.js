@@ -58,7 +58,7 @@ class UserController {
             console.log(myId);
             const user = await UserService.detailUser({myId});
 
-            console.log("res임니다요: ",res);
+            // console.log("res임니다요: ",res);
             res.status(200).json(user)
         }catch(error){
             next(error)

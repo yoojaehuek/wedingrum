@@ -13,18 +13,18 @@ const Header = () => {
   // const login = getCookie('accessToken');
   console.log("login: ", isLogin);
 
-  const refresh = async () => {
-    try {
-      const res = await axios.get(
-        `${API_URL}/refresh`,
-        { withCredentials: true },
-      );
-      console.log(res);
-    } catch (error) {
-      console.log("Header.js/error.res: ", error.response);
-      navigate('/login')
-    }
-  }
+  // const refresh = async () => {
+  //   try {
+  //     const res = await axios.get(
+  //       `${API_URL}/refresh`,
+  //       { withCredentials: true },
+  //     );
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.log("Header.js/error.res: ", error.response);
+  //     navigate('/login')
+  //   }
+  // }
 
   const logout = async () => {
     axios.get(`${API_URL}/logout`, { withCredentials: true })
@@ -119,7 +119,7 @@ const Header = () => {
             </li>
             {isLogin ? 
               <li>
-                <NavLink to='/mypage' onClick={refresh}><PersonOutlineIcon fontSize='medium'/></NavLink>
+                <NavLink to='/mypage'><PersonOutlineIcon fontSize='medium'/></NavLink>
                 <ul id='sub-menu'>
                   <li><NavLink to="/mypage">마이페이지</NavLink></li>
                   <li><NavLink to="/" onClick={logout}>로그아웃</NavLink></li>
