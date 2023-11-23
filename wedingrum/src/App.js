@@ -29,12 +29,9 @@ import Time from './pages/Reservations/Reservations/Time';
 import Month from './pages/Reservations/Reservations/Month';
 import Holl from './pages/Reservations/Reservations/Holl';
 import Ceremony from './pages/Reservations/Information';
-import Customer from './pages/Customer/Customer'
-// import { useRecoilState } from "recoil";
-// import { loginState } from "../src/recoil/atoms/loginState";
+import Customer from './pages/Customer/Customer';
 
 function App() {
-  // const [isLogin, setIsLogin] = useRecoilState(loginState); //useState와 거의 비슷한 사용법
   return (
     <div className="App">
       <Header />

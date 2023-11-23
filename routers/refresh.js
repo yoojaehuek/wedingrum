@@ -51,7 +51,7 @@ const refresh = async (req, res, next) => {
       }
     }else{ //accToken있음
       //통과!
-      console.log('accToken유효 통과!');
+      console.log('accessToken유효 통과!');
       // res.status(200).json({ 
       //   ok: true,
       //   message: 'accToken유효 통과!' 
