@@ -37,12 +37,6 @@ const Header = () => {
   } 
 
   
-
-  // axios.get(
-  //   `${API_URL}/verify`,
-  //   { withCredentials: true },
-  // );
-  
   const productData = [
     { id: 'prodpho', name: '웨딩 본식 상품', category: '웨딩 본식 상품' },
     { id: 'prodpho', name: '사진 촬영', category: '사진 촬영' },
@@ -55,7 +49,7 @@ const Header = () => {
     { id: 'prodwdmg', name: '웨딩관리', category: '웨딩관리' },
   ];
 
-    const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+  // //   const [isHeaderHovered, setIsHeaderHovered] = useState(false);
 
   return (
     <div id="header-container"
@@ -125,9 +119,9 @@ const Header = () => {
             </li>
             {isLogin ? 
               <li>
-                <NavLink to='/user/mypage' onClick={refresh}><PersonOutlineIcon fontSize='medium'/></NavLink>
+                <NavLink to='/mypage' onClick={refresh}><PersonOutlineIcon fontSize='medium'/></NavLink>
                 <ul id='sub-menu'>
-                  <li><NavLink to="/user/mypage">마이페이지</NavLink></li>
+                  <li><NavLink to="/mypage">마이페이지</NavLink></li>
                   <li><NavLink to="/" onClick={logout}>로그아웃</NavLink></li>
                 </ul>
               </li>
