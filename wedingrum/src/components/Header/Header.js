@@ -1,9 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Header/Header.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import axios from "axios";
+import { API_URL } from "../../config/contansts";
+import { useRecoilState } from "recoil";
+import { loginState } from "../../recoil/atoms/loginState";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useRecoilState(loginState); //useState와 거의 비슷한 사용법
+  // const login = getCookie('accessToken');
+  console.log("login: ", isLogin);
+
+  const refresh = async () => {
+    try {
+      const res = await axios.get(
+        `${API_URL}/refresh`,
+        { withCredentials: true },
+      );
+      console.log(res);
+    } catch (error) {
+      console.log("Header.js/error.res: ", error.response);
+      navigate('/login')
+    }
+  }
+
+  const logout = async () => {
+    axios.get(`${API_URL}/logout`, { withCredentials: true })
+      .then(()=>{
+        setIsLogin(false);
+      })
+      .catch((err) => {
+        console.log("logout/err: ", err);
+      })
+  } 
+
   
   const productData = [
     { id: 'prodpho', name: '웨딩 본식 상품', category: '웨딩 본식 상품' },
@@ -29,14 +61,14 @@ const Header = () => {
         <div className='header-item'>
           <ul>
             <li>
-              <NavLink to='/Reservations'>RESERVATIONS</NavLink>
+              <NavLink to='/reservations'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
                 <li><NavLink to='/reservations'>예식예약</NavLink></li>
-                <li><NavLink to='/sangDam2'>상담예약</NavLink></li>
+                <li><NavLink to='/sangdam2'>상담예약</NavLink></li>
               </ul>
             </li>
             <li>
-              <NavLink to='/wedding'>WEDDING</NavLink>
+              <NavLink to='/wedding/1'>WEDDING</NavLink>
               <ul id='sub-menu'>
                 <li><NavLink to='/wedding/1'>잠실점</NavLink></li>
                 <li><NavLink to='/wedding/2'>반포점</NavLink></li>
@@ -85,13 +117,24 @@ const Header = () => {
                 <li><NavLink to='/faq'>FAQ</NavLink></li>
               </ul>
             </li>
-            <li>
-              <NavLink to='/login'><PersonOutlineIcon fontSize='medium'/></NavLink>
-              <ul id='sub-menu'>
-                <li><NavLink to="/login">로그인</NavLink></li>
-                <li><NavLink to="/join">회원 가입</NavLink></li>
-              </ul>
-            </li>
+            {isLogin ? 
+              <li>
+                <NavLink to='/mypage' onClick={refresh}><PersonOutlineIcon fontSize='medium'/></NavLink>
+                <ul id='sub-menu'>
+                  <li><NavLink to="/mypage">마이페이지</NavLink></li>
+                  <li><NavLink to="/" onClick={logout}>로그아웃</NavLink></li>
+                </ul>
+              </li>
+              :
+              <li>
+                <NavLink to='/'><PersonOutlineIcon fontSize='medium'/></NavLink>
+                <ul id='sub-menu'>
+                  <li><NavLink to="/login">로그인</NavLink></li>
+                  <li><NavLink to="/join">회원 가입</NavLink></li>
+                </ul>
+              </li>
+            }
+            
           </ul>
         </div>
       </div>
