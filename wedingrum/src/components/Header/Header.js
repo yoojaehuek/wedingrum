@@ -31,14 +31,14 @@ const Header = () => {
             <li>
               <NavLink to='/Reservations'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/Reservations'>예식예약</NavLink></li>
-                <li><NavLink to='/SangDam2'>상담예약</NavLink></li>
+                <li><NavLink to='/reservations'>예식예약</NavLink></li>
+                <li><NavLink to='/sangDam2'>상담예약</NavLink></li>
               </ul>
             </li>
             <li>
-              <NavLink to='/'>WEDDING</NavLink>
+              <NavLink to='/wedding'>WEDDING</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>잠실점</NavLink></li>
+                <li><NavLink to='/wedding'>잠실점</NavLink></li>
                 <li><NavLink to='/'>반포점</NavLink></li>
                 <li><NavLink to='/'>평택점</NavLink></li>
                 <li><NavLink to='/'>선릉점</NavLink></li>
@@ -58,9 +58,9 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'>PARTY</NavLink>
+              <NavLink to='/party'>PARTY</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>연회</NavLink></li>
+                <li><NavLink to='/party'>연회</NavLink></li>
               </ul>
             </li>
             <li>
@@ -73,10 +73,10 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'>ABOUT</NavLink>
+              <NavLink to='/about'>ABOUT</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>브랜드 스토리</NavLink></li>
-                <li><NavLink to='/'>회사소개</NavLink></li>
+                <li><NavLink to='/about'>브랜드 스토리</NavLink></li>
+                <li><NavLink to='/about1'>회사소개</NavLink></li>
               </ul>
             </li>
             <li>
@@ -86,10 +86,10 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'><PersonOutlineIcon fontSize='medium'/></NavLink>
+              <NavLink to='/login'><PersonOutlineIcon fontSize='medium'/></NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to="/Login">로그인</NavLink></li>
-                <li><NavLink to="/Join">회원 가입</NavLink></li>
+                <li><NavLink to="/login">로그인</NavLink></li>
+                <li><NavLink to="/join">회원 가입</NavLink></li>
               </ul>
             </li>
           </ul>

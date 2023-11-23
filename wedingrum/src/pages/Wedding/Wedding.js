@@ -11,10 +11,10 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 function Wedding() {
   return (
-    <div className="App">     
+    <div className="App10">     
 
       <div class="contents">
-        <header>
+        <header className='abc'>
           <div class="bak-image">
             <div class="big_tit">
               <h3>WEDDING</h3>

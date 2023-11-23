@@ -14,7 +14,6 @@ import Product from './pages/Products/Product'
 import ProdDetail from './pages/Products/ProdDetail';
 import Wedding from './pages/Wedding/Wedding';
 import Party from './pages/Party/Party';
-import Customer from './pages/Customer/Customer';
 import Login from './pages/Login/Login'
 import Join from './pages/Join/Join'
 import Joininput from './pages/Join/Join-input';
@@ -29,7 +28,8 @@ import DateCal from './pages/Reservations/Reservations/DateCal';
 import Time from './pages/Reservations/Reservations/Time';
 import Month from './pages/Reservations/Reservations/Month';
 import Holl from './pages/Reservations/Reservations/Holl';
-
+import Ceremony from './pages/Reservations/Information';
+import Customer from './pages/Customer/Customer'
 
 function App() {
   return (
@@ -47,6 +47,7 @@ function App() {
         <Route path='/product/:id/:id' element={<ProdDetail />} />
         <Route path='/product/:id' element={<Product />} />
         <Route path='/wedding' element={<Wedding />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/party' element={<Party />} />
         <Route path='/about' element={<About />} />
         <Route path='/about1' element={<About1 />} />
@@ -62,6 +63,7 @@ function App() {
         <Route path='/Month' element={<Month />} />
         <Route path='/DateCal' element={<DateCal />} />
         <Route path='/Holl' element={<Holl />} />
+        <Route path='/ceremony' element={<Ceremony />} />
       </Routes>
       <Footer />
     </div>

@@ -4,6 +4,7 @@
 
 import React from "react";
 import './Exp.scss';
+import { NavLink } from "react-router-dom";
 
 const Experience = () => {
   const temp = {
@@ -29,10 +30,10 @@ const Experience = () => {
          </div>
              <div class="exp-2">
                 <ul>
-                   <li><a href="/exp">골든 아펠</a></li>
-                   <li><a href="/exp1">아펠가모 앳홈</a></li>
-                   <li><a href="/exp2">트리츠 스파</a></li>
-                   <li><a href="/exp3">웨딩의 여신</a></li>
+                   <li><NavLink to="/exp">골든 아펠</NavLink></li>
+                   <li><NavLink to="/exp1">아펠가모 앳홈</NavLink></li>
+                   <li><NavLink to="/exp2">트리츠 스파</NavLink></li>
+                   <li><NavLink to="/exp3">웨딩의 여신</NavLink></li>
                  </ul>
              </div>
         <div>

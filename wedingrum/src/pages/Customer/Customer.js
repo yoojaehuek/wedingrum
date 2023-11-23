@@ -31,7 +31,7 @@ const Customer = () => {
 
   return (
     <div className="customer-container">
-      <h2 className="center2">Customer</h2>
+      <h2 className="center">CUSTOMER</h2>
       <h1 className="center">FAQ</h1>
       <div className="search-container">
         {/* FAQ 카테고리 선택 드롭다운 */}
