@@ -7,7 +7,7 @@ const authJWT = require('../utils/authJWT');
 
 router.post('/join', UserController.addUser)
 router.post('/login', UserController.loginUser)
-router.get('/mypage', UserController.detailUser)
-
+router.get('/mypage', refresh, UserController.detailUser)
+// router.get('/mypage', authJWT, UserController.)
 
 module.exports = router;

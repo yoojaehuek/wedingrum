@@ -52,7 +52,6 @@ class UserController {
             next(error)
         }
     }
-
     static async detailUser(req, res, next){
         try{
             const myId = "22";
