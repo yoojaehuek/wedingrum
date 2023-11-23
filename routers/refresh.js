@@ -24,7 +24,10 @@ const refresh = async (req, res, next) => {
 
         res.clearCookie('accessToken');
         res.clearCookie('refreshToken');
-        res.status(302).json({ message: '다시로그인' });
+        res.status(302).json({ 
+          ok: false,
+          message: '다시로그인' 
+        });
       }else{ //accToken은 없는데 reToken은 있음 
         // const userId = redisClient.keys('123');
         
@@ -39,20 +42,31 @@ const refresh = async (req, res, next) => {
           secure : false,
           sameSite : 'strict',
         });
-        // res.status(200).json({ message: 'accessToken 재생성!' });
+        console.log('accessToken 재생성!');
+        // res.status(200).json({ 
+        //   ok: true,
+        //   message: 'accessToken 재생성!' 
+        // });
         next();
       }
     }else{ //accToken있음
       //통과!
-      // res.status(200).json({ message: 'accToken유효 통과!' });
+      console.log('accessToken유효 통과!');
+      // res.status(200).json({ 
+      //   ok: true,
+      //   message: 'accToken유효 통과!' 
+      // });
       next();
     }
   } catch (error) {
     // 오류 발생 시 에러 로그를 출력
-    console.error(error);
+    console.error("토큰 유효성 검사 실패 다시 로그인",error);
     // 에러 응답 전송 (클라이언트에서 토큰 유효성 검증 실패를 처리할 수 있도록)
     // res.status(500).json(error);
-    res.status(302).json({ message: error });
+    res.status(302).json({ 
+      ok: false,
+      message: error 
+    });
   }
 };
 

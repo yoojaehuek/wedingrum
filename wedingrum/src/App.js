@@ -29,7 +29,7 @@ import Time from './pages/Reservations/Reservations/Time';
 import Month from './pages/Reservations/Reservations/Month';
 import Holl from './pages/Reservations/Reservations/Holl';
 import Ceremony from './pages/Reservations/Information';
-import Customer from './pages/Customer/Customer'
+import Customer from './pages/Customer/Customer';
 
 function App() {
   return (
