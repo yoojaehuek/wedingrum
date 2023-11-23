@@ -49,7 +49,7 @@ const Header = () => {
     { id: 'prodwdmg', name: '웨딩관리', category: '웨딩관리' },
   ];
 
-  // //   const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
 
   return (
     <div id="header-container"
