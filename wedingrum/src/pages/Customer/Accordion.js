@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Accordion, AccordionSummary, AccordionDetails, Typography, styled } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import './Accordion.scss'
 
 const AccordionContainer = styled(Accordion)({
-  width: "63vw",
-  margin: "auto",
-  borderTop: "1px solid #ccc",
-  borderBottom: "1px solid #ccc",
+
 });
 
 const AccordionItem = ({ category, item }) => {
@@ -17,12 +15,12 @@ const AccordionItem = ({ category, item }) => {
   };
 
   return (
-    <AccordionContainer onChange={toggleDescription}>
-      <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content">
+    <AccordionContainer className="AccordionContainer" onChange={toggleDescription}>
+      <AccordionSummary className="AccordionContainer2" expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content">
         <Typography className="category" sx={{ marginRight: "3vw" }}>{category.category}</Typography>
         <Typography className="title">{item.name}</Typography>
       </AccordionSummary>
-      <AccordionDetails>
+      <AccordionDetails className="dectption">
         {showDescription && (
           <Typography className="description">
             {item.description}

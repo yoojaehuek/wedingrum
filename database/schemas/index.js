@@ -6,7 +6,6 @@ const Planner = require('./planner')//planner 파일을 Planner로 불러옴
 const Point = require('./point')//point.js 파일을 Point로 불러옴
 const Reservation = require('./reservation')//point.js 파일을 Point로 불러옴
 
-
 const env = process.env.NODE_ENV || 'development'; //상수 env에 NODE_ENV없으면 'development' 넣음
 const config = require('../../config/config.json')[env]; //상수config에 ../config/config파일에서 env(development) 불러옴
 const db = {}; //상수 db라는 빈 객체 생성
@@ -48,6 +47,3 @@ Point.associate(db);
 Reservation.associate(db);
 
 module.exports = db;
-
-
-
