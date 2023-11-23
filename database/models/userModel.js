@@ -30,7 +30,7 @@ class UserModel {
   static async findById({myId}){
     const user = await User.findOne({id: myId});
     return user;
-  }
+  } 
 }
 
 module.exports = UserModel; 

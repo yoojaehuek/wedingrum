@@ -33,12 +33,8 @@ function MyPage() {
   const pwd = profile.pwd;
   const birth = profile.birth;
   const phone = profile.phone;
-  const conpanionName = profile.conpanionName;
-  const conpanionPhone = profile.conpanionPhone;
-
-
-
-
+  const companionName = profile.companionName;
+  const companionPhone = profile.companionPhone;
 
   const handleMenuClick = (menuItem) => {
     setSelectedMenuItem(menuItem);
@@ -75,21 +71,13 @@ function MyPage() {
           <div className="my-content">
             <h1>{selectedMenuItem}</h1>
             <div className="my-content-main">
-              <div>
-                <h2>이름: {name}</h2>
-                <h2>생일: {birth}</h2>
-                <h2>전화번호: {phone}</h2>
-                <h2>배우자이름: {conpanionName}</h2>
-                <h2>배우자전화번호: {conpanionPhone}</h2>
-              </div>
               {selectedMenuItem === '내 정보' && (
                 <>
-                  {/* <h2>이름 : {users.name}</h2>
-                  <h2>배우자 이름 : {users.conpanionName}</h2> */}
-                  {/* <h2>나이 : {now.getYear() - users.birth.getYear}</h2> */}
-                  {/* <h2>나이 : {now.getYear() - users.birth.getYear}</h2> */}
-                  {/* <h2>전화번호 : {users.phone}</h2>
-                  <h2>생일 : {}</h2> */}
+                  <h2>이름: {name}</h2>
+                  <h2>생일: {birth}</h2>
+                  <h2>전화번호: {phone}</h2>
+                  <h2>배우자이름: {companionName}</h2>
+                  <h2>배우자전화번호: {companionPhone}</h2>
                 </>
               )}
               {selectedMenuItem === '내정보 수정' && (

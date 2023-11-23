@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./Amcarousel.css";
+import "./Amcarousel.scss";
 
 export default function App() {
   const responsive = {
@@ -23,7 +23,7 @@ export default function App() {
     }
   };
   return (
-    <div className="App">
+    <div className="App2">
       <div style={{ position: "relative" }}>
         <Carousel responsive={responsive}>
           <div><img src="img/About/am1.jpg"/>

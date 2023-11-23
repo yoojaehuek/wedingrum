@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize'); 
 const User = require('./user'); //user파일을 User로 불러옴 
 const FAQ = require('./faq');
-const ProductModels = require('./product');
+const Product = require('./product');
 const Planner = require('./planner')//planner 파일을 Planner로 불러옴
 const Point = require('./point')//point.js 파일을 Point로 불러옴
 const Reservation = require('./reservation')//point.js 파일을 Point로 불러옴
@@ -19,9 +19,7 @@ db.sequelize = sequelize;
 //만든 모델들 추가
 db.User = User;
 db.FAQ = FAQ;
-db.Product = ProductModels.Product;
-db.ProductDetail = ProductModels.ProductDetail;
-db.ProductSubImage = ProductModels.ProductSubImage;
+db.Product = Product;
 db.Planner = Planner;
 db.Point = Point;
 db.Reservation = Reservation;
@@ -29,9 +27,7 @@ db.Reservation = Reservation;
 
 User.initiate(sequelize);
 FAQ.initiate(sequelize);
-ProductModels.Product.init(sequelize);
-ProductModels.ProductDetail.init(sequelize);
-ProductModels.ProductSubImage.init(sequelize);
+Product.initiate(sequelize);
 Planner.initiate(sequelize);
 Point.initiate(sequelize);
 Reservation.initiate(sequelize);
@@ -39,9 +35,6 @@ Reservation.initiate(sequelize);
 
 User.associate(db);
 FAQ.associate(db);
-ProductModels.Product.associate(db);
-ProductModels.ProductDetail.associate(db);
-ProductModels.ProductSubImage.associate(db);
 Planner.associate(db);
 Point.associate(db);
 Reservation.associate(db);
