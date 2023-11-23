@@ -34,6 +34,7 @@
 //두번째 박스
 .exp-2{
   position: relative;
+  text-align: center;
 } 
 //두번째박스 li 위치조절
 .exp-2 li{
@@ -54,6 +55,10 @@
 //첫번째 a태그 색변경
 .exp-2 ul li:nth-child(1) a{
   color: #Ad5656;
+}
+
+.exp-22 {
+  text-align: center;
 }
 //가운데 글씨박스
 .exp-22 h3{
