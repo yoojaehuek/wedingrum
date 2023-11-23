@@ -26,7 +26,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/myPage' element={<MyPage />} />
+        <Route path='/user/myPage' element={<MyPage />} />
         <Route path='/myPage2' element={<MyPage2 />} />
         <Route path='/login' element={<Login />} />
         <Route path='/exp' element={<Exp />} />

@@ -1,9 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Header/Header.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import axios from "axios";
+import { API_URL } from "../../config/contansts";
+import { useRecoilState } from "recoil";
+import { loginState } from "../../recoil/atoms/loginState";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useRecoilState(loginState); //useState와 거의 비슷한 사용법
+  // const login = getCookie('accessToken');
+  console.log("login: ", isLogin);
+
+  const refresh = async () => {
+    try {
+      const res = await axios.get(
+        `${API_URL}/refresh`,
+        { withCredentials: true },
+      );
+      console.log(res);
+    } catch (error) {
+      console.log("Header.js/error.res: ", error.response);
+      navigate('/login')
+    }
+  }
+
+  const logout = async () => {
+    axios.get(`${API_URL}/logout`, { withCredentials: true })
+      .then(()=>{
+        setIsLogin(false);
+      })
+      .catch((err) => {
+        console.log("logout/err: ", err);
+      })
+  } 
+
+  
+
+  // axios.get(
+  //   `${API_URL}/verify`,
+  //   { withCredentials: true },
+  // );
   
   const productData = [
     { id: 'prodpho', name: '웨딩 본식 상품', category: '웨딩 본식 상품' },
@@ -85,13 +123,24 @@ const Header = () => {
                 <li><NavLink to='/faq'>FAQ</NavLink></li>
               </ul>
             </li>
-            <li>
-              <NavLink to='/'><PersonOutlineIcon fontSize='medium'/></NavLink>
-              <ul id='sub-menu'>
-                <li><NavLink to="/Login">로그인</NavLink></li>
-                <li><NavLink to="/Join">회원 가입</NavLink></li>
-              </ul>
-            </li>
+            {isLogin ? 
+              <li>
+                <NavLink to='/user/mypage' onClick={refresh}><PersonOutlineIcon fontSize='medium'/></NavLink>
+                <ul id='sub-menu'>
+                  <li><NavLink to="/user/mypage">마이페이지</NavLink></li>
+                  <li><NavLink to="/" onClick={logout}>로그아웃</NavLink></li>
+                </ul>
+              </li>
+              :
+              <li>
+                <NavLink to='/'><PersonOutlineIcon fontSize='medium'/></NavLink>
+                <ul id='sub-menu'>
+                  <li><NavLink to="/login">로그인</NavLink></li>
+                  <li><NavLink to="/join">회원 가입</NavLink></li>
+                </ul>
+              </li>
+            }
+            
           </ul>
         </div>
       </div>
