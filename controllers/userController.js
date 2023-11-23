@@ -55,5 +55,18 @@ class UserController {
             next(error)
         }
     }
+
+    static async detailUser(req, res, next){
+        try{
+            const myId = "22";
+            console.log(myId);
+            const user = await UserService.detailUser({myId});
+
+            console.log("res임니다요: ",res);
+            res.status(200).json(user)
+        }catch(error){
+            next(error)
+        }
+    }
 }
 module.exports = UserController;

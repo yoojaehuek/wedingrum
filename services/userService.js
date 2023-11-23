@@ -94,5 +94,25 @@ class UserService{
 
 	}
 
+	static async detailUser({myId}){
+		const user = await UserModel.findById({myId});
+
+		const name = user.name;
+		const user_id = user.id;
+		const phone = user.phone;
+		const companionName = user.companionName;
+		const birth = user.birth;
+
+		const userInfo = {
+			user_id,
+			name,
+			phone,
+			companionName,
+			birth,
+		};
+
+		return userInfo;
+	}
+
 }
 module.exports = UserService;

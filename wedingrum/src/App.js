@@ -21,7 +21,6 @@ import Joininput from './pages/Join/Join-input';
 import Invitation from './pages/Mypage/Mypage3';
 import About from './pages/About/About/About';
 import About1 from './pages/About/About1/About1';
-import Customer from './pages/Customer/Customer';
 import Reservations from './pages/Reservations/Reservations';
 import SangDam from './pages/Reservations/SangDam';
 
@@ -34,6 +33,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/myPage' element={<MyPage />} />
         <Route path='/myPage2' element={<MyPage2 />} />
+        <Route path='/mypage3' element={<Invitation />} />
         <Route path='/exp' element={<Exp />} />
         <Route path='/exp1' element={<Exp1 />} />
         <Route path='/exp2' element={<Exp2 />} />
@@ -46,7 +46,6 @@ function App() {
         <Route path='/about1' element={<About1 />} />
         <Route path='/join' element={<Join />} />
         <Route path='/join-input' element={<Joininput />} />
-        <Route path='/mypage3' element={<Invitation />} />
         <Route path='/faq' element={<Customer />} />
         <Route path='/Reservations' element={<Reservations />} />
         <Route path='/SangDam' element={<SangDam />} />

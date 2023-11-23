@@ -21,8 +21,7 @@ const Joininput = () => {
         // pwd === confirmPwd && id !== "" && pwd !== "" && confirmPwd !== "" && name !== "" && phone !== "" && gender !== ""&& birth !==""
         // && companionPhone !==""&&companionName!==""
 
-        if(pwd === confirmPwd && id !== "" && pwd !== ""  && name !== "" && phone !== "" && gender !== "" && birth !==""
-        && companionPhone !== "" && companionName !== ""){
+        if(true){
             console.log("g c c : ",gender, companionName, companionPhone);
             await axios.post(`${API_URL}/user/join`,{name, id, pwd, phone, birth, gender, companionName, companionPhone})
             .then(() =>{
@@ -36,10 +35,6 @@ const Joininput = () => {
             return alert("전부 입력해주세요");
         }
     };
-
-
-
-
 
     return (
 <form id="join-input-form" onSubmit={onsubmitJoin} >

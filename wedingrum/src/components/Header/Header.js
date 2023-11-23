@@ -86,7 +86,7 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'><PersonOutlineIcon fontSize='medium'/></NavLink>
+              <NavLink to='/mypage'><PersonOutlineIcon fontSize='medium'/></NavLink>
               <ul id='sub-menu'>
                 <li><NavLink to="/Login">로그인</NavLink></li>
                 <li><NavLink to="/Join">회원 가입</NavLink></li>
