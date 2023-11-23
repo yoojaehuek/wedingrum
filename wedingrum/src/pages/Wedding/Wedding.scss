@@ -33,6 +33,7 @@
     height: 100vh;
     position: relative;
     background-attachment: fixed;
+
     // transform: translate(-50%, -50%);
   }
   .big_tit {
@@ -48,8 +49,6 @@
     // font-weight: 400;
     line-height: 1;
   }
-
-
   .main nav {
     overflow-x: auto;
     padding: 2.5VW 2vw 2vw;
@@ -156,7 +155,6 @@
   .information p {
     font-size: 16px;
   }
-
   .center_fourth {
     display: flex;
     position: relative;
