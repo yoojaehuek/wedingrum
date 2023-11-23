@@ -20,10 +20,10 @@ import Joininput from './pages/Join/Join-input';
 import Invitation from './pages/Mypage/Mypage3';
 import About from './pages/About/About/About';
 import About1 from './pages/About/About1/About1';
-import Customer from './pages/Customer/Customer';
 import Reservations from './pages/Reservations/Reservations';
 import SangDam from './pages/Reservations/SangDam';
 import Ceremony from './pages/Reservations/Information';
+import Customer from './pages/Customer/Customer'
 
 function App() {
   return (
