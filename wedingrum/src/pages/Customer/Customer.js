@@ -31,13 +31,13 @@ const Customer = () => {
 
   return (
     <div className="customer-container">
-      <h2 className="center">고객</h2>
-      <h1 className="center">자주 묻는 질문</h1>
+      <h2 className="center2">Customer</h2>
+      <h1 className="center">FAQ</h1>
       <div className="search-container">
         {/* FAQ 카테고리 선택 드롭다운 */}
         <div className="dropdown">
           {/* select 사용하여 드롭다운 메뉴를 생성 */}
-          <select
+          <select className="dropmenu"
             // 현재 선택된 카테고리 값을 설정
             value={selectedCategory.category}
             // 새로운 카테고리를 선택할 때 호출되는 함수
