@@ -21,7 +21,8 @@ const Joininput = () => {
         // pwd === confirmPwd && id !== "" && pwd !== "" && confirmPwd !== "" && name !== "" && phone !== "" && gender !== ""&& birth !==""
         // && companionPhone !==""&&companionName!==""
 
-        if(true){
+        if(pwd === confirmPwd && id !== "" && pwd !== ""  && name !== "" && phone !== "" && gender !== "" && birth !==""
+        && companionPhone !== "" && companionName !== ""){
             console.log("g c c : ",gender, companionName, companionPhone);
             await axios.post(`${API_URL}/user/join`,{name, id, pwd, phone, birth, gender, companionName, companionPhone})
             .then(() =>{
