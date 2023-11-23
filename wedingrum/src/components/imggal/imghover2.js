@@ -1,10 +1,11 @@
 import React from 'react';
-import './imghover.scss';
+import './imghover2.scss';
+import { NavLink } from "react-router-dom";
 
 const ImageGallery = () => {
   return (
-    <div className="image-container">
-      <a href='/' className='image-item  item2'>
+    <div className="image-container2">
+      <NavLink to='' className='image-item  item2'>
         <div className='item-txt2'>
           <p className='small'>감동을 향해 동행하는 든든한 첫걸음</p>
           <p className='big'>Reservation Team</p>
@@ -14,8 +15,8 @@ const ImageGallery = () => {
             빛나는 센스로 함께 하겠습니다.
           </p>
         </div>
-      </a>
-      <a href='/' className='image-item  item3'>
+      </NavLink>
+      <NavLink to='' className='image-item  item3'>
         <div className='item-txt2'>
         <p className='small'>집중 케어로 완성되는 완벽한 웨딩 데이</p>
           <p className='big'>Wedding Team</p>
@@ -25,8 +26,8 @@ const ImageGallery = () => {
             집중 케어 서비스를 진행합니다.
           </p>
         </div>
-      </a>
-      <a href='/' className='image-item  item4'>
+      </NavLink>
+      <NavLink to='' className='image-item  item4'>
         <div className='item-txt2'>
         <p className='small'>예식의 완성도를 높여줄 미식의 향연</p>
           <p className='big'>Chefs</p>
@@ -35,8 +36,8 @@ const ImageGallery = () => {
             유명 파인 다이닝 출신의 스타 셰프들이 함께합니다.
           </p>
         </div>
-      </a>
-      <a href='/' className='image-item  item5'>
+      </NavLink>
+      <NavLink to='' className='image-item  item5'>
         <div className='item-txt2'>
         <p className='small'>감각적인 터치로 만개할 플라워 서비스</p>
           <p className='big'>Flower Team</p>
@@ -46,7 +47,7 @@ const ImageGallery = () => {
             아펠가모만을 위해 모였습니다.
           </p>
         </div>
-      </a>
+      </NavLink>
     </div>
   );
 };

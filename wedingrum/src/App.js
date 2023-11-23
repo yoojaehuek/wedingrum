@@ -14,7 +14,6 @@ import Product from './pages/Products/Product'
 import ProdDetail from './pages/Products/ProdDetail';
 import Wedding from './pages/Wedding/Wedding';
 import Party from './pages/Party/Party';
-import Customer from './pages/Customer/Customer';
 import Login from './pages/Login/Login'
 import Join from './pages/Join/Join'
 import Joininput from './pages/Join/Join-input';
@@ -23,6 +22,14 @@ import About from './pages/About/About/About';
 import About1 from './pages/About/About1/About1';
 import Reservations from './pages/Reservations/Reservations';
 import SangDam from './pages/Reservations/SangDam';
+import SangDam2 from './pages/Reservations/SangDam/SangDam2';
+import Date from './pages/Reservations/Reservations/Date';
+import DateCal from './pages/Reservations/Reservations/DateCal';
+import Time from './pages/Reservations/Reservations/Time';
+import Month from './pages/Reservations/Reservations/Month';
+import Holl from './pages/Reservations/Reservations/Holl';
+import Ceremony from './pages/Reservations/Information';
+import Customer from './pages/Customer/Customer'
 
 function App() {
   return (
@@ -39,7 +46,7 @@ function App() {
         <Route path='/exp3' element={<Exp3 />} />
         <Route path='/product/:id/:id' element={<ProdDetail />} />
         <Route path='/product/:id' element={<Product />} />
-        <Route path='/wedding' element={<Wedding />} />
+        <Route path='/wedding/:id' element={<Wedding />} />
         <Route path='/party' element={<Party />} />
         <Route path='/about' element={<About />} />
         <Route path='/about1' element={<About1 />} />
@@ -49,6 +56,13 @@ function App() {
         <Route path='/faq' element={<Customer />} />
         <Route path='/Reservations' element={<Reservations />} />
         <Route path='/SangDam' element={<SangDam />} />
+        <Route path='/SangDam2' element={<SangDam2 />} />
+        <Route path='/Date' element={<Date />} />
+        <Route path='/Time' element={<Time />} />
+        <Route path='/Month' element={<Month />} />
+        <Route path='/DateCal' element={<DateCal />} />
+        <Route path='/Holl' element={<Holl />} />
+        <Route path='/ceremony' element={<Ceremony />} />
       </Routes>
       <Footer />
     </div>

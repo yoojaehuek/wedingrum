@@ -49,7 +49,7 @@ const Header = () => {
     { id: 'prodwdmg', name: '웨딩관리', category: '웨딩관리' },
   ];
 
-  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+    const [isHeaderHovered, setIsHeaderHovered] = useState(false);
 
   return (
     <div id="header-container"
@@ -61,20 +61,20 @@ const Header = () => {
         <div className='header-item'>
           <ul>
             <li>
-              <NavLink to='/'>RESERVATIONS</NavLink>
+              <NavLink to='/reservations'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>예식예약</NavLink></li>
-                <li><NavLink to='/'>상담예약</NavLink></li>
+                <li><NavLink to='/reservations'>예식예약</NavLink></li>
+                <li><NavLink to='/sangdam2'>상담예약</NavLink></li>
               </ul>
             </li>
             <li>
-              <NavLink to='/'>WEDDING</NavLink>
+              <NavLink to='/wedding/1'>WEDDING</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>잠실점</NavLink></li>
-                <li><NavLink to='/'>반포점</NavLink></li>
-                <li><NavLink to='/'>평택점</NavLink></li>
-                <li><NavLink to='/'>선릉점</NavLink></li>
-                <li><NavLink to='/'>공덕점</NavLink></li>
+                <li><NavLink to='/wedding/1'>잠실점</NavLink></li>
+                <li><NavLink to='/wedding/2'>반포점</NavLink></li>
+                <li><NavLink to='/wedding/3'>평택점</NavLink></li>
+                <li><NavLink to='/wedding/4'>선릉점</NavLink></li>
+                <li><NavLink to='/wedding/5'>공덕점</NavLink></li>
               </ul>
             </li>
             <li>
@@ -90,9 +90,9 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'>PARTY</NavLink>
+              <NavLink to='/party'>PARTY</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>연회</NavLink></li>
+                <li><NavLink to='/party'>연회</NavLink></li>
               </ul>
             </li>
             <li>
@@ -105,10 +105,10 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'>ABOUT</NavLink>
+              <NavLink to='/about'>ABOUT</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>브랜드 스토리</NavLink></li>
-                <li><NavLink to='/'>회사소개</NavLink></li>
+                <li><NavLink to='/about'>브랜드 스토리</NavLink></li>
+                <li><NavLink to='/about1'>회사소개</NavLink></li>
               </ul>
             </li>
             <li>
@@ -141,5 +141,4 @@ const Header = () => {
     </div>
   );
 }
-
 export default Header;
