@@ -53,10 +53,10 @@ const Product = () => {
         {filteredProducts.map(product => (
           <NavLink to={`/product/${id}/${product.id}`} key={product.id}>
             <div className="photo-card">
-              <img src={`..${product.image}`} alt={product.name} />
+              <img src={`..${product.image}`} alt={"사진"} />
               <div className="card-details">
                 <h3>{product.name}</h3>
-                <p>{`가격: ${product.price}원`}</p>
+                <p>{`${(+product.price).toLocaleString()}원`}</p>
               </div>
             </div>
           </NavLink>

@@ -14,11 +14,13 @@ import Product from './pages/Products/Product'
 import ProdDetail from './pages/Products/ProdDetail';
 import Wedding from './pages/Wedding/Wedding';
 import Party from './pages/Party/Party';
+import Customer from './pages/Customer/Customer';
 import Login from './pages/Login/Login'
 import Join from './pages/Join/Join'
 import Joininput from './pages/Join/Join-input';
 import Invitation from './pages/Mypage/Mypage3';
-import Customer from './pages/Customer/Customer';
+import About from './pages/About/About/About';
+import About1 from './pages/About/About1/About1';
 import Reservations from './pages/Reservations/Reservations';
 import SangDam from './pages/Reservations/SangDam';
 import SangDam2 from './pages/Reservations/SangDam/SangDam2';
@@ -35,9 +37,9 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/myPage' element={<MyPage />} />
         <Route path='/myPage2' element={<MyPage2 />} />
-        <Route path='/login' element={<Login />} />
         <Route path='/exp' element={<Exp />} />
         <Route path='/exp1' element={<Exp1 />} />
         <Route path='/exp2' element={<Exp2 />} />
@@ -46,6 +48,8 @@ function App() {
         <Route path='/product/:id' element={<Product />} />
         <Route path='/wedding' element={<Wedding />} />
         <Route path='/party' element={<Party />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/about1' element={<About1 />} />
         <Route path='/join' element={<Join />} />
         <Route path='/join-input' element={<Joininput />} />
         <Route path='/mypage3' element={<Invitation />} />
