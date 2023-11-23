@@ -10,5 +10,4 @@ router.post('/login', UserController.loginUser)
 router.get('/mypage', refresh, UserController.detailUser)
 // router.get('/mypage', authJWT, UserController.)
 
-
 module.exports = router;

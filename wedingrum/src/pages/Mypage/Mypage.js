@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import '../Mypage/Mypage.scss';
 import LeftBar from '../../components/MyPage/LeftBar';
 import MyPageTop from '../../components/MyPage/MyPageTop';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
+import axios from 'axios';
+import { API_URL } from '../../config/contansts';
+import useAsync from '../../hooks/useAsync';
 
 function MyPage() {
   const [selectedMenuItem, setSelectedMenuItem] = useState('내 정보');
@@ -12,6 +15,26 @@ function MyPage() {
     confirmPassword: '',
     email: '',
   });
+  const getUser = async () =>{
+    const user = await axios.get(`${API_URL}/user/mypage`)
+    return user.data;
+  }
+  
+  const [state] = useAsync(getUser, []);
+  const { loading, data:profile, error} = state; //state구조분해 
+  if(loading) return <div>로딩중 ......</div>
+  if(error) return <div>에러가 발생했습니다.</div>
+  if(!profile){
+    return <div>로딩중입니다.</div>
+  }  
+  console.log(profile);
+  const name = profile.name;
+  const id = profile.id;
+  const pwd = profile.pwd;
+  const birth = profile.birth;
+  const phone = profile.phone;
+  const companionName = profile.companionName;
+  const companionPhone = profile.companionPhone;
 
   const handleMenuClick = (menuItem) => {
     setSelectedMenuItem(menuItem);
@@ -50,11 +73,11 @@ function MyPage() {
             <div className="my-content-main">
               {selectedMenuItem === '내 정보' && (
                 <>
-                  <h2>이름 : {user.name}</h2>
-                  <h2>배우자 이름 : {user.spouse}</h2>
-                  <h2>나이 : {user.age}</h2>
-                  <h2>전화번호 : {user.phone}</h2>
-                  <h2>생일 : {user.bh}</h2>
+                  <h2>이름: {name}</h2>
+                  <h2>생일: {birth}</h2>
+                  <h2>전화번호: {phone}</h2>
+                  <h2>배우자이름: {companionName}</h2>
+                  <h2>배우자전화번호: {companionPhone}</h2>
                 </>
               )}
               {selectedMenuItem === '내정보 수정' && (
