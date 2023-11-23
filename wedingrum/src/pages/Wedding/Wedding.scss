@@ -1,217 +1,217 @@
-.App {
+.App10 {
   overflow: initial;
   margin: 0 auto;
   position: relative;
   box-sizing: border-box;
   padding: 0;
-}
 
-.contents {
-  position: relative;
-  padding: 0;
-  z-index: 5;
-  min-width: 320px;
-  overflow: hidden;
-  letter-spacing: -.5px;
-}
-
-.bak-image {
-  background: url(../../../public/image/wedding/back.jpg) 50%;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  position: relative;
+  .contents {
+    position: relative;
+    padding: 0;
+    z-index: 5;
+    min-width: 320px;
+    overflow: hidden;
+    letter-spacing: -.5px;
+  }
+  
+  .bak-image {
+    background: url(../../../public/image/wedding/back.jpg) 50%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-attachment: fixed;
+  }
+  .abc {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    position: relative;
     background-attachment: fixed;
-}
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-  background-attachment: fixed;
-  // transform: translate(-50%, -50%);
-}
-.big_tit {
-  text-align: center;
-  color: #fff;
-}
-.big_tit h1 {
-  color: #fff;
-  font-size: 60px;
-}
-.big_tit h3 {
-  font-size: 30px;
-  // font-weight: 400;
-  line-height: 1;
-}
-
-.main {
-  text-align: center;
-}
-
-.main nav {
-  overflow-x: auto;
-  padding: 2.5VW 2vw 2vw;
-  text-align: center;
-}
-.main nav ul {
-  list-style: none;
-  white-space: nowrap;
-}
-.main nav ul li {
-  display: inline-block;
-}
-.main nav ul li a {
-  color: #000;
-  font-weight: 700;
-  font-size: 1.1em;
-  margin-right: 20px;
-}
-.main nav ul li a.active {
-  color: #ad5656;
-}
-.main nav ul li a:hover {
-  color: #ad5656;
-}
-
-.inner {
-  position: relative;
-  padding: 2vw 0 0;
-}
-
-.center_first {
-  margin-top: 0;
-  padding: 1vw 0 3vw;
-  width: 100%;
-  text-align: center;
-}
-.center_first h1 {
-  position: relative;
-  padding: 0 0px 20px;
-  font-size: 45px;
-}
-.center_first h1 span {
-  font-size: 24px;
-  letter-spacing: 0.3em;
-  display: block;
-}
-.center_first h1:after {
-  height: 40px;
-  bottom: -5px;
-  content: "";
-  position: absolute;
-  width: 1px;
-  background: #313131;
-  left: 50%;
-  bottom: -40px;
-}
-
-.center_seccond {
-  padding: 30px 0 0;
-}
-.center_seccond h3 {
-  color: #ad5656;
-  // font-weight: 400;
-  font-size: 23px;
-}
-.center_seccond p {
-  font-weight: 400;
-  padding: 3vw 0 0;
-}
-
-.center_third {
-  background: url(../../../public/image/wedding/AP_JS_br001.5ba20b19.jpg) 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 830px;
-  margin: 0 0 4vw;
-}
-.center_third img {
-  background-size: cover;
-}
-#nemo {
-  padding: 3vw 6vw;
-  border: 1px solid #000;
-  background: hsla(0, 0%, 100%, .7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
-.information {
-  position: relative;
-  padding: 2vw 1vw;
-}
-.information h2 {
-  font-size: 40px;
-  padding: 0 0 20px;
-  font-weight: 400;
-}
-.information p {
-  font-size: 16px;
-}
-
-.center_fourth {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 92vh;
-  min-height: 780px;
-}
-.slidebox {
-  width: 68%;
-  margin-left: 0;
-  margin-right: auto;
-  position: relative;
-  overflow: hidden;
-  list-style: none;
-  padding: 0;
-  z-index: 1;
-}
-.swiper {
-  transform: translateZ(0);
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  display: flex;
-  box-sizing: content-box;
-  transition: transform 300ms
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.l_arrow {
-  top: 80%;
+    // transform: translate(-50%, -50%);
+  }
+  .big_tit {
+    text-align: center;
+    color: #fff;
+  }
+  .big_tit h1 {
+    color: #fff;
+    font-size: 60px;
+  }
+  .big_tit h3 {
+    font-size: 30px;
+    // font-weight: 400;
+    line-height: 1;
+  }
   
-}
-.r_arrow {
-  top: 80%;
-  left: auto;
-  right: calc(30% - 135px);
-  bottom: -45vh;
-  width: 63px;
-  height: 63px;
-}
-
-.footer {
-  background: url();
+  .main {
+    text-align: center;
+  }
+  
+  .main nav {
+    overflow-x: auto;
+    padding: 2.5VW 2vw 2vw;
+    text-align: center;
+  }
+  .main nav ul {
+    list-style: none;
+    white-space: nowrap;
+  }
+  .main nav ul li {
+    display: inline-block;
+  }
+  .main nav ul li a {
+    color: #000;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-right: 20px;
+  }
+  .main nav ul li a.active {
+    color: #ad5656;
+  }
+  .main nav ul li a:hover {
+    color: #ad5656;
+  }
+  
+  .inner {
+    position: relative;
+    padding: 2vw 0 0;
+  }
+  
+  .center_first {
+    margin-top: 0;
+    padding: 1vw 0 3vw;
+    width: 100%;
+    text-align: center;
+  }
+  .center_first h1 {
+    position: relative;
+    padding: 0 0px 20px;
+    font-size: 45px;
+  }
+  .center_first h1 span {
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    display: block;
+  }
+  .center_first h1:after {
+    height: 40px;
+    bottom: -5px;
+    content: "";
+    position: absolute;
+    width: 1px;
+    background: #313131;
+    left: 50%;
+    bottom: -40px;
+  }
+  
+  .center_seccond {
+    padding: 30px 0 0;
+  }
+  .center_seccond h3 {
+    color: #ad5656;
+    // font-weight: 400;
+    font-size: 23px;
+  }
+  .center_seccond p {
+    font-weight: 400;
+    padding: 3vw 0 0;
+  }
+  
+  .center_third {
+    background: url(../../../public/image/wedding/AP_JS_br001.5ba20b19.jpg) 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 830px;
+    margin: 0 0 4vw;
+  }
+  .center_third img {
+    background-size: cover;
+  }
+  #nemo {
+    padding: 3vw 6vw;
+    border: 1px solid #000;
+    background: hsla(0, 0%, 100%, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  .information {
+    position: relative;
+    padding: 2vw 1vw;
+  }
+  .information h2 {
+    font-size: 40px;
+    padding: 0 0 20px;
+    font-weight: 400;
+  }
+  .information p {
+    font-size: 16px;
+  }
+  
+  .center_fourth {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 92vh;
+    min-height: 780px;
+  }
+  .slidebox {
+    width: 68%;
+    margin-left: 0;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+  }
+  .swiper {
+    transform: translateZ(0);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+    transition: transform 300ms
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .l_arrow {
+    top: 80%;
+    
+  }
+  .r_arrow {
+    top: 80%;
+    left: auto;
+    right: calc(30% - 135px);
+    bottom: -45vh;
+    width: 63px;
+    height: 63px;
+  }
+  
+  .footer {
+    background: url();
+  }
 }
