@@ -36,13 +36,13 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <NavLink to='/'>WEDDING</NavLink>
+              <NavLink to='/wedding/1'>WEDDING</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/'>잠실점</NavLink></li>
-                <li><NavLink to='/'>반포점</NavLink></li>
-                <li><NavLink to='/'>평택점</NavLink></li>
-                <li><NavLink to='/'>선릉점</NavLink></li>
-                <li><NavLink to='/'>공덕점</NavLink></li>
+                <li><NavLink to='/wedding/1'>잠실점</NavLink></li>
+                <li><NavLink to='/wedding/2'>반포점</NavLink></li>
+                <li><NavLink to='/wedding/3'>평택점</NavLink></li>
+                <li><NavLink to='/wedding/4'>선릉점</NavLink></li>
+                <li><NavLink to='/wedding/5'>공덕점</NavLink></li>
               </ul>
             </li>
             <li>
