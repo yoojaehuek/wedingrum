@@ -37,7 +37,7 @@ const Customer = () => {
         {/* FAQ 카테고리 선택 드롭다운 */}
         <div className="dropdown">
           {/* select 사용하여 드롭다운 메뉴를 생성 */}
-          <select
+          <select className="dropmenu"
             // 현재 선택된 카테고리 값을 설정
             value={selectedCategory.category}
             // 새로운 카테고리를 선택할 때 호출되는 함수
