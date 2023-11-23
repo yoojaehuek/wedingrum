@@ -1,0 +1,59 @@
+const express = require('express');
+const router = express.Router();
+const jwt = require('jsonwebtoken'); 
+require('dotenv').config();
+const { verify, refreshVerify, makeAccessToken, makeRefreshToken} = require("../utils/token");
+
+// POST 요청을 처리하는 라우터 핸들러
+const refresh = async (req, res, next) => {
+  try {
+    const accessToken = req.cookies.accessToken;
+    const refreshToken = req.cookies.refreshToken;
+    console.log('verify.get.accessToken: ', accessToken);
+    console.log('verify.get.refreshToken: ', refreshToken);
+    const accessTokenResult = await verify(accessToken);  
+    const decode = jwt.decode(accessToken); 
+    console.log("verify.get.accessTokenResult: ",accessTokenResult.ok);
+    const refreshTokenResult = await refreshVerify(refreshToken, decode.id);
+    console.log("verify.get.refreshTokenResult: ",refreshTokenResult);
+
+    if (accessTokenResult.ok == false || accessToken == undefined) { //accToken 쿠키없음
+      if (refreshTokenResult == false || refreshToken == undefined) { //refreshToken 쿠키도 없음
+        console.log("다시로그인!");
+        //다시로그인!
+
+        res.clearCookie('accessToken');
+        res.clearCookie('refreshToken');
+        res.status(302).json({ message: '다시로그인' });
+      }else{ //accToken은 없는데 reToken은 있음 
+        // const userId = redisClient.keys('123');
+        
+        // reToken으로 accToken재생성
+        const decoded = jwt.decode(accessToken);
+        console.log("accessTokenResult.decoded: ",decoded);
+        console.log("accessTokenResult.accessToken: ",accessToken);
+        console.log("accessTokenResult.req.cookies.accessToken: ", req.cookies.accessToken);
+        const newAccessToken = makeAccessToken({id: decoded.id});
+        res.cookie('accessToken', newAccessToken, {
+          httpOnly : true,
+          secure : false,
+          sameSite : 'strict',
+        });
+        // res.status(200).json({ message: 'accessToken 재생성!' });
+        next();
+      }
+    }else{ //accToken있음
+      //통과!
+      // res.status(200).json({ message: 'accToken유효 통과!' });
+      next();
+    }
+  } catch (error) {
+    // 오류 발생 시 에러 로그를 출력
+    console.error(error);
+    // 에러 응답 전송 (클라이언트에서 토큰 유효성 검증 실패를 처리할 수 있도록)
+    // res.status(500).json(error);
+    res.status(302).json({ message: error });
+  }
+};
+
+module.exports = refresh;

@@ -1,10 +1,10 @@
 import React from 'react';
-import './imghover.scss';
+import './imghover2.scss';
 import { NavLink } from "react-router-dom";
 
 const ImageGallery = () => {
   return (
-    <div className="image-container">
+    <div className="image-container2">
       <NavLink to='' className='image-item  item2'>
         <div className='item-txt2'>
           <p className='small'>감동을 향해 동행하는 든든한 첫걸음</p>
