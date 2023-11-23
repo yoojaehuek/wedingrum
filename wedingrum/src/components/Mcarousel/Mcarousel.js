@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./Mcarousel.css";
+import "./Mcarousel.scss";
 
 export default function App() {
   const responsive = {
@@ -23,7 +23,7 @@ export default function App() {
     }
   };
   return (
-    <div className="App">
+    <div className="App3">
       <div style={{ position: "relative" }}>
         <Carousel responsive={responsive}>
           <div><img src="/img/Party/m1.jpg"/><h3>청담점 2F 연회홀</h3><p>수용인원 300명·주차가능 200대</p></div>

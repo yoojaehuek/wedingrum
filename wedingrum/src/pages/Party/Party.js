@@ -3,6 +3,7 @@ import React from "react"
 import Swiper from "../../components/Swiper/Swiper";
 import Multi from "../../components/Mcarousel/Mcarousel";
 import Vswiper from "../../components/Vswiper/Vswiper";
+import { NavLink } from "react-router-dom";
 
 const Party = () => {
   return (
