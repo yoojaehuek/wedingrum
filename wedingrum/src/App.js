@@ -24,7 +24,7 @@ import Reservations from './pages/Reservations/Reservations';
 import SangDam from './pages/Reservations/SangDam';
 import Ceremony from './pages/Reservations/Information';
 import Customer from './pages/Customer/Customer'
-
+//ㄴㄴ
 function App() {
   return (
     <div className="App">
