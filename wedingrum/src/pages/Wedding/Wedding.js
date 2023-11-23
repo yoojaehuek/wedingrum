@@ -300,8 +300,8 @@ function Wedding() {
                 </Swiper>
               </div>
             </div>
-            <div class="l_arrow" role='button' aria-label='Previous slide'>{'<'}</div>
-            <div class="r_arrow" role='button' aria-label='Next slide'>{'>'}</div>
+            {/* <div class="l_arrow" role='button' aria-label='Previous slide'>{'<'}</div>
+            <div class="r_arrow" role='button' aria-label='Next slide'>{'>'}</div> */}
             <div class="gallery">
               <div class="sub_tit">
                 <h2>{weddings.sub_tit}</h2>
