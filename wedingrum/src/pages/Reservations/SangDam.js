@@ -15,10 +15,10 @@ const SangDam = () => {
                       <div className='saris-tit2'>
                           <ul>
                               <li><NavLink to="/"><p>WDR 잠실점</p><span className='icon21'></span></NavLink></li>
-                              <li><NavLink to="/"><p>WDR 잠실점</p><span className='icon22'></span></NavLink></li>
-                              <li><NavLink to="/"><p>WDR 잠실점</p><span className='icon23'></span></NavLink></li>
-                              <li><NavLink to="/"><p>WDR 잠실점</p><span className='icon23'></span></NavLink></li>
-                              <li><NavLink to="/"><p>WDR 잠실점</p><span className='icon23'></span></NavLink></li>
+                              <li><NavLink to="/"><p>WDR 반포점</p><span className='icon22'></span></NavLink></li>
+                              <li><NavLink to="/"><p>WDR 광화문점</p><span className='icon23'></span></NavLink></li>
+                              <li><NavLink to="/"><p>WDR 선릉점</p><span className='icon23'></span></NavLink></li>
+                              <li><NavLink to="/"><p>WDR 공덕점</p><span className='icon23'></span></NavLink></li>
                           </ul>
                       </div>
                   </div>

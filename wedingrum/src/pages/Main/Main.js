@@ -10,12 +10,6 @@ const Main = () => {
   const sliderRef = useRef(null);
   const [scrollTriggered, setScrollTriggered] = useState(false);
 
-  const handleNextSlide = () => {
-    if (sliderRef.current) {
-      sliderRef.current(); // AutoImageSlider 컴포넌트의 nextSlide 함수 호출
-    }
-  };
-
   const handleScroll = () => {
     if (!scrollTriggered && window.scrollY > window.innerHeight) {
       setScrollTriggered(true);
@@ -29,7 +23,9 @@ const Main = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrollTriggered]);
+  },);
+
+
 
   return (
     <>

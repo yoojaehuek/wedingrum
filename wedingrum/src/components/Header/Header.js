@@ -32,7 +32,7 @@ const Header = () => {
               <NavLink to='/Reservations'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
                 <li><NavLink to='/reservations'>예식예약</NavLink></li>
-                <li><NavLink to='/sangDam'>상담예약</NavLink></li>
+                <li><NavLink to='/sangDam2'>상담예약</NavLink></li>
               </ul>
             </li>
             <li>
@@ -98,5 +98,4 @@ const Header = () => {
     </div>
   );
 }
-
 export default Header;
