@@ -5,6 +5,7 @@ const Product = require('./product');
 const Planner = require('./planner')//planner 파일을 Planner로 불러옴
 const Point = require('./point')//point.js 파일을 Point로 불러옴
 const Reservation = require('./reservation')//point.js 파일을 Point로 불러옴
+const Hall = require('./hall')
 
 const env = process.env.NODE_ENV || 'development'; //상수 env에 NODE_ENV없으면 'development' 넣음
 const config = require('../../config/config.json')[env]; //상수config에 ../config/config파일에서 env(development) 불러옴
@@ -23,6 +24,7 @@ db.Product = Product;
 db.Planner = Planner;
 db.Point = Point;
 db.Reservation = Reservation;
+db.Hall = Hall;
 
 
 User.initiate(sequelize);
@@ -31,6 +33,7 @@ Product.initiate(sequelize);
 Planner.initiate(sequelize);
 Point.initiate(sequelize);
 Reservation.initiate(sequelize);
+Hall.initiate(sequelize);
 
 
 User.associate(db);
@@ -38,5 +41,6 @@ FAQ.associate(db);
 Planner.associate(db);
 Point.associate(db);
 Reservation.associate(db);
+Hall.associate(db);
 
 module.exports = db;
