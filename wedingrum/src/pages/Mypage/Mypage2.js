@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Mypage/Mypage2.scss';
 import MyPageTop from '../../components/MyPage/MyPageTop';
 import MapWithRealtimeLocation from '../../components/Map/Map'
+import axios from 'axios';
+import { API_URL } from '../../config/contansts';
+
 function MyPage2() {
+  const [reservation, setReservation] = useState({});
+
+  useEffect(()=>{
+    axios.get(`${API_URL}/reservation`)
+    .then(res => {
+      console.log("MyPage2/res: ",res.data);
+      setReservation(res.data);
+    }).catch(e => {
+      console.log("MyPage2/e: ",e);
+    })
+  }, []);
+  
   return (
     <div className="Mypage-container">
       <div className='my-backgrund'>
@@ -14,12 +29,12 @@ function MyPage2() {
             <h1>예약 정보</h1>
             <div className='my3-content'>
               <div className='my2-content-main'>
-                <h2>식장 이름: 잠실</h2>
-                <h2>장소 :</h2>
-                <h2>예약 시간 :</h2>
-                <h2>룸 번호 :</h2>
-                <h2>식장 전화번호 :</h2>
-                <h2>주차장 안내:</h2>
+                {/* <h2>상담사: {reservation.Planner.name}</h2> */}
+                <h2>장소 : {reservation.where1}</h2>
+                <h2>예약 날짜 : {reservation.when}</h2>
+                <h2>예약 시간 : {reservation.time}</h2>
+                {/* <h2>식장 전화번호 :</h2> */}
+                {/* <h2>주차장 안내:</h2> */}
               </div>
               <div className='my2-map'>
                   <MapWithRealtimeLocation />
