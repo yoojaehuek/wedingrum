@@ -7,9 +7,10 @@ require('dotenv').config();
 const { sequelize } = require('./database/schemas');//DB테이블
 const userRouter =require('./routers/user');
 const faqRouter = require('./routers/customer');
-const ProductRouter = require('./routers/product');
+const productRouter = require('./routers/product');
+const reservationRouter = require('./routers/reservation');
 const refresh = require('./routers/refresh');
-const authJWT = require('./utils/authJWT');
+// const authJWT = require('./utils/authJWT');
 
 //시퀄라이즈 연결 부분
 sequelize.sync({ force: false }) //force가 true면 킬때마다 DB 새로 만듬
@@ -48,7 +49,8 @@ app.set('port', process.env.PORT);
 //{API}/user 로 접속하면  userRouter 를 실행
 app.use('/user', userRouter);
 app.use('/faq', faqRouter);
-app.use('/product/:id', ProductRouter);
+app.use('/product/:id', productRouter);
+app.use('/reservation', reservationRouter);
 app.use('/refresh', refresh);
 app.get('/logout', (req, res) => {
   console.log("logout");

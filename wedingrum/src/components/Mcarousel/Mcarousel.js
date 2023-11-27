@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Mcarousel.scss";
+import { use } from "passport";
 
 export default function App() {
+  
+  useEffect(()=> {
+
+  },[])
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -26,7 +32,7 @@ export default function App() {
     <div className="App3">
       <div style={{ position: "relative" }}>
         <Carousel responsive={responsive}>
-          <div><img src="/img/Party/m1.jpg"/><h3>청담점 2F 연회홀</h3><p>수용인원 300명·주차가능 200대</p></div>
+          {/* {holls.map(holl => <div><img src={"/img/Party/m1.jpg"}/><h3>{holl.name}</h3><p>{holl.content}</p></div>)} */}
           <div><img src="/img/Party/m2.jpg"/><h3>공덕점 6F 연회홀</h3><p>수용인원 500명·주차가능 550대</p></div>
           <div><img src="/img/Party/m3.jpg"/><h3>공덕점 7F 연회홀</h3><p>수용인원 500명·주차가능 550대</p></div>
           <div><img src="/img/Party/m4.jpg"/><h3>선릉점 연회홀</h3><p>수용인원 440명·주차가능 350대</p></div>

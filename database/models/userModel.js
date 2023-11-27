@@ -17,7 +17,7 @@ class UserModel {
     return user;
   }
 
-  static async destroyUser(userId){
+  static async destroyUser({userId}){
     // console.log("userId",userId);
     const user = await User.destroy({
       where: {

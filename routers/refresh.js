@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const { verify, refreshVerify, makeAccessToken, makeRefreshToken} = require("../utils/token");
 
-// POST 요청을 처리하는 라우터 핸들러
+// 사용자 전용 페이지 들어가기전 검증 미들웨어 
 const refresh = async (req, res, next) => {
   try {
     const accessToken = req.cookies.accessToken;
@@ -47,6 +47,7 @@ const refresh = async (req, res, next) => {
         //   ok: true,
         //   message: 'accessToken 재생성!' 
         // });
+        req.userId = decode.id; 
         next();
       }
     }else{ //accToken있음
@@ -56,6 +57,7 @@ const refresh = async (req, res, next) => {
       //   ok: true,
       //   message: 'accToken유효 통과!' 
       // });
+      req.userId = decode.id;
       next();
     }
   } catch (error) {

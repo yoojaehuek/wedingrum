@@ -24,7 +24,7 @@ function MyPage() {
   const getUser = async () =>{
     console.log("Mypage.js/getUser()들어옴");
     const user = await axios.get(`${API_URL}/user/mypage`);
-    console.log("mypage/user", user.status);
+    console.log("Mypage.js/getUser(): ", user.status);
     return user.data;
   }
   
@@ -74,7 +74,7 @@ function MyPage() {
   return (
     <div className="Mypage-container">
       <div className="my-backgrund">
-        <MyPageTop />
+        <MyPageTop name={name}/>
       </div>
       <div className="sub-menu">
         <div className="my-both">
