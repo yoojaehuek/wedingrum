@@ -46,17 +46,17 @@ class Product extends Sequelize.Model {
           allowNull: true,
           comment: "상품 설명",
         },
-        detailtype: {
+        detailType: {
           type: Sequelize.JSON,
           allowNull: true,
           comment: "상세 정보 배열",
         },
-        detaildescription: {
+        detailDescription: {
           type: Sequelize.JSON,
           allowNull: true,
           comment: "상세 정보 설명",
         },
-        detailprice: {
+        detailPrice: {
           type: Sequelize.JSON,
           allowNull: true,
           comment: "상세 정보 가격",

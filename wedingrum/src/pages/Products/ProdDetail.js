@@ -6,8 +6,12 @@ import { API_URL } from '../../config/contansts';
 import { useParams } from 'react-router-dom';
 
 const ProdDetail = () => {
-  const [selectedImage, setSelectedImage] = useState(0);
-  const [productDetails, setProductDetails] = useState(null);
+  const [selectedImage, setSelectedImage] = useState("");
+  const [productDetails, setProductDetails] = useState({});
+  const [detailDescription, setDetailDescription] = useState([]); 
+  const [detailPrice, setDetailPrice] = useState([]);
+  const [detailType, setDetailType] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
   const { id } = useParams();
 
   const goBack = () => {
@@ -17,13 +21,22 @@ const ProdDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${API_URL}/product/${id}`);
+        const response = await axios.get(`${API_URL}/products/detail/${id}`);
         if (!response.data || response.data.error) {
           console.error('확실히 문제가 있어.');
           return;
         }
-        setProductDetails(response.data[0]);
-        console.log(response.data);
+        setProductDetails(response.data);
+        setSelectedImage(response.data.imageUrl);
+        setDetailDescription(JSON.parse(response.data.detailDescription));
+        setDetailPrice(JSON.parse(response.data.detailPrice));
+        setDetailType(JSON.parse(response.data.detailType));
+        setGalleryImages(JSON.parse(response.data.galleryImages));
+        console.log("response.data: ", response.data);
+        console.log("detailDescription: ", detailDescription);
+        console.log("detailPrice: ", detailPrice);
+        console.log("detailType: ", detailType);
+        console.log("galleryImages: ", galleryImages);
       } catch (error) {
         console.error('에러:', error);
       }
@@ -33,25 +46,25 @@ const ProdDetail = () => {
     fetchData();
   }, [id]);
 
-  const handleThumbnailClick = (index) => {
-    setSelectedImage(index);
+  const handleThumbnailClick = (image) => {
+    setSelectedImage(image);
   };
 
-  if (!productDetails) {
-    return <p>제발 되게 해주세요..</p>;
-  }
+  // if (!productDetails) {
+  //   return <p>제발 되게 해주세요..</p>;
+  // }
 
   return (
     <div className="detail-container">
       <div className="image-container">
-        <img src={productDetails.imageUrl} alt="Product" />
+        <img src={selectedImage} alt="Product" />
         <div className="image-overlay">
-          {Array.isArray(productDetails.galleryImages) &&
-            productDetails.galleryImages.map((image, index) => (
+          {Array.isArray(galleryImages) &&
+            galleryImages.map((image, index) => (
               <div
                 key={index}
-                className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
-                onClick={() => handleThumbnailClick(index)}
+                className={`thumbnail ${selectedImage === image ? 'active' : ''}`}
+                onClick={() => handleThumbnailClick(image)}
               >
                 <img src={image} alt={`Thumbnail ${index + 1}`} />
               </div>
@@ -61,21 +74,30 @@ const ProdDetail = () => {
       </div>
       <div className="description-container">
         <div className="header">
-          <p>{productDetails.category}</p>
+          <p>PRODUCTS {'>'} {productDetails.category}</p>
           <button className="list-button" onClick={goBack}>
-            <ListIcon fontSize="large" />
+            <ListIcon /> 
+            <span>목록으로</span>
           </button>
         </div>
-        <h1>{productDetails.title}</h1>
+        <h1>
+          <span style={{ color: '#ad5656' }}>{productDetails.title} </span> 
+          {productDetails.name}
+        </h1>
         <p>{productDetails.description}</p>
         <div className="details">
-          {productDetails && (
-            <div className="detail">
-              <p>{productDetails.detailtype}</p>
-              <span className="description">{productDetails.detaildescription}</span>
-              <span className="price">{(+productDetails.detailprice).toLocaleString()}원</span>
-            </div>
-          )}
+          {productDetails && 
+            (detailType.map((val, index) => {
+              return(
+                <div className="detail" key={index}>
+                  <p>{detailType[index]}</p>
+                  <span className="description">{detailDescription[index]}</span>
+                  <span className="price">{detailPrice[index]}원</span>
+                </div>
+              )
+              // console.log(`반복테스크`, detailType[index]);
+            }))
+          }
         </div>
       </div>
     </div>
