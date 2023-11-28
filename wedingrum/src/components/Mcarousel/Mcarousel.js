@@ -2,13 +2,8 @@ import React, { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Mcarousel.scss";
-import { use } from "passport";
 
 export default function App() {
-  
-  useEffect(()=> {
-
-  },[])
 
   const responsive = {
     superLargeDesktop: {
