@@ -18,8 +18,8 @@ const Date2 = () => {
                         </div>
                         <div className='Date-tit2'>
                           <div className='Date-tit3'>
-                            <h2>예식 날짜 선택</h2>
-                            <h3>원하시는 날짜를 선택해주세요.</h3>
+                            <h2>방문 날짜 선택</h2>
+                            <h3>원하시는 방문일을 선택해주세요.</h3>
                           </div>
                           <ul>
                             <div>
@@ -27,7 +27,11 @@ const Date2 = () => {
                             </div>
                           </ul>
                         </div>
-                        <NavLink to ="/Time" className="next"><p>다음</p></NavLink>
+                        <div className="next-arrow-container">
+                          <NavLink to="/Time" className="next-arrow">
+                            <p>→</p>
+                          </NavLink>
+                        </div>
                       </div>
                     </div>
                 </div>
