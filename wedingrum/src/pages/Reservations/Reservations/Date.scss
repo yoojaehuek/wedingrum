@@ -85,6 +85,28 @@
         display: flex;
         height: 100%;
 
+        .next-arrow-container {
+          display: flex;
+          position: relative;
+          top: 300px;
+          justify-content: flex-end; /* 가운데에서 맨 오른쪽으로 이동 */
+
+          .next-arrow {
+            font-size: 60px; /* 원하는 크기로 조절 */
+            text-decoration: none;
+            transition: transform 0.3s;
+
+            p{
+              color: white;
+
+              &:hover{
+                transform: scale(1.4);
+              }
+    
+            }
+          }
+        }
+        
         .Date-tit{
           display: flex;
           margin: 0 80px;
@@ -170,6 +192,53 @@
             list-style: none;
             margin: 0;
             padding: 0;
+
+            .day-of-week-selector-container22 {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 25px;
+            
+              .days-of-week {
+                border: 1px solid #ccc; /* 태두리 스타일을 원하는 대로 수정 */
+                padding: 10px;
+                height: auto;
+                width: 13vw;
+                text-align: center;
+                border-radius: 30px;
+            
+                img {
+                  width: 250px; /* 이미지 크기를 조절하거나 필요에 따라 조절하세요 */
+                  height: 250px; /* 높이를 자동으로 조절하여 비율 유지 */
+                  border: 1px solid #ccc; /* 이미지에도 태두리를 추가하거나 필요에 따라 수정 */
+                  border-radius: 30px;
+                }
+            
+                .proname {
+                  /* 필요한 스타일을 추가하거나 수정하세요 */
+                  h1{
+                    font-weight: 400;
+                    margin: 10px 0;
+                  }
+
+                  h2 {
+                    border-top: 0.1px solid rgba(255, 255, 255, 0.493);
+                    font-weight: 400;
+                    margin: 10px 0;
+                  }
+            
+                  .introduction {
+                    /* 필요한 스타일을 추가하거나 수정하세요 */
+                    h3 {
+                      border-top: 0.1px solid rgba(255, 255, 255, 0.493);
+                      font-weight: 200;
+                      font-size: 20px;
+                      margin: 5px 0;
+                      padding: 10px;
+                    }
+                  }
+                }
+              }
+            }
 
             .Hollimg{
               position: relative;
@@ -390,10 +459,6 @@
                 background-repeat: no-repeat;
                 background-size: auto;
               }
-
-            }
-            .next{
-              color: white;
             }
           }
         }

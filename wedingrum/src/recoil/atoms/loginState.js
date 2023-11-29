@@ -30,3 +30,13 @@ export const pointState = atom({
   key: 'pointState',
   default: '',
 })
+
+export const contactChoiceState = atom({
+  key: 'contactChoiceState',
+  default: '',
+})
+
+export const themeState = atom({
+  key: 'themeState',
+  default: '',
+})
