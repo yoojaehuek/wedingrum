@@ -63,7 +63,7 @@ const Header = () => {
             <li>
               <NavLink to='/reservations'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
-                <li><NavLink to='/reservations'>예식예약</NavLink></li>
+                {/* <li><NavLink to='/reservations'>예식예약</NavLink></li> */}
                 <li><NavLink to='/sangdam2'>상담예약</NavLink></li>
               </ul>
             </li>
