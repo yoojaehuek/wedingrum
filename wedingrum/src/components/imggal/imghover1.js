@@ -1,9 +1,9 @@
 import React from 'react';
-import './imghover.scss';
+import './imghover1.scss';
 
 const ImageGallery = () => {
   return (
-    <div className="image-container">
+    <div className="image-container1">
       <a href='/' className='image-item  item2'>
         <div className='item-txt2'>
           <p className='small'>감동을 향해 동행하는 든든한 첫걸음</p>

@@ -3,7 +3,7 @@ import React from "react"
 import Header from "../../../components/Header/Header";
 import Aswiper from "../../../components/Aswiper/Aswiper";
 import Multi from "../../../components/Amcarousel/Amcarousel";
-import ImageGal from '../../../components/imggal/imghover'
+import ImageGal from '../../../components/imggal/imghover1'
 import { Link } from 'react-router-dom';
 import About1 from '../About1/About1';
 
