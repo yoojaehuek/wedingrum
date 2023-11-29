@@ -3,6 +3,7 @@ import './Date.scss'
 // import { NavLink } from "react-router-dom";
 import LeftDate from './leftDate';
 import DateCalendarFormProps from './Calendar';
+import { NavLink } from 'react-router-dom';
 
 const Date2 = () => {
     
@@ -26,6 +27,7 @@ const Date2 = () => {
                             </div>
                           </ul>
                         </div>
+                        <NavLink to ="/Time" className="next"><p>다음</p></NavLink>
                       </div>
                     </div>
                 </div>
