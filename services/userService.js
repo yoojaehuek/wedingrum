@@ -1,29 +1,8 @@
 const UserModel = require('../database/models/userModel')
 const crypto = require('crypto');
-const redis = require('redis');
+const redisClient = require("../utils/redis.utils");
 require('dotenv').config();
 const { makeRefreshToken, makeAccessToken } = require('../utils/token');
-
-const redisClient = redis.createClient({
-	password : process.env.REDIS_PASSWORD,
-		socket : {
-			host : process.env.REDIS_HOST,
-			port : process.env.REDIS_PORT
-	},
-	legacyMode: true,
-})
-redisClient.connect();
-
-
-// const redisClient = redis.createClient({
-// 	password: '0B7FGs7Q2qistIUJvlmHRikCkR9v1TUG',
-// 	socket: {
-// 			host: 'redis-14791.c246.us-east-1-4.ec2.cloud.redislabs.com',
-// 			port: 14791
-// 	},
-// 	legacyMode: true,
-// });
-
 
 
 class UserService{
@@ -71,6 +50,7 @@ class UserService{
 		// Compare the generated hash with the stored hashed password
 		if (hashedPassword === user.pwd) {
 			console.log('Login successful!');
+			// console.log("userService.js/loginUser()/user: ", user);
 			const accessToken = makeAccessToken({id: user.id});
 			const refreshToken = makeRefreshToken();
 
@@ -80,9 +60,7 @@ class UserService{
 			// await redisClient.get(user.id, (err, value) => {
 			// 	console.log("redis.value: ", value); 
 			// });
-			redisClient.get(refreshToken, (err, val) => {
-				console.log("* : ", val);
-			});
+			
 			const name = user.name; 
 			const id = user.id;			
 			const newUser = {name, id, accessToken, refreshToken};
@@ -92,6 +70,28 @@ class UserService{
 			console.log('Invalid login credentials.');
 		}
 
+	}
+
+	static async detailUser({myId}){
+		const user = await UserModel.findById({myId});
+
+		const name = user.name;
+		const user_id = user.id;
+		const phone = user.phone;
+		const companionName = user.companionName;
+		const companionPhone = user.companionPhone;
+		const birth = user.birth;
+
+		const userInfo = {
+			user_id,
+			name,
+			phone,
+			companionName,
+			companionPhone,
+			birth,
+		};
+
+		return userInfo;
 	}
 
 }
