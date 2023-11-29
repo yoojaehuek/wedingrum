@@ -22,12 +22,12 @@ export default function App(){
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide><img src="img/Party/s1.jpg"/></SwiperSlide>
-          <SwiperSlide><img src="img/Party/s2.jpg"/></SwiperSlide>
-          <SwiperSlide><img src="img/Party/s3.jpg"/></SwiperSlide>
-          <SwiperSlide><img src="img/Party/s4.jpg"/></SwiperSlide>
-          <SwiperSlide><img src="img/Party/s5.jpg"/></SwiperSlide>
-          <SwiperSlide><img src="img/Party/s6.jpg"/></SwiperSlide>
+          <SwiperSlide><img src="img/Party/st1.jpg"/></SwiperSlide>
+          <SwiperSlide><img src="img/Party/st2.jpg"/></SwiperSlide>
+          <SwiperSlide><img src="img/Party/st3.jpg"/></SwiperSlide>
+          <SwiperSlide><img src="img/Party/st4.jpg"/></SwiperSlide>
+          <SwiperSlide><img src="img/Party/st5.jpg"/></SwiperSlide>
+          <SwiperSlide><img src="img/Party/st6.jpg"/></SwiperSlide>
         </Swiper>
     )
 }
