@@ -10,6 +10,7 @@ const faqRouter = require('./routers/customer');
 const productRouter = require('./routers/product');
 const reservationRouter = require('./routers/reservation');
 const hallRouter = require('./routers/hall')
+const plannerRouter = require('./routers/planner')
 const refresh = require('./routers/refresh');
 // const authJWT = require('./utils/authJWT');
 
@@ -53,6 +54,7 @@ app.use('/faq', faqRouter);
 app.use('/products', productRouter);
 app.use('/reservation', reservationRouter);
 app.use('/hall',hallRouter);
+app.use('/planner',plannerRouter);
 app.use('/refresh', refresh);
 app.get('/logout', (req, res) => {
   console.log("logout");

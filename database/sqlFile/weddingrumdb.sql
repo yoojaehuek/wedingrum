@@ -76,15 +76,32 @@ INSERT INTO `halls` (`id`, `hallName`, `hallImg`, `Capacity`, `ParkingCapacity`)
 CREATE TABLE IF NOT EXISTS `planners` (
   `id` varchar(20) NOT NULL COMMENT '플레너 ID (기본키)',
   `pwd` varchar(20) NOT NULL COMMENT '비밀번호',
+  `profileImgUrl` varchar(255) NOT NULL COMMENT '상담사프로필사진',
+  `point` varchar(20) NOT NULL COMMENT '지점',
   `name` varchar(20) NOT NULL COMMENT '이름',
-  `phone` varchar(20) NOT NULL COMMENT '회원 전화번호',
+  `phone` varchar(20) NOT NULL COMMENT '전화번호',
+  `introduction` varchar(255) NOT NULL COMMENT '소개',
   `regdate` datetime NOT NULL COMMENT '플레너 회원 가입일',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 테이블 데이터 wedingrumdb.planners:~1 rows (대략적) 내보내기
-INSERT INTO `planners` (`id`, `pwd`, `name`, `phone`, `regdate`) VALUES
-	('asd', 'asd', '김지환', 'asd', '2023-11-22 00:00:00');
+-- 테이블 데이터 wedingrumdb.planners:~0 rows (대략적) 내보내기
+INSERT INTO `planners` (`id`, `pwd`, `profileImgUrl`, `point`, `name`, `phone`, `introduction`, `regdate`) VALUES
+	('asd', 'asd', '/image/Reservation/planner/planner.jpg', '잠실점', '카리나', '010-1111-2222', '안녕하세요 카리나 입니다.','2023-11-22 00:00:00'),
+  ('asd1', 'asd1', '/image/Reservation/planner/planner1.jpg', '잠실점', '김일', '010-1111-2222', '안녕하세요 김일 입니다.','2023-11-22 00:00:00'),
+  ('asd2', 'asd2', '/image/Reservation/planner/planner2.jpg', '잠실점', '김이', '010-1111-2222', '안녕하세요 김이 입니다.','2023-11-22 00:00:00'),
+  ('asd3', 'asd3', '/image/Reservation/planner/planner3.jpg', '반포점', '김삼', '010-1111-2222', '안녕하세요 김삼 입니다.','2023-11-22 00:00:00'),
+  ('asd4', 'asd4', '/image/Reservation/planner/planner4.jpg', '반포점', '김사', '010-1111-2222', '안녕하세요 김사 입니다.','2023-11-22 00:00:00'),
+  ('asd5', 'asd5', '/image/Reservation/planner/planner5.jpg', '반포점', '김오', '010-1111-2222', '안녕하세요 김오 입니다.','2023-11-22 00:00:00'),
+  ('asd6', 'asd6', '/image/Reservation/planner/planner6.jpg', '평택점', '김육', '010-1111-2222', '안녕하세요 김육 입니다.','2023-11-22 00:00:00'),
+  ('asd7', 'asd7', '/image/Reservation/planner/planner7.jpg', '평택점', '김칠', '010-1111-2222', '안녕하세요 김칠 입니다.','2023-11-22 00:00:00'),
+  ('asd8', 'asd8', '/image/Reservation/planner/planner8.jpg', '평택점', '김팔', '010-1111-2222', '안녕하세요 김팔 입니다.','2023-11-22 00:00:00'),
+  ('asd9', 'asd9', '/image/Reservation/planner/planner9.jpg', '선릉점', '김구', '010-1111-2222', '안녕하세요 김구 입니다.','2023-11-22 00:00:00'),
+  ('asd10', 'asd10', '/image/Reservation/planner/planner10.jpg', '선릉점', '김십', '010-1111-2222', '안녕하세요 김십 입니다.','2023-11-22 00:00:00'),
+  ('asd11', 'asd11', '/image/Reservation/planner/planner11.jpg', '선릉점', '김십일', '010-1111-2222', '안녕하세요 김십일 입니다.','2023-11-22 00:00:00'),
+  ('asd12', 'asd12', '/image/Reservation/planner/planner12.jpg', '공덕점', '김십이', '010-1111-2222', '안녕하세요 김십이 입니다.','2023-11-22 00:00:00'),
+  ('asd13', 'asd13', '/image/Reservation/planner/planner13.jpg', '공덕점', '김십삼', '010-1111-2222', '안녕하세요 김십삼 입니다.','2023-11-22 00:00:00'),
+  ('asd14', 'asd14', '/image/Reservation/planner/planner14.jpg', '공덕점', '김십사', '010-1111-2222', '안녕하세요 김십사 입니다.','2023-11-22 00:00:00');
 
 -- 테이블 wedingrumdb.points 구조 내보내기
 CREATE TABLE IF NOT EXISTS `points` (
@@ -119,17 +136,39 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 테이블 데이터 wedingrumdb.products:~0 rows (대략적) 내보내기
-INSERT INTO `products` (`id`, `name`, `price`, `imageUrl`, `galleryImages`, `category`, `title`, `description`, `detailType`, `detailDescription`, `detailPrice`) VALUES
-	(1, '축가', 165000, '/image/Product/category/Etc/weddingSong.jpg', '["/image/Product/category/Etc/weddingSong.jpg", "/image/Product/category/Etc/weddingSong2.jpg"]', 'prodetc', '[더채플 · 아펠가모 · 루벨]', ' 아름다운 노래로 신랑, 신부님에게 축복을 전해드립니다. ', '["축가 1인", "축가 2인"]', '["1인 축가, 1곡", "2인 축가, 1곡"]', '[165000, 220000]');
+INSERT INTO `products` (`id`, `name`, `price`, `imageUrl`, `galleryImages`, `category`, `title`, `description`, `detailType`, `detailDescription`, `detailPrice`) VALUES 
+(1, '축가', 165000, '/image/Product/category/Etc/weddingSong.jpg', '["/image/Product/category/Etc/weddingSong.jpg", "/image/Product/category/Etc/weddingSong2.jpg"]', 'prodetc', '[더채플 · 아펠가모 · 루벨]', ' 아름다운 노래로 신랑, 신부님에게 축복을 전해드립니다. ', '["축가 1인", "축가 2인"]', '["1인 축가, 1곡", "2인 축가, 1곡"]', '[165000, 220000]'),
+(2, '연주', 220000, '/image/Product/category/Etc/music.jpg', '["/image/Product/category/Etc/music.jpg"]', 'prodetc', '[더채플 · 아펠가모 · 루벨]', ' 아름다운 선율로 완성되는 프리미엄 웨딩을 만나보세요. ', '["현악 2중주 (아펠가모 선릉, 더채플앳청담 전용)", "현악 4중주 (더채플 전용)", "재즈 3중주 (더채플앳청담 전용)", "현악3중주+남성3중창 (아펠가모 반포 전용)"]', '["악기 구성: 바이올린+첼로", "악기 구성: 바이올린2+비올라+첼로", "악기 구성: 콘트라베이스+색소폰+피아노", "악기 구성: 피아노+바이올린+첼로 | 화촉점화, 신랑 입장, 신부 입장, 축가, 퇴장"]', '[220000, 495000, 550000, 550000]'),
+(3, '주례자', 165000, '/image/Product/category/Etc/officiant-1.adc0c31c.jpg', '["/image/Product/category/Etc/officiant-1.adc0c31c.jpg"]', 'prodetc', '[더채플 · 아펠가모 · 루벨]', ' 신랑, 신부님의 찬란하게 빛날 앞날에 진심 어린 축복을 담아 드립니다. ', '["웨딩 전문 주례자"]', '[""]', '[165000]'),
+(4, '사회자', 220000, '/image/Product/category/Etc/moderator-1.7417d133.jpg', '["/image/Product/category/Etc/moderator-1.7417d133.jpg"]', 'prodetc', '[아펠가모(공덕 제외) · 루벨]', ' 깔끔하고 센스 있는 웨딩 전문 사회자와 함께 완벽한 웨딩을 준비해보세요. 매끄러운 진행으로 더욱 빛나는 웨딩을 만들어 드립니다. ', '["웨딩 전문 사회자"]', '[""]', '[220000]'),
+(5, '사회자', 275000, '/image/Product/category/Etc/moderator-1.7417d133.jpg', '["/image/Product/category/Etc/moderator-1.7417d133.jpg"]', 'prodetc', '[더채플 · 아펠가모 공덕]', ' 깔끔하고 센스 있는 웨딩 전문 사회자와 함께 완벽한 웨딩을 준비해보세요. 매끄러운 진행으로 더욱 빛나는 웨딩을 만들어 드립니다. ', '["웨딩 전문 사회자"]', '[""]', '[275000]'),
+(6, '본식 스냅 촬영', 770000, '/image/Product/category/photo/0001-01.0d33df7e.jpg', '["/image/Product/category/photo/0001-01.0d33df7e.jpg"]', 'prodpho', '[더웨이스튜디오]', ' 그날의 생생한 감동과 행복한 순간을 오롯이 한 권에 담습니다. 트렌디한 감각으로 가장 소중한 날의 기억을 기록해 드립니다. ', '["1인 촬영"]', '["50P앨범(14X11인치)1권+50P(10X8인치)앨범 2권 원본,수정본 별도(신부대기실 부터 촬영)"]', '[770000]'),
+(7, '본식 스냅 촬영', 1430000, '/image/Product/category/photo/nua-1.1fef90e5.jpg', '["/image/Product/category/photo/nua-1.1fef90e5.jpg", "/image/Product/category/photo/nua-2.bffd8ea6.jpg", "/image/Product/category/photo/nua-3.ae185722.jpg", "/image/Product/category/photo/nua-4.7c1462d2.jpg", "/image/Product/category/photo/nua-5.a852decf.jpg", "/image/Product/category/photo/nua-6.02f3a8f0.jpg", "/image/Product/category/photo/nua-7.fc2532ec.jpg", "/image/Product/category/photo/nua-8.1d1a870f.jpg"]', 'prodpho', '[누아스튜디오]', ' 가장 찬란한 순간, 기쁨을 함께 합니다. 신랑신부님의 아름다운 추억을 정성스럽게 담아냅니다. ', '["1인 촬영"]', '["80P앨범 1권+10P앨범 2권 원본, 수정본 포함 (신부대기실 부터 촬영)"]', '[1430000]'),
+(8, '본식 스냅 촬영', 880000, '/image/Product/category/photo/0004-01.99e593fb.jpg', '["/image/Product/category/photo/0004-01.99e593fb.jpg"]', 'prodpho', '[르스토리아]', ' 가장 찬란한 순간, 기쁨을 함께 합니다. 신랑신부님의 아름다운 추억을 정성스럽게 담아냅니다. ', '["1인 촬영"]', '["40P앨범 1권+10P앨범 2권 원본, 수정본 별도 (신부대기실 부터 촬영)"]', '[880000]'),
+(9, '본식 스냅 촬영', 1500000, '/image/Product/category/photo/anotherday-1.f0db315a.jpg', '["/image/Product/category/photo/anotherday-1.f0db315a.jpg", "/image/Product/category/photo/anotherday-2.ab3547a0.jpg", "/image/Product/category/photo/anotherday-3.0594c885.jpg", "/image/Product/category/photo/anotherday-4.02b0dfca.jpg", "/image/Product/category/photo/anotherday-5.fb3fe2df.jpg", "/image/Product/category/photo/anotherday-6.0769f071.jpg", "/image/Product/category/photo/anotherday-7.46bb68d8.jpg", "/image/Product/category/photo/anotherday-8.bb28e6a5.jpg"]', 'prodpho', '[언아더데이]', ' 크고 작은 웃음, 진심 어린 축하로 가득한 특별한 하루. 더 많은 날을 약속하는 두 분의 언아더데이를 기록합니다. ', '["1인 촬영", "2인 촬영"]', '["80P앨범 1권+80P미니앨범 2권 원본, 수정본 포함 (신부대기실 부터 촬영)", "80P앨범 1권+80P미니앨범 2권 원본, 수정본 포함 (신부대기실 부터 촬영)"]', '[1500000, 1900000]'),
+(10, '본식 영상 촬영', 660000, '/image/Product/category/movie/0006-01.adfe9c64.jpg', '["/image/Product/category/movie/0006-01.adfe9c64.jpg"]', 'prodmov', '[웨딩미]', ' 많은 셀럽들의 선택한 웨딩미는 바른촬영과 많이 꾸미지 않는 편집, 눈에 보는듯한 순수한 색감을 지향하며 아름다운 결혼식을 남겨드립니다. ', '["1인 2캠 (FHD)", "1인 1캠 (4k)", "1인 2캠 (4k)"]', '["FHD 촬영, 다큐영상 형식 40분, 신부대기실 부터, USB 제공", "4K UHD 촬영, 다큐영상 형식 40분, 신부대기실 부터, USB 제공, 하이라이트 영상 포함", "4K UHD 촬영, 다큐영상 형식 40분, 신부대기실 부터, USB 제공, 하이라이트 영상 포함"]', '[660000, 770000, 880000]'),
+(11, '본식 영상 촬영', 660000, '/image/Product/category/movie/0007-01.6141edf0.jpg', '["/image/Product/category/movie/0007-01.6141edf0.jpg"]', 'prodmov', '[레이블]', ' 사랑하는 사람들이 주인공이었던 그 소중한 시간들을 거창하고 화려하진 않지만 진심으로 담아 세상에 하나뿐인 아름다운 감동으로 만들어 드립니다. ', '["1인 2캠 (FHD)"]', '["FHD 촬영, 뮤비 형식 20분, 신부대기실 부터, USB로 제공"]', '[660000]'),
+(12, '혼주 헤어&메이크업', 185000, '/image/Product/category/makeup/ecojardin-1.9925d617.jpg', '["/image/Product/category/makeup/ecojardin-1.9925d617.jpg"]', 'prodhair', '[에코쟈뎅]', " '에코쟈뎅'은 박준뷰티랩의 오랜 노하우와 기술력으로 선보인 프리미엄 브랜드로 트렌디한 헤어&메이크업을 선보이고 있습니다. ", '["여성혼주 1인", "남성혼주 1인"]', '["", ""]', '[185000, 55000]'),
+(13, '혼주 헤어&메이크업', 220000, '/image/Product/category/makeup/boboris-1.d27a70e6.jpg', '["/image/Product/category/makeup/boboris-1.d27a70e6.jpg"]', 'prodhair', '[보보리스(출장)]', ' 보보리스는 아름다움을 경외하는 사람들이란 뜻으로 감각적인 영 프로페셔널을 위한 진정한 아름다움을 추구하는 스타일라이프 살롱입니다. ', '["여성혼주 1인", "남성혼주 1인", "여성혼주 1인, 남성혼주 1인", "여성혼주 2인, 남성혼주 2인", "남성혼주 2인", "여성혼주 2인"]', '["", "", "", "", "", ""]', '[198000, 55000, 220000, 429000, 110000, 396000]'),
+(14, '혼주 헤어&메이크업', 242000, '/image/Product/category/makeup/jennyhouse-1.6c90e2f9.jpg', '["/image/Product/category/makeup/jennyhouse-1.6c90e2f9.jpg"]', 'prodhair', '[제니하우스]', ' 20년 노하우, 탄탄한 실력과 감각을 갖춘 80여 명의 아티스트가 감각적인 헤어, 메이크업을 선보이고 있습니다. 2만 5천 쌍의 커플이 선택한 제니하우스 웨딩은 트렌디하고 절제미와 세련미를 갖춘 웨딩 스타일 룩을 완성 시켜드립니다. ', '["여성혼주 1인", "남성혼주 1인", "여성혼주 1인, 남성혼주 1인", "여성혼주 2인, 남성혼주 2인", "남성혼주 2인", "여성혼주 2인"]', '["", "", "", "", "", ""]', '[187000, 55000, 242000, 484000, 110000, 374000]'),
+(15, '혼주 헤어&메이크업', 220000, '/image/Product/category/makeup/pllipe-1.acbcb259.jpg', '["/image/Product/category/makeup/pllipe-1.acbcb259.jpg"]', 'prodhair', '[플리페]', ' 풀잎에라는 한글의 발음을 차용한 플리페는 뷰티전문가로서 고객에게 아름다움과 전문적인 서비스를 제공하고자 노력하는 Professional 정신을 표현하고 있습니다. 풀잎의 자연스러운 움직임과 풀잎 끝의 날카로운 형태를 응용해 정해진 틀에 얽매이지 않는 표현력과 트렌디한 헤어&메이크업을 선보입니다. ', '["여성혼주 1인, 남성혼주 1인", "여성혼주 2인, 남성혼주 2인", "남성혼주 1인", "여성혼주 1인", "남성혼주 2인", "여성혼주 2인"]', '["", "", "", "", "", ""]', '[220000, 429000, 55000, 198000, 110000, 396000]'),
+(16, '혼주 헤어&메이크 (루벨 강동)', 198000, '/image/Product/category/makeup/pllipe-1.acbcb259.jpg', '["/image/Product/category/makeup/pllipe-1.acbcb259.jpg"]', 'prodhair', '[플리페]', ' 풀잎에라는 한글의 발음을 차용한 플리페는 뷰티전문가로서 고객에게 아름다움과 전문적인 서비스를 제공하고자 노력하는 Professional 정신을 표현하고 있습니다. 풀잎의 자연스러운 움직임과 풀잎 끝의 날카로운 형태를 응용해 정해진 틀에 얽매이지 않는 표현력과 트렌디한 헤어&메이크업을 선보입니다. ', '["여성혼주 1인, 남성혼주 1인", "여성혼주 2인, 남성혼주 2인", "남성혼주 1인", "여성혼주 1인", "남성혼주 2인", "여성혼주 2인"]', '["", "", "", "", "", ""]', '[198000, 396000, 55000, 165000, 110000, 330000]'),
+(17, '포토부스', 407000, '/image/Product/category/booth/simple-cube-1.16b94ca4.jpg', '["/image/Product/category/booth/simple-cube-1.16b94ca4.jpg", "/image/Product/category/booth/simple-cube-2.58e401df.jpg", "/image/Product/category/booth/simple-cube-3.2080521a.jpg", "/image/Product/category/booth/simple-cube-4.8fb90264.jpg", "/image/Product/category/booth/simple-cube-5.70680e6a.jpg", "/image/Product/category/booth/simple-cube-6.66d53ede.jpg", "/image/Product/category/booth/simple-cube-7.4f7eee70.jpg"]', 'prodphotobooth', '[심플큐브]', ' 평생에 한 번뿐인 소중한 순간을 사랑하는 지인들의 사진과 따뜻한 축하 메시지가 담긴 포토 방명록으로 추억으로 남겨보세요. ', '["포토부스"]', '["무제한 촬영 인화지+액자 1개(블랙or우드)+무제한 포토방명록+포토방명록 케이스 1개+원본 이미지 USB"]', '[407000]'),
+(18, '웨딩카', 330000, '/image/Product/category/weddingcar/car-1.f4e5dff7.jpg', '["/image/Product/category/weddingcar/car-1.f4e5dff7.jpg", "/image/Product/category/weddingcar/car-2.a1e82482.jpg", "/image/Product/category/weddingcar/car-3.63614e30.jpg"]', 'prodcar', '[더채플 · 아펠가모 · 루벨]', '가장 행복 한 날의 시작과 마지막을 완벽하게, 베테랑 기사님의 안전한 운행으로 신랑 신부님을 편안하게 모십니다.', '["2구간", "풀구간"]', '["자택(서울출발기준)", "자택(서울출발기준)"]', '[330000, 500000]'),
+(19, '폐백 음식', 209000, '/image/Product/category/Bow/honeymoon-1.b4d9be2b.jpg', '["/image/Product/category/Bow/honeymoon-1.b4d9be2b.jpg", "/image/Product/category/Bow/honeymoon-2.00a109c1.jpg", "/image/Product/category/Bow/honeymoon-3.3823fa10.jpg", "/image/Product/category/Bow/honeymoon-4.71ef4c98.jpg", "/image/Product/category/Bow/honeymoon-5.d8db26d5.jpg", "/image/Product/category/Bow/honeymoon-6.7e90200d.jpg", "/image/Product/category/Bow/honeymoon-7.c40edef3.jpg", "/image/Product/category/Bow/honeymoon-8.d6de3a14.jpg", "/image/Product/category/Bow/honeymoon-9.f05777e3.jpg", "/image/Product/category/Bow/honeymoon-10.710fc1c1.jpg"]', 'prodbow', '[허니문폐백]', '이옥남 폐백 장인의 손을 거쳐 하나부터 열까지 정성스럽게 만든 폐백 음식, 내 딸을 시집보낸다는 어머니의 마음으로 지극한 정성과 소망을 담아 만듭니다.', '["1호", "2호", "3호", "5호", "6호", "7호", "8호", "9호", "특가 A호", "특가 B호"]', '["닭, 구절판, 한과, 정종", "닭, 구절판, 대추고임, 정종", "닭, 구절판, 대추고임, 한과, 정종", "육포, 구절판, 대추고임, 정종", "육포, 구절판, 대추고임, 한과, 정종", "닭, 육포, 구절판, 대추고임, 정종", "산적, 구절판, 대추고임, 한과, 정종", "육포, 닭, 구절판, 대추고임, 한과, 정종", "육포, 구절판, 한과, 술, 밤주머니", "밤대추고임, 구절판, 한과, 정종"]', '[209000, 231000, 297000, 308000, 374000, 385000, 440000, 451000, 275000, 220000]'),
+(20, '신부&신랑 관리', 496000, '/image/Product/category/treatz/treatz-1.b557e646.jpg', '["/image/Product/category/treatz/treatz-1.b557e646.jpg", "/image/Product/category/treatz/treatz-2.0e5d14c4.jpg", "/image/Product/category/treatz/treatz-3.ad2e15d0.jpg", "/image/Product/category/treatz/treatz-4.6dae7deb.jpg", "/image/Product/category/treatz/treatz-5.8e7b9ca2.jpg", "/image/Product/category/treatz/treatz-6.45d3f51f.jpg", "/image/Product/category/treatz/treatz-7.daf840a3.jpg", "/image/Product/category/treatz/treatz-8.f1289680.jpg"]', 'prodwdmanagementlist', '[트리츠]', '국내 최초 브라이덜 전문 스파 트리츠는 신부들의 정확한 니즈를 충족시켜줄 세분화된 최적의 관리 프로그램들이 마련되어 있습니다. 신부 전용 케어라는 이름을 붙인 관리 서비스는 여럿이지만 실제 신부들의 정확한 니즈와 D-day의 드라마틱한 변화를 확실히 이끌어내 줄 프로그램은 트리츠의 신부 전용 케어뿐임을 자신합니다.', '["웨딩케어 60분 5회", "웨딩케어 90분 5회"]', '["정상가 620,000원 / 회당 99,200원", "정상가 750,000원 / 회당 120,000원"]', 
+'[496000, 600000]');
 
 -- 테이블 wedingrumdb.reservations 구조 내보내기
 CREATE TABLE IF NOT EXISTS `reservations` (
-  `id` varchar(20) NOT NULL COMMENT '예약 ID (기본키)',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '예약 ID (기본키)',
   `userId` varchar(20) NOT NULL COMMENT '유저 ID (참조키) ',
   `plannerId` varchar(20) NOT NULL COMMENT '플레너 ID (참조키) ',
-  `when` varchar(20) NOT NULL COMMENT '예약일',
-  `time` varchar(20) NOT NULL COMMENT '예약시간',
-  `where1` varchar(20) NOT NULL COMMENT '예약장소',
+  `point` varchar(20) NOT NULL COMMENT '지점',
+  `date` varchar(20) NOT NULL COMMENT '방문일',
+  `time` varchar(20) NOT NULL COMMENT '희망 시간대',
+  `contactChoice` varchar(20) NOT NULL COMMENT '선호하는 연락 방법',
+  `theme` varchar(20) NOT NULL COMMENT '방문 인원',
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   KEY `plannerId` (`plannerId`),
@@ -138,8 +177,6 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 테이블 데이터 wedingrumdb.reservations:~1 rows (대략적) 내보내기
-INSERT INTO `reservations` (`id`, `userId`, `plannerId`, `when`, `time`, `where1`) VALUES
-	('1', '123', 'asd', '20223-12-25', '시간', '반포점?');
 
 -- 테이블 wedingrumdb.users 구조 내보내기
 CREATE TABLE IF NOT EXISTS `users` (

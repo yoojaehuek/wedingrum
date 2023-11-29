@@ -25,7 +25,8 @@ class ReservationController {
   static async getReservationByUserId(req, res, next){
     try {
       console.log("req.userId: ", req.userId);
-      const result = await ReservationService.getReservationByUserId({id: req.userId});
+      const userId = req.userId;
+      const result = await ReservationService.getReservationByUserId({id: userId});
       console.log("reservationController.js/getReservationByUserId()/result: ", result);
       res.status(200).json(result);
     } catch (error) {
