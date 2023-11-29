@@ -29,7 +29,7 @@ import Time from './pages/Reservations/Reservations/Time';
 import Month from './pages/Reservations/Reservations/Month';
 import Holl from './pages/Reservations/Reservations/Holl';
 import Ceremony from './pages/Reservations/Information';
-import Customer from './pages/Customer/Customer'
+import Customer from './pages/Customer/Customer';
 
 function App() {
   return (
@@ -40,20 +40,19 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/myPage' element={<MyPage />} />
         <Route path='/myPage2' element={<MyPage2 />} />
+        <Route path='/mypage3' element={<Invitation />} />
         <Route path='/exp' element={<Exp />} />
         <Route path='/exp1' element={<Exp1 />} />
         <Route path='/exp2' element={<Exp2 />} />
         <Route path='/exp3' element={<Exp3 />} />
         <Route path='/product/:id/:id' element={<ProdDetail />} />
         <Route path='/product/:id' element={<Product />} />
-        <Route path='/wedding' element={<Wedding />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/wedding/:id' element={<Wedding />} />
         <Route path='/party' element={<Party />} />
         <Route path='/about' element={<About />} />
         <Route path='/about1' element={<About1 />} />
         <Route path='/join' element={<Join />} />
         <Route path='/join-input' element={<Joininput />} />
-        <Route path='/mypage3' element={<Invitation />} />
         <Route path='/faq' element={<Customer />} />
         <Route path='/Reservations' element={<Reservations />} />
         <Route path='/SangDam' element={<SangDam />} />

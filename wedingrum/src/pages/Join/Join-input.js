@@ -36,10 +36,6 @@ const Joininput = () => {
         }
     };
 
-
-
-
-
     return (
 <form id="join-input-form" onSubmit={onsubmitJoin} >
     <h3>MEMBER</h3>
