@@ -26,11 +26,6 @@ class UserModel {
     });//where: {id: asdf} 형태가 들어와야함
     return user;
   }
-
-  static async findById({myId}){
-    const user = await User.findOne({id: myId});
-    return user;
-  } 
 }
 
 module.exports = UserModel; 
