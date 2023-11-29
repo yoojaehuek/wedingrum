@@ -50,7 +50,7 @@ class UserService{
 		// Compare the generated hash with the stored hashed password
 		if (hashedPassword === user.pwd) {
 			console.log('Login successful!');
-			console.log("userService.js/loginUser()/user: ", user);
+			// console.log("userService.js/loginUser()/user: ", user);
 			const accessToken = makeAccessToken({id: user.id});
 			const refreshToken = makeRefreshToken();
 
@@ -70,6 +70,28 @@ class UserService{
 			console.log('Invalid login credentials.');
 		}
 
+	}
+
+	static async detailUser({myId}){
+		const user = await UserModel.findById({myId});
+
+		const name = user.name;
+		const user_id = user.id;
+		const phone = user.phone;
+		const companionName = user.companionName;
+		const companionPhone = user.companionPhone;
+		const birth = user.birth;
+
+		const userInfo = {
+			user_id,
+			name,
+			phone,
+			companionName,
+			companionPhone,
+			birth,
+		};
+
+		return userInfo;
 	}
 
 }

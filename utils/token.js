@@ -1,7 +1,6 @@
 require("dotenv").config();
 const jwt = require('jsonwebtoken'); 
 const JWT_KEY = process.env.ACCESS_TOKEN_SECRET;
-// const redis = require('redis');
 const redisClient = require("./redis.utils");
 const { promisify } = require('util');
 

@@ -2,7 +2,7 @@ const User = require('../schemas/user');
 
 class UserModel {
   static async createUser({newUser}){
-    // console.log("newUser",newUser);
+    console.log("newUser",newUser);
     const createNewUser = await User.create(newUser);
     return createNewUser;
   }
@@ -17,7 +17,7 @@ class UserModel {
     return user;
   }
 
-  static async destroyUser(userId){
+  static async destroyUser({userId}){
     // console.log("userId",userId);
     const user = await User.destroy({
       where: {
@@ -26,6 +26,11 @@ class UserModel {
     });//where: {id: asdf} 형태가 들어와야함
     return user;
   }
+
+  static async findById({myId}){
+    const user = await User.findOne({id: myId});
+    return user;
+  } 
 }
 
 module.exports = UserModel; 
