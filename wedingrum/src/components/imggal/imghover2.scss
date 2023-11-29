@@ -5,19 +5,19 @@
   height: 100vh;
 
     .item2{
-      background-image: url(../../../public/img/About/al1.jpg);
+      background-image: url(../../../public/img/About/alt1.jpg);
       background-size: cover;
     }
     .item3{
-      background-image: url(../../../public/img/About/al2.jpg);
+      background-image: url(../../../public/img/About/alt2.jpg);
       background-size: cover;
     }
     .item4{
-      background-image: url(../../../public/img/About/al3.jpg);
+      background-image: url(../../../public/img/About/alt3.jpg);
       background-size: cover;
     }
     .item5{
-      background-image: url(../../../public/img/About/al4.jpg);
+      background-image: url(../../../public/img/About/alt4.jpg);
       background-size: cover;
     }
 
@@ -34,21 +34,35 @@
   }
 
   .item-txt2 {
-    position: absolute;
+    margin: 0;
+    padding: 0;
     opacity: 0;
-    transition: opacity 0.3s ease; /* 호버 시 텍스트 표시를 부드럽게 만들기 위한 트랜지션 설정 */
-    
-    .small{
+    p{
+      position: absolute;
+      top: 75px;
       color: #ffffff;
-      font-weight: 900;
-      font-size: 22px;
-      left: 10px;
-      top: 10px;
+      padding: 0 40 0 0;
+      text-align: left;
+      left: 40px;
+      font-size: 35px;
     }
-    .big{
-      left: 10px;
-      top: 10px;
+    .small{
+      position: absolute;
+      top: 50px;
+      color: #ffffff;
+      font-size: 1.05em;
     }
+  }
+  .item-txt3{
+    color: #ffffff;
+    font-weight: 400;
+    position: absolute;
+    bottom: 55px;
+    padding: 0 0 0 0;
+    text-align: right;
+    right: 40px;
+    font-size: 17px;
+    opacity: 0;
   }
 
 
@@ -56,4 +70,7 @@
   .image-item:hover .item-txt2 {
     opacity: 1;
   }
+}
+  .image-item:hover .item-txt3 {
+    opacity: 1;
 }
