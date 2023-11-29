@@ -14,6 +14,16 @@ class Planner extends Sequelize.Model {
             allowNull: false,
             comment: "비밀번호",
         },
+        profileImgUrl: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            comment: "상담사프로필사진",
+        },
+        point: {
+            type: Sequelize.STRING(20),
+            allowNull: false,
+            comment: "지점",
+        },
         name: {
             type: Sequelize.STRING(20),
             allowNull: false,
@@ -22,7 +32,12 @@ class Planner extends Sequelize.Model {
         phone: {
             type: Sequelize.STRING(20),
             allowNull: false,
-            comment: "회원 전화번호",
+            comment: "전화번호",
+        },
+        introduction: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            comment: "소개",
         },
         regdate: {
             type: Sequelize.DATE,
