@@ -89,6 +89,8 @@
   }
 }
 .partyinfo{
+  width: 100%;
+  text-align: center;
   .pinfo_text{
     h2{
       font-size: 40px;
@@ -143,10 +145,22 @@
 .pmenu_tab a:hover{
   color: #ad5656;
 }
-
-.Vswiper{
-  position: relative;
-  width: 50%;
-  height: 600px;
-  float: left;
+.party_menu_wrap{
+  width: 100%;
+  .party_left{
+    width: 50%;
+    position: relative;
+  }
+  .Vswiper{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+    width: 50%;
+    height: 600px;
+  }
 }
