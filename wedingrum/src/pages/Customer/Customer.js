@@ -31,8 +31,8 @@ const Customer = () => {
 
   return (
     <div className="customer-container">
-      <h2 className="center">CUSTOMER</h2>
-      <h1 className="center">FAQ</h1>
+      <h2 className="center">고객</h2>
+      <h1 className="center">자주 묻는 질문</h1>
       <div className="search-container">
         {/* FAQ 카테고리 선택 드롭다운 */}
         <div className="dropdown">
