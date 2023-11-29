@@ -80,6 +80,7 @@
     height: 870px;
     .Asubimg{
       width: 75%;
+      height: 650px;
       float: left;
       position: relative;
     }
@@ -126,6 +127,8 @@
     padding-bottom: 80px;
   }
   .aboutinfo{
+    width: 100%;
+    text-align: center;
     .Ainfo_text{
       h2{
         font-size: 40px;
@@ -164,9 +167,3 @@
     }
   }
   
-  .Vswiper{
-    position: relative;
-    width: 50%;
-    height: 600px;
-    float: left;
-  }
