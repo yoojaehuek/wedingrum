@@ -18,13 +18,11 @@ const Date = () => {
                         </div>
                         <div className='Date-tit2'>
                           <div className='Date-tit3'>
-                            <h2>예식 시간 선택</h2>
+                            <h2>방문 상담 예약</h2>
                             <h3>원하시는 예식일정을 찾기 위해 우선 검색 조건을 선택해주세요.</h3>
                           </div>
                           <ul>
-                            <li><NavLink to="/DateCal"><p>날짜 먼저 선택</p><span className='icon7'></span></NavLink></li>
-                            <li><NavLink to="/Month"><p>요일 먼저 선택</p><span className='icon8'></span></NavLink></li>
-                            <li><NavLink to="/Time"><p>시간 먼저 선택</p><span className='icon9'></span></NavLink></li>
+                            <li><NavLink to="/DateCal"><p>날짜 선택</p><span className='icon7'></span></NavLink></li>
                           </ul>
                         </div>
                       </div>
