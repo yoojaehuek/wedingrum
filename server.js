@@ -32,7 +32,7 @@ app.use(cookieParser());
 // URL-encoded방식 사용할수있게 설정 (.urlencoded()은 x-www-form-urlencoded형태의 데이터를 해석  )
 // json형식의 데이터를 처리할 수 있게 설정 (.json()은 JSON형태의 데이터를 해석.)
 // 자세한 설명: https://kirkim.github.io/javascript/2021/10/16/body_parser.html
-app.use(express.urlencoded({extended:false}));  
+app.use(express.urlencoded({extended:true}));  
 app.use(express.json());
 
 // 브라우저 cors 이슈를 막기 위해 사용(모든 브라우저의 요청을 일정하게 받겠다)
@@ -50,7 +50,7 @@ app.set('port', process.env.PORT);
 //{API}/user 로 접속하면  userRouter 를 실행
 app.use('/user', userRouter);
 app.use('/faq', faqRouter);
-app.use('/product/:id', productRouter);
+app.use('/products', productRouter);
 app.use('/reservation', reservationRouter);
 app.use('/hall',hallRouter);
 app.use('/refresh', refresh);

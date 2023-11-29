@@ -7,12 +7,15 @@ import { API_URL } from '../../config/contansts';
 
 function MyPage2() {
   const [reservation, setReservation] = useState({});
+  const [reservationPlannerName, setReservationPlannerName] = useState("");
 
   useEffect(()=>{
     axios.get(`${API_URL}/reservation`)
     .then(res => {
-      console.log("MyPage2/res: ",res.data);
+      console.log("MyPage2/res: ",res.data.Planner.name);
       setReservation(res.data);
+      setReservationPlannerName(res.data.Planner.name);
+      // console.log(reservation);A
     }).catch(e => {
       console.log("MyPage2/e: ",e);
     })
@@ -29,7 +32,8 @@ function MyPage2() {
             <h1>예약 정보</h1>
             <div className='my3-content'>
               <div className='my2-content-main'>
-                {/* <h2>상담사: {reservation.Planner.name}</h2> */}
+                {console.log("reservation: ",reservation)}
+                <h2>상담사: {reservationPlannerName}</h2>
                 <h2>장소 : {reservation.where1}</h2>
                 <h2>예약 날짜 : {reservation.when}</h2>
                 <h2>예약 시간 : {reservation.time}</h2>
