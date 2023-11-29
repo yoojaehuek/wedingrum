@@ -10,12 +10,13 @@ class ReservationModel {
   }
 
   static async findOneReservationUserId({id}){
-    // console.log("reservationId",id);
+    // console.log("reservationId: ",id);
     const reservation = await Reservation.findOne({
       where: {
         userId: id
       }
     }); //where: {id: asdf} 형태가 들어와야함
+    // console.log(reservation);
     return reservation;
   }
 
@@ -27,7 +28,7 @@ class ReservationModel {
       },
       include: [{
         model: Planner,
-        attributes: ['name'],
+        attributes: ['name', 'phone'],
       }],
     }); //where: {id: asdf} 형태가 들어와야함
     return reservation;

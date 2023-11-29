@@ -1,12 +1,12 @@
 // LeftDate 컴포넌트
 import React from 'react';
 import { useRecoilState } from "recoil";
-import { startDateState, timeState, monthState, pointState, contactChoiceState, themeState } from "../../../recoil/atoms/loginState";
+import { startDateState, timeState, plannerState, pointState, contactChoiceState, themeState } from "../../../recoil/atoms/loginState";
 
-const LeftDate = ({ selectedTime, selectedDay }) => {
+const LeftDate = () => {
   const [startDate, setStartDate] = useRecoilState(startDateState); //useState와 거의 비슷한 사용법
   const [time, setTime] = useRecoilState(timeState); //useState와 거의 비슷한 사용법
-  const [month, setMonth] = useRecoilState(monthState); //useState와 거의 비슷한 사용법
+  const [planner, setPlanner] = useRecoilState(plannerState); //useState와 거의 비슷한 사용법
   const [point, setPoint] = useRecoilState(pointState); //useState와 거의 비슷한 사용법
   const [contactChoice, setcontactChoice] = useRecoilState(contactChoiceState); //useState와 거의 비슷한 사용법
   const [theme, settheme] = useRecoilState(themeState); //useState와 거의 비슷한 사용법
@@ -19,7 +19,7 @@ const LeftDate = ({ selectedTime, selectedDay }) => {
     theme:theme,
     start: startDate,
     time: time, // 선택된 시간을 받아옵니다.
-    month: month, // 선택된 요일을 받아옵니다.
+    month: planner, // 선택된 요일을 받아옵니다.
   };
 
   return (
