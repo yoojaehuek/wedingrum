@@ -30,6 +30,7 @@ const Date4 = () => {
     axios.post(`${API_URL}/reservation`, {plannerId, point, date, time, contactChoice, theme})
       .then(res => {
         console.log(res);
+        alert("예약 성공");
       }).catch(e => {
         console.log("Planners.js/handleReservationClick()/e: ",e);
       })

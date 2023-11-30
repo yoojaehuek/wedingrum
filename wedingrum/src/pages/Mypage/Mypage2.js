@@ -31,6 +31,7 @@ function MyPage2() {
           <div className='my2-content'>
             <h1>예약 정보</h1>
             <div className='my3-content'>
+            {reservationPlanner.length != 0 ? 
               <div className='my2-content-main'>
                 {console.log("reservation: ",reservation)}
                 <h2>상담사: {reservationPlanner[0]}</h2>
@@ -41,10 +42,9 @@ function MyPage2() {
                 <h2>선호하는 연락 방법 : {reservation.contactChoice}</h2>
                 <h2>방문 인원 : {reservation.theme}</h2>
               </div>
-              <div className='my2-map'>
-                  <MapWithRealtimeLocation />
-              </div>
-            </div> 
+            : 
+            <p>예약 내역이 없습니다.</p>}
+            </div>
           </div>
         </div>
       </div>
