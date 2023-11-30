@@ -38,7 +38,7 @@ const Main = () => {
       <div className="main-page2">
         <div className="main-content2">
           <h1>웨딩홀 예약하기</h1>
-          <NavLink to="/Reservations"><li>Search</li></NavLink>
+          <NavLink to="/sangdam2"><li>Reservation</li></NavLink>
         </div>
       </div>
       <div className="main-page3">
