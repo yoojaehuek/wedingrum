@@ -14,7 +14,7 @@ const SangDam2 = () => {
                         </div>
                         <div className='ris-tit4'>
                             <ul>
-                                <li><NavLink to="/SangDam"><p>유선 상담 예약</p><span className='icon4'></span></NavLink></li>
+                                <li><NavLink to="/SangDam3"><p>유선 상담 예약</p><span className='icon4'></span></NavLink></li>
                                 <li><NavLink to="/SangDam"><p>방문 상담<br></br>(1시간,보증금 5만원)</p><span className='icon5'></span></NavLink></li>
                             </ul>
                         </div>
