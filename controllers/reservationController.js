@@ -33,6 +33,17 @@ class ReservationController {
       next(error);
     }
   }
+  static async reservationDelete(req, res, next){
+    try {
+      console.log("req.userId: ", req.userId);
+      const userId = req.userId;
+      const result = await ReservationService.reservationDelete({id: userId});
+      console.log("reservationController.js/reservationDelete()/result: ", result);
+      res.status(200).json(result);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = ReservationController;

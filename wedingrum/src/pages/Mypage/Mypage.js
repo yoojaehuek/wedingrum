@@ -73,11 +73,18 @@ function MyPage() {
 
     // 사용자가 확인을 누를 경우
     if (confirmWithdrawal) {
-      // 탈퇴 로직 실행
-      // ...
+      axios.delete(`${API_URL}/user/delete`)
+      .then(res => {
+        console.log(res);
+        setIsLogin(false);
+        alert("탈퇴 되었습니다.")
+        navigate("/")
+      }).catch(err => {
+        console.log(err);
+      })
     } else {
       // 사용자가 취소를 누른 경우
-      // ...
+      return;
     }
   };
 

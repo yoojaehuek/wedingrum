@@ -10,7 +10,7 @@ class ReservationModel {
   }
 
   static async findOneReservationUserId({id}){
-    // console.log("reservationId: ",id);
+    console.log("reservationId: ",id);
     const reservation = await Reservation.findOne({
       where: {
         userId: id
@@ -34,7 +34,7 @@ class ReservationModel {
     return reservation;
   }
 
-  static async destroyReservation({id}){
+  static async reservationDelete({id}){
     // console.log("reservationId",reservationId);
     const reservation = await Reservation.destroy({
       where: {
