@@ -33,7 +33,8 @@ class UserController {
             console.log("userControll.loginUser: ", user);
             
             if(user.errorMessage){
-                throw new Error(user.errorMessage);
+                // throw new Error(user.errorMessage);
+                res.status(500);
             };
             res.cookie('accessToken', user.accessToken, {
                 httpOnly : true,
@@ -57,6 +58,18 @@ class UserController {
             const id = req.userId;
             console.log(id);
             const user = await UserService.detailUser({id});
+
+            // console.log("res임니다요: ",res);
+            res.status(200).json(user)
+        }catch(error){
+            next(error)
+        }
+    }
+    static async deleteUser(req, res, next){
+        try{
+            const id = req.userId;
+            console.log(id);
+            const user = await UserService.deleteUser({id});
 
             // console.log("res임니다요: ",res);
             res.status(200).json(user)

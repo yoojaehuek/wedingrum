@@ -34,8 +34,8 @@ class UserService{
 
 		const user = await UserModel.findOneUserId({ id });
 		if (!user) {
-			const errorMessage = "해당 id는 가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
-			return errorMessage;
+			user.errorMessage = "해당 id는 가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
+			return user;
 		}
 
 		// Combine entered password with stored salt
@@ -92,6 +92,13 @@ class UserService{
 		};
 
 		return userInfo;
+	}
+
+	static async deleteUser({id}){
+		const user = await UserModel.destroyUser({id});
+		// console.log({myId});
+
+		return user;
 	}
 
 }

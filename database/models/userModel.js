@@ -17,11 +17,11 @@ class UserModel {
     return user;
   }
 
-  static async destroyUser({userId}){
+  static async destroyUser({id}){
     // console.log("userId",userId);
     const user = await User.destroy({
       where: {
-        id: userId
+        id: id
       }
     });//where: {id: asdf} 형태가 들어와야함
     return user;

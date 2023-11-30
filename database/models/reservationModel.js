@@ -34,7 +34,7 @@ class ReservationModel {
     return reservation;
   }
 
-  static async destroyReservation({id}){
+  static async reservationDelete({id}){
     // console.log("reservationId",reservationId);
     const reservation = await Reservation.destroy({
       where: {

@@ -5,6 +5,7 @@ const refresh = require('./refresh');
 
 router.post('/', refresh, ReservationController.addReservation);
 router.get('/', refresh, ReservationController.getReservationByUserId);
+router.delete('/delete', refresh, ReservationController.reservationDelete);
 // router.get('/mypage', authJWT, UserController.)
 
 module.exports = router;

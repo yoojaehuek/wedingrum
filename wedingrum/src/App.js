@@ -31,6 +31,7 @@ import Holl from './pages/Reservations/Reservations/Holl';
 import Ceremony from './pages/Reservations/Information';
 import Customer from './pages/Customer/Customer';
 import Theme from './pages/Reservations/Reservations/Theme';
+import SangDam3 from "./pages/Reservations/SangDam/SangDam3"
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
         <Route path='/Holl' element={<Holl />} />
         <Route path='/ceremony' element={<Ceremony />} />
         <Route path='/theme' element={<Theme />} />
+        <Route path='/SangDam3' element={<SangDam3 />} />
       </Routes>
       <Footer />
     </div>
