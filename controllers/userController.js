@@ -64,5 +64,21 @@ class UserController {
             next(error)
         }
     }
+    /** 회원정보 수정 */
+    static async setUser(req, res, next){
+        try{
+            const id = req.currentUserId;
+            const {...props} = req.body;
+            const toUpdate = {...props};
+
+            const updateUser = await UserService.setUser({id, toUpdate});
+            console.log("유저컨트롤러/업데이트 값: ",updateUser)
+
+            //해당 사용자id로 사용자 정보를 db에서 찾아 업데이트 함 , 업데이트 요소가 없을 시 생략
+            res.status(200).send("수정되었습니다");
+        }catch(error){
+            next(error)
+        }
+    }
 }
 module.exports = UserController;

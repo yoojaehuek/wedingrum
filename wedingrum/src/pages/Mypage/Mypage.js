@@ -19,7 +19,7 @@ function MyPage() {
     id: '',
     password: '',
     confirmPassword: '',
-    email: '',
+    phone: '',
   });
   const getUser = async () =>{
     console.log("Mypage.js/getUser()들어옴");
@@ -60,9 +60,15 @@ function MyPage() {
     });
   };
 
-  const handleUpdateProfile = () => {
-    // 여기에 실제 회원정보 업데이트 로직을 추가하세요.
+  const handleUpdateProfile = async ({}) => {
     // formData에는 입력된 정보가 들어 있습니다.
+
+    try{
+      const user = await axios.put(`${API_URL}/user/update`);
+    }catch{
+
+    }
+
     console.log('Updated Profile:', formData);
   };
 
@@ -108,7 +114,7 @@ function MyPage() {
                       <TextField fullWidth label="비밀번호 확인" variant="outlined" required type="password" name="confirmPassword" onChange={handleInputChange} />
                     </Box>
                     <Box mt={2}>
-                      <TextField fullWidth label="이메일" variant="outlined" required type="email" name="email" onChange={handleInputChange} />
+                      <TextField fullWidth label="전화번호" variant="outlined" required type="text" name="phone" onChange={handleInputChange} />
                     </Box>
                     <Box mt={2} mb={2}>
                       <Button fullWidth variant="contained" color="primary"  type="button" onClick={handleUpdateProfile}>

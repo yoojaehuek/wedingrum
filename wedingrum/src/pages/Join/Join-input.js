@@ -18,10 +18,8 @@ const Joininput = () => {
         const companionName = e.target.companionName.value
         const companionPhone = e.target.companionPhone.value
 
-        // pwd === confirmPwd && id !== "" && pwd !== "" && confirmPwd !== "" && name !== "" && phone !== "" && gender !== ""&& birth !==""
-        // && companionPhone !==""&&companionName!==""
-
-        if(true){
+        if(pwd === confirmPwd && id !== "" && pwd !== "" && confirmPwd !== "" && name !== "" && phone !== "" && gender !== ""&& birth !==""
+        && companionPhone !==""&&companionName!==""){
             console.log("g c c : ",gender, companionName, companionPhone);
             await axios.post(`${API_URL}/user/join`,{name, id, pwd, phone, birth, gender, companionName, companionPhone})
             .then(() =>{
@@ -37,10 +35,9 @@ const Joininput = () => {
     };
 
     return (
-<form id="join-input-form" onSubmit={onsubmitJoin} >
-    <h3>MEMBER</h3>
-    <h1>회원가입</h1>
-
+    <form id="join-input-form" onSubmit={onsubmitJoin} >
+        <h3>MEMBER</h3>
+        <h1>회원가입</h1>
         <ul id='join-input'>
             <li>
                 <div className='input-box'>
@@ -81,10 +78,8 @@ const Joininput = () => {
             <li>
                 <button type="submit" id='join-btn'>회원가입</button>
             </li>
-
         </ul>
-
-</form>
+    </form>
     );
 }
 //1

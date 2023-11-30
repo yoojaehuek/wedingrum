@@ -94,5 +94,26 @@ class UserService{
 		return userInfo;
 	}
 
+
+	static async setUser({id, toUpdate}){
+		let user = await UserModel.findById(id);
+
+		if(toUpdate.id){//id가 수정되면
+			const fieldToUpdate = "name";
+			const newValue = toUpdate.name;
+			user = await UserModel.update({_id: id, fieldToUpdate, newValue});
+		}
+		if(toUpdate.pwd){//pwd 가 수정되면
+			const fieldToUpdate = "pwd";
+			const newValue = toUpdate.pwd;
+			user = await UserModel.update({_id: id, fieldToUpdate, newValue});
+		}
+		if(toUpdate.phone){//phone 가 수정되면
+			const fieldToUpdate = "phone";
+			const newValue = toUpdate.phone;
+			user = await UserModel.update({_id: id, fieldToUpdate, newValue});
+		}
+		return user;
+	}
 }
 module.exports = UserService;
