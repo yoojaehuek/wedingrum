@@ -7,14 +7,14 @@ import { API_URL } from '../../config/contansts';
 
 function MyPage2() {
   const [reservation, setReservation] = useState({});
-  const [reservationPlannerName, setReservationPlannerName] = useState("");
+  const [reservationPlanner, setReservationPlanner] = useState([]);
 
   useEffect(()=>{
     axios.get(`${API_URL}/reservation`)
     .then(res => {
       console.log("MyPage2/res: ",res.data.Planner.name);
       setReservation(res.data);
-      setReservationPlannerName(res.data.Planner.name);
+      setReservationPlanner([res.data.Planner.name, res.data.Planner.phone]);
       // console.log(reservation);A
     }).catch(e => {
       console.log("MyPage2/e: ",e);
@@ -31,19 +31,20 @@ function MyPage2() {
           <div className='my2-content'>
             <h1>예약 정보</h1>
             <div className='my3-content'>
+            {reservationPlanner.length != 0 ? 
               <div className='my2-content-main'>
                 {console.log("reservation: ",reservation)}
-                <h2>상담사: {reservationPlannerName}</h2>
-                <h2>장소 : {reservation.where1}</h2>
-                <h2>예약 날짜 : {reservation.when}</h2>
-                <h2>예약 시간 : {reservation.time}</h2>
-                {/* <h2>식장 전화번호 :</h2> */}
-                {/* <h2>주차장 안내:</h2> */}
+                <h2>상담사: {reservationPlanner[0]}</h2>
+                <h2>상담사 연락처: {reservationPlanner[1]}</h2>
+                <h2>장소 : {reservation.point}</h2>
+                <h2>방문일 : {reservation.date}</h2>
+                <h2>희망 시간대 : {reservation.time}</h2>
+                <h2>선호하는 연락 방법 : {reservation.contactChoice}</h2>
+                <h2>방문 인원 : {reservation.theme}</h2>
               </div>
-              <div className='my2-map'>
-                  <MapWithRealtimeLocation />
-              </div>
-            </div> 
+            : 
+            <p>예약 내역이 없습니다.</p>}
+            </div>
           </div>
         </div>
       </div>

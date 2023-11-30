@@ -1,17 +1,19 @@
 const ReservationModel = require('../database/models/reservationModel');
+const PlannerModel = require('../database/models/plannerModel');
 
 class ReservationService{
 
-  static async addReservation({plannerId, when, time, where1, userId}){
+  static async addReservation({plannerId, point, date, time, contactChoice, theme,  userId}){
     
     //이미 예약한 유저면 막기
-    const reservation = ReservationModel.findOneReservationUserId({ id: userId });
-    if (reservation) {
+    const reservation = await ReservationModel.findOneReservationUserId({ id: userId });
+    // console.log(reservation);
+    if (reservation != null) {
       const errorMessage = "이미 예약하신 내역이 있습니다.";
-      return { errorMessage };
+      return { errorMessage };      
     }
 
-    const newReservation = {plannerId, when, time, where1, userId};
+    const newReservation = {plannerId, point, date, time, contactChoice, theme,  userId};
 		
     //예약테이블에 INSERT INTO
 		const createNewReservation = await ReservationModel.createReservation({newReservation});

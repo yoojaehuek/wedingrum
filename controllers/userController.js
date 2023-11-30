@@ -54,9 +54,9 @@ class UserController {
     }
     static async detailUser(req, res, next){
         try{
-            const myId = "22";
-            console.log(myId);
-            const user = await UserService.detailUser({myId});
+            const id = req.userId;
+            console.log(id);
+            const user = await UserService.detailUser({id});
 
             // console.log("res임니다요: ",res);
             res.status(200).json(user)

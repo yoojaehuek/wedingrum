@@ -72,9 +72,9 @@ class UserService{
 
 	}
 
-	static async detailUser({myId}){
-		const user = await UserModel.findById({myId});
-
+	static async detailUser({id}){
+		const user = await UserModel.findOneUserId({id});
+		// console.log({myId});
 		const name = user.name;
 		const user_id = user.id;
 		const phone = user.phone;

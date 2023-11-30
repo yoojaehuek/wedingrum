@@ -92,7 +92,7 @@ const ProdDetail = () => {
                 <div className="detail" key={index}>
                   <p>{detailType[index]}</p>
                   <span className="description">{detailDescription[index]}</span>
-                  <span className="price">{detailPrice[index]}원</span>
+                  <span className="price">{detailPrice[index].toLocaleString()}원</span>
                 </div>
               )
               // console.log(`반복테스크`, detailType[index]);

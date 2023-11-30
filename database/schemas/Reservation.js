@@ -5,7 +5,8 @@ class Reservation extends Sequelize.Model {
     static initiate(sequelize) {
         Reservation.init({
         id:{
-            type: Sequelize.STRING(20),
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
             primaryKey: true,
             allowNull: false,
             comment: "예약 ID (기본키)",
@@ -20,20 +21,30 @@ class Reservation extends Sequelize.Model {
             allowNull: false,
             comment: "플레너 ID (참조키) ",
         },
-        when: {
+        point:{
+            type:Sequelize.STRING(20),
+            allowNull:false,
+            comment:"지점"
+        },
+        date: {
             type: Sequelize.STRING(20),
             allowNull: false,
-            comment: "예약일",
+            comment: "방문일",
         },
         time: {
             type: Sequelize.STRING(20),
             allowNull: false,
-            comment: "예약시간",
+            comment: "희망 시간대",
         },
-        where1:{
-            type:Sequelize.STRING(20),
-            allowNull:false,
-            comment:"예약장소"
+        contactChoice: {
+            type: Sequelize.STRING(20),
+            allowNull: false,
+            comment: "선호하는 연락 방법",
+        },
+        theme: {
+            type: Sequelize.STRING(20),
+            allowNull: false,
+            comment: "방문 인원",
         },
         }, {
         sequelize,
