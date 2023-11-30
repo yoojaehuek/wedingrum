@@ -6,11 +6,11 @@ class ReservationService{
   static async addReservation({plannerId, point, date, time, contactChoice, theme,  userId}){
     
     //이미 예약한 유저면 막기
-    const reservation = ReservationModel.findOneReservationUserId({ id: userId });
-    
-    if (reservation) {
+    const reservation = await ReservationModel.findOneReservationUserId({ id: userId });
+    // console.log(reservation);
+    if (reservation != null) {
       const errorMessage = "이미 예약하신 내역이 있습니다.";
-      return { errorMessage };
+      return { errorMessage };      
     }
 
     const newReservation = {plannerId, point, date, time, contactChoice, theme,  userId};
