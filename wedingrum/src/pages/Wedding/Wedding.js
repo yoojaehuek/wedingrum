@@ -11,11 +11,36 @@ import {NavLink, useParams} from 'react-router-dom';
 
 function Wedding() {
 
+  // 화면 크기에 따른 상태 설정
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    // 윈도우 크기 변경 감지 함수
+    const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+    };
+
+    // 리사이즈 이벤트 리스너 등록
+    window.addEventListener('resize', handleResize);
+
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   let weddings = {}
   console.log("weddings: ", weddings);
 
   let {id} = useParams();
   console.log("category: ",id);
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    // 원하는 동작 수행
+  };
+
+
   switch (id) {
     case "1":
       weddings={
@@ -227,150 +252,151 @@ function Wedding() {
       break;
   }
 
-
   return (
-    <div className="wedding_container">     
-      <div class="contents">
-        <div class="contents_header">
-          <div class="back-image" 
-            style={{
-            backgroundImage: `url(${weddings.back_img})`
-            }}>
-            <div class="big_tit">
-              <h3>WEDDING</h3>
-              <h1>{weddings.name}</h1>
+    <div className={`wedding_container ${isMobile ? 'mobile' : ''}`}>
+      <div className="wedding_container">     
+        <div class="contents">
+          <div class="contents_header">
+            <div class="back-image" 
+              style={{
+              backgroundImage: `url(${weddings.back_img})`
+              }}>
+              <div class="big_tit">
+                <h3>WEDDING</h3>
+                <h1>{weddings.name}</h1>
+              </div>
             </div>
+            
           </div>
           
-        </div>
-        
-        <div class="main">
-          <nav>
-            <ul>
-              <li><NavLink to='/wedding/1' class="active">아펠가모 잠실</NavLink></li>
-              <li><NavLink to='/wedding/2'>아펠가모 반포</NavLink></li>
-              <li><NavLink to='/wedding/3'>아펠가모 평택</NavLink></li>
-              <li><NavLink to='/wedding/4'>아펠가모 선릉</NavLink></li>
-              <li><NavLink to='/wedding/5'>아펠가모 공덕</NavLink></li>
-            </ul>
-          </nav>
-  
-          <div class="inner">
-            <div class="center_first">
-              <h1>
-                <span>{weddings.point_en}</span>
-                {weddings.point}
-              </h1>
-            </div>
-  
-            <div class="center_seccond">
-              <h3>{weddings.point_main}</h3>
-              <p class="pdt20">{weddings.point_text}</p>
-            </div>
+          <div class="main">
+            <nav>
+              <ul>
+                <li><NavLink to='/wedding/1' class="active">아펠가모 잠실</NavLink></li>
+                <li><NavLink to='/wedding/2'>아펠가모 반포</NavLink></li>
+                <li><NavLink to='/wedding/3'>아펠가모 평택</NavLink></li>
+                <li><NavLink to='/wedding/4'>아펠가모 선릉</NavLink></li>
+                <li><NavLink to='/wedding/5'>아펠가모 공덕</NavLink></li>
+              </ul>
+            </nav>
     
-            <div class="center_third"
-              style={{
-                backgroundImage: `url(${weddings.information_img})`,
-                }}
-              >
-              <div id="nemo">
-                <div class="information">
-                  <h2>Information</h2>
-                  <p>{weddings.information_p}</p>
-                </div>
+            <div class="inner">
+              <div class="center_first">
+                <h1>
+                  <span>{weddings.point_en}</span>
+                  {weddings.point}
+                </h1>
               </div>
-            </div>
-          </div>
-
-          <div class="center_fourth">
-            <div class="slidebox">
-              <div class="slide">
-                <Swiper
-                  spaceBetween={30}
-                  centeredSlides={true}
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
+    
+              <div class="center_seccond">
+                <h3>{weddings.point_main}</h3>
+                <p class="pdt20">{weddings.point_text}</p>
+              </div>
+      
+              <div class="center_third"
+                style={{
+                  backgroundImage: `url(${weddings.information_img})`,
                   }}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  navigation={true}
-                  modules={[Autoplay, Pagination, Navigation]}
-                  className="mySwiper"
                 >
-                  <SwiperSlide><img src={weddings.SwiperSlide1}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide2}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide3}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide4}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide5}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide6}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide7}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide8}/></SwiperSlide>
-                  <SwiperSlide><img src={weddings.SwiperSlide9}/></SwiperSlide>
-                </Swiper>
+                <div id="nemo">
+                  <div class="information">
+                    <h2>Information</h2>
+                    <p>{weddings.information_p}</p>
+                  </div>
+                </div>
               </div>
             </div>
-            {/* <div class="l_arrow" role='button' aria-label='Previous slide'>{'<'}</div>
-            <div class="r_arrow" role='button' aria-label='Next slide'>{'>'}</div> */}
-            <div class="gallery">
-              <div class="sub_tit">
-                <h2>{weddings.sub_tit}</h2>
-                <div class="gallery_btn">
-                  <a class="btn_boline">All</a>
-                  <a class="btn_boline">Wedding Hall</a>
-                  <a class="btn_boline">Bridal Room</a>
-                  <a class="btn_boline">Courtesy Room</a>
-                  <a class="btn_boline">Banquet & Buffet</a>
-                  <a class="btn_boline">Others</a>
+  
+            <div class="center_fourth">
+              <div class="slidebox">
+                <div class="slide">
+                  <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    }}
+                    pagination={{
+                      clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper"
+                  >
+                    <SwiperSlide><img src={weddings.SwiperSlide1}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide2}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide3}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide4}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide5}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide6}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide7}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide8}/></SwiperSlide>
+                    <SwiperSlide><img src={weddings.SwiperSlide9}/></SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+              {/* <div class="l_arrow" role='button' aria-label='Previous slide'>{'<'}</div>
+              <div class="r_arrow" role='button' aria-label='Next slide'>{'>'}</div> */}
+              <div class="gallery">
+                <div class="sub_tit">
+                  <h2>{weddings.sub_tit}</h2>
+                  <div class="gallery_btn">
+                    <a href="#" onClick={handleClick} class="btn_boline">All</a>
+                    <a href="#" onClick={handleClick} class="btn_boline">Wedding Hall</a>
+                    <a href="#" onClick={handleClick} class="btn_boline">Bridal Room</a>
+                    <a href="#" onClick={handleClick} class="btn_boline">Courtesy Room</a>
+                    <a href="#" onClick={handleClick} class="btn_boline">Banquet & Buffet</a>
+                    <a href="#" onClick={handleClick} class="btn_boline">Others</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="foooter backimg03"
-          style={{
-            backgroundImage: `url(${weddings.footer_img})`
-            }}
-          >
-          <div class="backblack">
-            <div class="foooter_txt">
-              <div class="tit">
-                <h1>Location</h1>
-              </div>
-              <div class="txt">
-                <p class="txt_01">{weddings.footer_text_01}</p>
-                <p class="txt_02">{weddings.footer_text_02}</p>
-                <p class="txt_03">{weddings.footer_text_03}
-                  <span class="txt_s01">{weddings.footer_text_03_01}</span>
-                </p>
-                <p class="txt_04">
-                  <span class="txt_s01 pdt00">{weddings.footer_text_04_01}</span>
-                  {weddings.footer_text_04}
-                </p>
-                {weddings.footer_text_05_01 ?
-                    <p class="txt_05">
-                      <span class="txt_s01 pdt00">{weddings.footer_text_05_span01}</span>
-                      {weddings.footer_text_05_01}
-                      <span class="txt_s01">{weddings.footer_text_05_span02}</span>
-                      {weddings.footer_text_05_02}
-                      <span class="txt_s01">{weddings.footer_text_05_span03}</span>
-                      {weddings.footer_text_05_03}
-                    </p>
-                  :
-                    <></>
-                }
+  
+          <div class="foooter backimg03"
+            style={{
+              backgroundImage: `url(${weddings.footer_img})`
+              }}
+            >
+            <div class="backblack">
+              <div class="foooter_txt">
+                <div class="tit">
+                  <h1>Location</h1>
+                </div>
+                <div class="txt">
+                  <p class="txt_01">{weddings.footer_text_01}</p>
+                  <p class="txt_02">{weddings.footer_text_02}</p>
+                  <p class="txt_03">{weddings.footer_text_03}
+                    <span class="txt_s01">{weddings.footer_text_03_01}</span>
+                  </p>
+                  <p class="txt_04">
+                    <span class="txt_s01 pdt00">{weddings.footer_text_04_01}</span>
+                    {weddings.footer_text_04}
+                  </p>
+                  {weddings.footer_text_05_01 ?
+                      <p class="txt_05">
+                        <span class="txt_s01 pdt00">{weddings.footer_text_05_span01}</span>
+                        {weddings.footer_text_05_01}
+                        <span class="txt_s01">{weddings.footer_text_05_span02}</span>
+                        {weddings.footer_text_05_02}
+                        <span class="txt_s01">{weddings.footer_text_05_span03}</span>
+                        {weddings.footer_text_05_03}
+                      </p>
+                    :
+                      <></>
+                  }
+                </div>
               </div>
             </div>
-          </div>
-          <div class="map_area">
-            <div class="map">
-            <MapWithRealtimeLocation props={{ position: weddings.position, popup: weddings.popup }}/>
-            </div>
-            <div class="map_btn">
-              <a href="/" class="btn_down">약도 다운로드</a>
-              <a href="/" class="btn_down">지도 크게보기</a>
+            <div class="map_area">
+              <div class="map">
+              <MapWithRealtimeLocation props={{ position: weddings.position, popup: weddings.popup }}/>
+              </div>
+              <div class="map_btn">
+                <a href="#" onClick={handleClick} class="btn_down">약도 다운로드</a>
+                <a href="#" onClick={handleClick} class="btn_down">지도 크게보기</a>
+              </div>
             </div>
           </div>
         </div>
