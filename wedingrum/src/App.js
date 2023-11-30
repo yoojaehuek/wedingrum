@@ -20,16 +20,17 @@ import Joininput from './pages/Join/Join-input';
 import Invitation from './pages/Mypage/Mypage3';
 import About from './pages/About/About/About';
 import About1 from './pages/About/About1/About1';
-import Reservations from './pages/Reservations/Reservations';
+import ContactChoice from './pages/Reservations/contactChoice';
 import SangDam from './pages/Reservations/SangDam';
 import SangDam2 from './pages/Reservations/SangDam/SangDam2';
 import Date from './pages/Reservations/Reservations/Date';
 import DateCal from './pages/Reservations/Reservations/DateCal';
 import Time from './pages/Reservations/Reservations/Time';
-import Month from './pages/Reservations/Reservations/Month';
+import Planners from './pages/Reservations/Reservations/Planners';
 import Holl from './pages/Reservations/Reservations/Holl';
 import Ceremony from './pages/Reservations/Information';
 import Customer from './pages/Customer/Customer';
+import Theme from './pages/Reservations/Reservations/Theme';
 
 function App() {
   return (
@@ -54,15 +55,16 @@ function App() {
         <Route path='/join' element={<Join />} />
         <Route path='/join-input' element={<Joininput />} />
         <Route path='/faq' element={<Customer />} />
-        <Route path='/Reservations' element={<Reservations />} />
+        <Route path='/contactChoice' element={<ContactChoice />} />
         <Route path='/SangDam' element={<SangDam />} />
         <Route path='/SangDam2' element={<SangDam2 />} />
         <Route path='/Date' element={<Date />} />
         <Route path='/Time' element={<Time />} />
-        <Route path='/Month' element={<Month />} />
+        <Route path='/Planners' element={<Planners />} />
         <Route path='/DateCal' element={<DateCal />} />
         <Route path='/Holl' element={<Holl />} />
         <Route path='/ceremony' element={<Ceremony />} />
+        <Route path='/theme' element={<Theme />} />
       </Routes>
       <Footer />
     </div>

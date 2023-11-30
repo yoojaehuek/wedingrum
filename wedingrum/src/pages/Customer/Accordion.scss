@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   border-top: solid 2px black;
-
+  width: 60vw;
 }
 
 .AccordionContainer2 {
@@ -33,12 +33,6 @@
 
 
 .description {
-  max-height: 500px; /* 원하는 높이로 조절 */
-  overflow: auto; /* 넘치는 내용이 있을 경우 스크롤 생성 */
-
-}
-
-.dectption {
   max-height: 500px; /* 원하는 높이로 조절 */
   overflow: auto; /* 넘치는 내용이 있을 경우 스크롤 생성 */
 }
