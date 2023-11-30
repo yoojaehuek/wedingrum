@@ -58,7 +58,7 @@ const Main = () => {
               <li><NavLink to=''>선릉점</NavLink></li>
               <li><NavLink to=''>공덕점</NavLink></li>
             </ul>
-            <MapWithRealtimeLocation/>
+            <MapWithRealtimeLocation props={{ position: [37.516021856867816, 127.09954578154682], popup: "잠실점입니다." }}/>
           </div>
         </section>
       </div>
