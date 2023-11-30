@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { loginState } from "../../recoil/atoms/loginState";
 
+
 function MyPage() {
   console.log('마이페이지 실행됨');
   const navigate = useNavigate();
@@ -66,9 +67,24 @@ function MyPage() {
     console.log('Updated Profile:', formData);
   };
 
-  const user = { name: '임헌성', spouse: '윈터', age: '25', phone: '000-0000-0000', bh: '1999-10-08' }
-  const pay = { name: '임헌성', prodname:'A패키지', price: '1000만원', how:'카카오페이', map: '잠실점', memo: '화려하게 부탁드립니다' }
-  const cons = { name: '임헌성', consname:'김준녕', day: '2023-11-16', prodname:'A패키지', memo: '웨딩카 벤츠로 부탁드립니다' }
+  const handleWithdrawal = () => {
+    // 버튼 클릭 시 알림 창 띄우기
+    const confirmWithdrawal = window.confirm("탈퇴하시겠습니까?");
+
+    // 사용자가 확인을 누를 경우
+    if (confirmWithdrawal) {
+      // 탈퇴 로직 실행
+      // ...
+    } else {
+      // 사용자가 취소를 누른 경우
+      // ...
+    }
+  };
+
+
+  // const user = { name: '임헌성', spouse: '윈터', age: '25', phone: '000-0000-0000', bh: '1999-10-08' }
+  // const pay = { name: '임헌성', prodname:'A패키지', price: '1000만원', how:'카카오페이', map: '잠실점', memo: '화려하게 부탁드립니다' }
+  // const cons = { name: '임헌성', consname:'김준녕', day: '2023-11-16', prodname:'A패키지', memo: '웨딩카 벤츠로 부탁드립니다' }
   
 
   return (
@@ -118,24 +134,11 @@ function MyPage() {
                   </Container>
                 </form>
               )}
-              {selectedMenuItem === '결제 내역' && (
-                <>
-                  <h2>이름 : {pay.name}</h2>
-                  <h2>상품 이름 : {pay.prodname}</h2>
-                  <h2>가격 : {pay.price}</h2>
-                  <h2>결혼식 장소 : {pay.map}</h2>
-                  <h2>결제 방법 (신용카드, 계좌이체, 결제 앱 등) : {pay.how} </h2>
-                  <h2>요청사항 : {pay.memo}</h2>
-                </>
-              )}
-              {selectedMenuItem === '상담 예약 내역' && (
-                <>
-                  <h2>이름 : {cons.name}</h2>
-                  <h2>상담사 이름 : {cons.consname}</h2>
-                  <h2>상담 날짜 : {cons.day}</h2>
-                  <h2>상품 이름 : {cons.prodname}</h2>
-                  <h2>요청사항 : {cons.memo}</h2>
-                </>
+              {selectedMenuItem === '회원 탈퇴' && (
+                <div className='goodbye'>
+                  <h2>탈퇴 하시면 개인정보는 1년간 유지 후 폐기됩니다.<br></br>탈퇴를 원하시면 아래 버튼을 눌러주세요.</h2>
+                  <button onClick={handleWithdrawal}>탈퇴</button>
+                </div>
               )}
             </div>
           </div>
