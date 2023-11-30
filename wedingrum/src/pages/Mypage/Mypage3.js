@@ -18,7 +18,6 @@ const Mypage3 = () => {
         <div className={`invitation-container ${selectedButton === 'button1' ? 'style1' : selectedButton === 'button2' ? 'style2' : 'style3'}`}>
           <h1>결혼식 청첩장</h1>
           <p>이 특별한 순간에 여러분을 초대합니다.</p>
-
           <div className="details">
             <p className="date">날짜: 2023년 12월 1일</p>
             <p>시간: 오후 3시</p>

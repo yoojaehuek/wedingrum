@@ -61,7 +61,7 @@ const Header = () => {
         <div className='header-item'>
           <ul>
             <li>
-              <NavLink to='/reservations'>RESERVATIONS</NavLink>
+              <NavLink to='/sangdam2'>RESERVATIONS</NavLink>
               <ul id='sub-menu'>
                 {/* <li><NavLink to='/reservations'>예식예약</NavLink></li> */}
                 <li><NavLink to='/sangdam2'>상담예약</NavLink></li>
