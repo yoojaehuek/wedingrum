@@ -10,7 +10,7 @@ class ReservationModel {
   }
 
   static async findOneReservationUserId({id}){
-    // console.log("reservationId: ",id);
+    console.log("reservationId: ",id);
     const reservation = await Reservation.findOne({
       where: {
         userId: id

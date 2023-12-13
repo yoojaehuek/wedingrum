@@ -6,6 +6,6 @@ const refresh = require('./refresh');
 router.post('/join', UserController.addUser);
 router.post('/login', UserController.loginUser);
 router.get('/mypage', refresh, UserController.detailUser);
-router.put('/update',UserController.setUser);
+router.put('/update', refresh, UserController.setUser);
 
 module.exports = router;

@@ -3,6 +3,7 @@ const crypto = require('crypto');
 const redisClient = require("../utils/redis.utils");
 require('dotenv').config();
 const { makeRefreshToken, makeAccessToken } = require('../utils/token');
+const { log } = require('util');
 
 
 class UserService{
@@ -96,21 +97,23 @@ class UserService{
 
 
 	static async setUser({id, toUpdate}){
-		let user = await UserModel.findById(id);
-
-		if(toUpdate.id){//id가 수정되면
+		console.log("id: ", id);
+		console.log("toUpdate: ", toUpdate.formData.name);
+		let user = await UserModel.findOneUserId({id});
+		
+		if(toUpdate.formData.name){//id가 수정되면
 			const fieldToUpdate = "name";
-			const newValue = toUpdate.name;
+			const newValue = toUpdate.formData.name;
 			user = await UserModel.update({_id: id, fieldToUpdate, newValue});
 		}
-		if(toUpdate.pwd){//pwd 가 수정되면
+		if(toUpdate.formData.pwd){//pwd 가 수정되면
 			const fieldToUpdate = "pwd";
-			const newValue = toUpdate.pwd;
+			const newValue = toUpdate.formData.pwd;
 			user = await UserModel.update({_id: id, fieldToUpdate, newValue});
 		}
-		if(toUpdate.phone){//phone 가 수정되면
+		if(toUpdate.formData.phone){//phone 가 수정되면
 			const fieldToUpdate = "phone";
-			const newValue = toUpdate.phone;
+			const newValue = toUpdate.formData.phone;
 			user = await UserModel.update({_id: id, fieldToUpdate, newValue});
 		}
 		return user;

@@ -15,12 +15,15 @@ function MyPage() {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useRecoilState(loginState); //useState와 거의 비슷한 사용법
   const [selectedMenuItem, setSelectedMenuItem] = useState('내 정보');
-  const [formData, setFormData] = useState({
-    id: '',
-    password: '',
-    confirmPassword: '',
-    phone: '',
-  });
+  const [updateName , setUpdateName] = useState('');
+  const [updatePwd , setUpdatePwd] = useState('');
+  const [updatePhone , setUpdatePhone] = useState('');
+  // const [formData, setFormData] = useState({
+  //   id: '',
+  //   password: '',
+  //   confirmPassword: '',
+  //   phone: '',
+  // });
   const getUser = async () =>{
     console.log("Mypage.js/getUser()들어옴");
     const user = await axios.get(`${API_URL}/user/mypage`);
@@ -53,21 +56,22 @@ function MyPage() {
     setSelectedMenuItem(menuItem);
   };
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleUpdateProfile = async ({}) => {
+  /**수정버튼을 클릭하면 실행하는 함수 */
+  const handleUpdateProfile = async () => {
     // formData에는 입력된 정보가 들어 있습니다.
+    const formData = {};
+    formData.name = updateName;
+    formData.pwd = updatePwd;
+    formData.phone = updatePhone;
+    console.log(formData);
 
-    try{
-      const user = await axios.put(`${API_URL}/user/update`);
-    }catch{
+    axios.put(`${API_URL}/user/update`, {formData})
+    .then(res => {
+      console.log(res);
+    }).catch(e => {
+      console.log(e);
+    })
 
-    }
 
     console.log('Updated Profile:', formData);
   };
@@ -105,16 +109,16 @@ function MyPage() {
                     <Box mt={3}>
                     </Box>
                     <Box mt={2}>
-                      <TextField fullWidth label="아이디" variant="outlined" required name="id" onChange={handleInputChange} />
+                      <TextField fullWidth label="이름" variant="outlined" required name="name" onChange={ e => setUpdateName(e.target.value)} />
                     </Box>
                     <Box mt={2}>
-                      <TextField fullWidth label="비밀번호" variant="outlined" required type="password" name="password" onChange={handleInputChange} />
+                      <TextField fullWidth label="비밀번호" variant="outlined" required type="password" name="password" onChange={ e => setUpdatePwd(e.target.value)} />
                     </Box>
                     <Box mt={2}>
-                      <TextField fullWidth label="비밀번호 확인" variant="outlined" required type="password" name="confirmPassword" onChange={handleInputChange} />
+                      <TextField fullWidth label="비밀번호 확인" variant="outlined" required type="password" name="confirmPassword" onChange={ e => setUpdatePwd(e.target.value)} />
                     </Box>
                     <Box mt={2}>
-                      <TextField fullWidth label="전화번호" variant="outlined" required type="text" name="phone" onChange={handleInputChange} />
+                      <TextField fullWidth label="전화번호" variant="outlined" required type="text" name="phone" onChange={ e => setUpdatePhone(e.target.value)} />
                     </Box>
                     <Box mt={2} mb={2}>
                       <Button fullWidth variant="contained" color="primary"  type="button" onClick={handleUpdateProfile}>

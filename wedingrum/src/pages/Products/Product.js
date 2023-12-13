@@ -31,9 +31,6 @@ const Product = () => {
         console.error('데이터를 불러오는 도중 에러 발생:', error);
       }
     };
-
-    
-
     fetchData();
   }, [id]);
 

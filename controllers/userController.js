@@ -67,10 +67,12 @@ class UserController {
     /** 회원정보 수정 */
     static async setUser(req, res, next){
         try{
-            const id = req.currentUserId;
-            const {...props} = req.body;
-            const toUpdate = {...props};
-
+            console.log(req.body);
+            const id = req.userId;
+            const toUpdate = req.body;
+            // console.log(props);
+            // const toUpdate = {...props};
+            console.log("toupdatae:",toUpdate);
             const updateUser = await UserService.setUser({id, toUpdate});
             console.log("유저컨트롤러/업데이트 값: ",updateUser)
 

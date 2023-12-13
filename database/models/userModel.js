@@ -28,11 +28,15 @@ class UserModel {
   }
 
   static async update({_id, fieldToUpdate, newValue}){
-    const filter = { _id };
+    console.log(_id)
+    const filter = { id: _id };
+    console.log("filter: ",filter);
     const update = { [fieldToUpdate]: newValue };
+    console.log("update: ",update);
     const option = {returnOriginal: false};// 이렇게 하면 업데이트 된 데이터를 리턴받음
 
-    const updateUser = await User.findOneAndUpdate(filter, update, option);
+    // const updateUser = await User.update(update, filter, option);
+    const updateUser = await User.update({},{where:{id:filter}});
     console.log("유저모델/업데이트 된 값: ",updateUser);
 
     return updateUser;
