@@ -34,27 +34,40 @@ For building and running the application you need :
 
 - [Node.js 18.16.1](https://nodejs.org/en)
 - [npm 9.7.2](https://www.npmjs.com/)
+- MariaDB 10.3.11
 
 Installation
 
 ```bash
-git clone https://github.com/KJH1225/wedingrum.git
-cd weddingrum
+https://github.com/KJH1225/wedingrum.git
 ```
 
-Front
+Front (popol3/wedingrum/)에서
 
 ```
-cd weddingrum
-npm install
+npm i --force
+npm run build
+```
+
+DB
+
+```
+popol3/database/sqlFile/wedingrumdb.sql 실행
+popol3/config/config.json 파일의 development: {} 내용을 자신에 맞게 수정
+```
+
+
+Back (popol3/)에서
+
+```
+npm i 
 npm start
 ```
 
-Back
+접속
 
 ```
-npm install
-npm start
+http://localhost:8082 접속
 ```
 
 ## 💻 2. Project Info : 프로젝트 소개
