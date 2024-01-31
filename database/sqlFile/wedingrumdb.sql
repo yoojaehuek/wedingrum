@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `planners` (
 -- 테이블 데이터 wedingrumdb.planners:~15 rows (대략적) 내보내기
 INSERT INTO `planners` (`id`, `pwd`, `profileImgUrl`, `point`, `name`, `phone`, `introduction`, `regdate`) VALUES
 	('asd', 'asd', '/image/Reservation/planner/planner.jpg', '잠실점', '카리나', '010-1111-2222', '안녕하세요 카리나 입니다.', '2023-11-22 00:00:00'),
-	('asd1', 'asd1', '/image/Reservation/planner/planner1.jpg', '잠실점', '김일', '010-1111-2222', '안녕하세요 김일 입니다.', '2023-11-22 00:00:00'),
+	('asd1', 'asd1', '/image/Reservation/planner/planner15.jpg', '잠실점', '김일', '010-1111-2222', '안녕하세요 김일 입니다.', '2023-11-22 00:00:00'),
 	('asd10', 'asd10', '/image/Reservation/planner/planner10.jpg', '선릉점', '김십', '010-1111-2222', '안녕하세요 김십 입니다.', '2023-11-22 00:00:00'),
 	('asd11', 'asd11', '/image/Reservation/planner/planner11.jpg', '선릉점', '김십일', '010-1111-2222', '안녕하세요 김십일 입니다.', '2023-11-22 00:00:00'),
 	('asd12', 'asd12', '/image/Reservation/planner/planner12.jpg', '공덕점', '김십이', '010-1111-2222', '안녕하세요 김십이 입니다.', '2023-11-22 00:00:00'),
