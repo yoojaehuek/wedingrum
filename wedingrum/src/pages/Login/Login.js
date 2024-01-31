@@ -33,6 +33,8 @@ const Login = () => {
             <form id="login-form" onSubmit={onLogin}>
                 <h3>MEMBER</h3>
                 <h1>로그인</h1>
+                <p>test 아이디: 123</p>
+                <p>test 비밀번호: 123</p>
                 <div id="login-input">
                     <li><input id="id" type="text" placeholder='아이디'/></li>
                     <li><input id="pwd" type="password" placeholder='비밀번호'/></li>

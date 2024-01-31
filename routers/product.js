@@ -5,6 +5,7 @@ const  Product = require('../database/schemas/product');
 router.get('/', async (req, res) => {
   try {
     const products = await Product.findAll();
+    console.log("products: ", products);
     res.json(products);
   } catch (error) {
     console.error(error);
