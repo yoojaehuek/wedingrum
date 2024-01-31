@@ -1,12 +1,18 @@
 // Date4 컴포넌트
 import React, { useEffect, useState } from 'react';
 import LeftDate from './leftDate';
-import { useRecoilState } from "recoil";
 import { startDateState, timeState, plannerState, pointState, contactChoiceState, themeState, plannerIdState } from "../../../recoil/atoms/loginState";
 import axios from 'axios';
+import { useRecoilState } from "recoil";
+import { loginState } from "../../../recoil/atoms/loginState";
 import { API_URL } from '../../../config/contansts';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Date4 = () => {
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useRecoilState(loginState); //useState와 거의 비슷한 사용법
   const [planner, setPlanner] = useRecoilState(plannerState); //useState와 거의 비슷한 사용법
   const [plannerId, setPlannerId] = useRecoilState(plannerIdState); //useState와 거의 비슷한 사용법
   const [point, setpoint] = useRecoilState(pointState); //useState와 거의 비슷한 사용법
@@ -15,6 +21,7 @@ const Date4 = () => {
   const [contactChoice, setContactChoice] = useRecoilState(contactChoiceState); //useState와 거의 비슷한 사용법
   const [theme, setTheme] = useRecoilState(themeState); //useState와 거의 비슷한 사용법
   const [planners, setPlanners] = useState([]);
+  
 
   useEffect(()=>{
     axios.get(`${API_URL}/planner?point=${point}`)
@@ -27,13 +34,33 @@ const Date4 = () => {
   },[])
 
   const handleReservationClick = () => {
-    axios.post(`${API_URL}/reservation`, {plannerId, point, date, time, contactChoice, theme})
-      .then(res => {
+
+    const confirmWithdrawal = window.confirm("예약하시겠습니까?");
+
+    // 사용자가 확인을 누를 경우
+    if (confirmWithdrawal) {
+      axios.post(`${API_URL}/reservation`, {plannerId, point, date, time, contactChoice, theme})
+      .then(res => { 
+        alert("예약 되었습니다.");
+        navigate("/");
         console.log(res);
-        alert("예약 성공");
-      }).catch(e => {
+      }).catch(e => { 
+        if(e.response.status == 302){
+          alert("다시 로그인 하세요.");
+          setIsLogin(false);
+          navigate('/login');
+        } else if(e.response.status == 500){
+          alert("이미 예약 내역이 있습니다.")
+        }
         console.log("Planners.js/handleReservationClick()/e: ",e);
       })
+    } else {
+      // 사용자가 취소를 누른 경우
+      // ...
+      return;
+    }
+
+    
   }
 
   const handlePlannerChange = (e) => {
@@ -76,13 +103,15 @@ const Date4 = () => {
                             <div className='introduction'>
                               <h3>{planner.introduction}</h3>
                             </div>
-                            <button data-id={planner.id} data-name={planner.name} onClick={handlePlannerChange}>확인</button>
+                            <button classname="plannerbtn" data-id={planner.id} data-name={planner.name} onClick={handlePlannerChange}>확인</button>
                           </div>
                       </div>
                     ))}
                   </div>
                 </ul>
-                <button onClick={handleReservationClick}>예약 확정</button>
+                <div className='bottombtn'>
+                  <button onClick={handleReservationClick}>예약 확정</button>
+                </div>
               </div>
             </div>
           </div>

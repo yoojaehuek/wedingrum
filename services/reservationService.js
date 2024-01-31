@@ -28,6 +28,14 @@ class ReservationService{
     return reservationData;
   }
 
+  static async reservationDelete({id}){
+    const reservationData = await ReservationModel.reservationDelete({id});
+    // if (reservationData.length === 0) {
+    //   return [];
+    // }
+    return reservationData;
+  }
+
 }
 
 module.exports = ReservationService;
